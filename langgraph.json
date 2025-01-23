@@ -1,0 +1,15 @@
+{
+  "python_version": "3.11",
+  "dockerfile_lines": [],
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "RE Agent": "./src/langgraph_engineer/agent.py:graph",
+    "RE Agent - Save Md": "./src/langgraph_engineer/agent_save_markdown.py:graph"
+  },
+  "env": [
+    "ANTHROPIC_API_KEY",
+    "OPENAI_API_KEY"
+  ]
+}
