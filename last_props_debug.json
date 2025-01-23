@@ -1,0 +1,4247 @@
+[
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/647ae6406af7fbba4c02e95aaac68750-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c8f14ba89ce560d18d50f7329f7988bd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/482270d11e9bc9aaae0bb0c0c9182805-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d02311aa1b555138d497bc0ed3df5edc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3ca10a06549730995c22a978f5c7e404-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ffb82d73b6223c6e777ba18af62fe1b5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/da2d9602e935a1e7154fe1e7ddbc2a41-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a46c658b19aafd2e87788db8e11d4cf5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/66c0fd52f2be2c8e5cedfab557be3bf8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a7ff1a4d2d28b93feb2594110bc36178-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cf428ac76ca9011a93b627ffcd06715d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6af6d1d1c737eafca31240d25d649926-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6087582ac977947180a0ff637cb54fce-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "13787 NE 76th Pl, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": true
+            },
+            "text": "4 hours ago"
+        },
+        "detailUrl": "/homedetails/13787-NE-76th-Pl-Redmond-WA-98052/49088074_zpid/",
+        "zestimate": 1230500,
+        "daysOnZillow": 0,
+        "datePriceChanged": null,
+        "price": 3350,
+        "bedrooms": 3,
+        "longitude": -122.155556,
+        "hasVideo": false,
+        "latitude": 47.67254,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49088074",
+        "listingSubType": {},
+        "rentZestimate": 3556,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/647ae6406af7fbba4c02e95aaac68750-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1230,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/be5de704cea292f47be7c1e47e72594c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7ebf49385b4a926f06e11a5e9c5f3456-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d36e9683d6002bec59bc7b9c59792c62-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/111af6a61cbc65d5bc3dd8ea6e3fbdea-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62a66d9efd855ca0eca8f789a5e160e5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b109f9e3b04435f5b1924b6607b655a8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1bac2ef0e72b42b646f9c03152e2b011-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8b575ade483321b2e5d7eb420bb48312-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e467ce77e93a8f211a13f9b507886939-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/709e666399d240c600bf3213fd058d28-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1ae2a4da1941c7913332ecff278f0824-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7b290a1aec75ce5ce739d2a1931a9dc8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8b295cf869566911df75fe07b27b77c5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/09c8ef6097f4dcb21b679f0b06abb408-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e802c6fbf902d33b8de7455711e48521-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f77fcd7491dc3555dc24f1157509bccd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cd0ea3181b117b40d64d650286fda3f7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2a01f38e9275431d7225d7dcbefd2b19-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ed098833fe33686c88186661209aa51c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b651eded1a555dad00ff5da8a5eef80-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1cb6b3b7cb02b026dcccdf027224315e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/98891bd0858dad0ac296133b479b211f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6c2fce5da7689e30523d2ca00d1dbe64-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/27ade3df913c3269b56bb0cea6c3382c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/99558320cd8fe279e9edd7252e9a0e34-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a44fd9dfd618ba5ecb1aec6084aa2c42-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5f4a5b5645267d1b5ef22f2cb307667a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f27f4174febef97cbebf7f3505916a7a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c4bdb966ea6128748dd1af083ccd3eb8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e41eb6a1d1caed71cd12090feddd7592-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/09f54c7516cbb7d1b8eb97a80fe872a9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5390bae96d16cf136706d95c8d5d030c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a4110831a75af28f90d1788bb5872ef9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/41f8c095d5db2b6d367eabeecec060c8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a46b3acea00f38ad6fd0d1207460c59b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ca1526f440203320c4baa01459303b69-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de9c04c49a9dc022f6a801d1e753b9c7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/beb33857bd80e0403af5894a3131c732-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bf055ac2178f63b9a41cea7157c93fc3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8c55a0162aa9a84b7ceb3523ed947ea2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5b736fdb9b068846da840bc61b7c64b9-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "17614 NE 33rd Pl, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "1 day ago"
+        },
+        "detailUrl": "/homedetails/17614-NE-33rd-Pl-Redmond-WA-98052/49044534_zpid/",
+        "zestimate": 1663600,
+        "daysOnZillow": 1,
+        "datePriceChanged": null,
+        "price": 5900,
+        "bedrooms": 4,
+        "longitude": -122.10488,
+        "hasVideo": false,
+        "latitude": 47.640327,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49044534",
+        "listingSubType": {},
+        "rentZestimate": 4510,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/be5de704cea292f47be7c1e47e72594c-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2350,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/490430bbed8a6c0b9d9db1e32447b4c2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/55ac526b435957e8629dbf688852fa5f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8df72fbe93aabb004a353bc1a340e65f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9d23dbb7616113ba3995723cb93c1aac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c3b90fef330f9c846d039eab0df8dcd9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b0d4b72efe165e0d8a0032d923a776e9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c5ca0025d2ca713b6022a8f5cdb6017f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f9839d1cf96980bd6dcb3798e2ed769b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5afa068c71ae6f37a1ac7d45562a9db8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f7e8ce9a16fec31e38d93aed94f88300-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f0c6c6205a4217fb67a7bbd0dc1f29ed-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/98a801565969bcc826b6f462b7aaebb3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/446893cdd46a74fba7dfcc9bbb56a07b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1279309f39305b2aa0a2f83dc6bfa25b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8fa01a1b3983ec05e7c86d2ae7c969b4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2ac0475f8702ed3e13a0f22fe97ecdfb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/85c61576299bcd9c2e6405c87db9efaf-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ad77cc5739492ac4774dbbfa7cd38ddb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ef7bd174895e5b50c75537cbd5b3b099-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/27bbe0ba1ea5611d1ba07b1238b4636a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fe95540f0ccb3cfa1468999351dfcb02-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a2ed5ff04a8f54b5ca8c528816c9b256-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8e1eb37cde3bfcfdee1c345a975df397-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d198e9deac5a7b8f69841051fd171e90-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/abeb1051c2a3bf1b1edada2a42e5505c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0e9d86fb1c6470294a2816fbd2028f4d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d5e750be58fd8e97c6d76fb8dca11da5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3ba6107f1cf05bb125c4779f69ccc40f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/74b87d7574279b109e50ffbf55b30584-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/74002a67b4e4fe8902643da14480f281-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62d0cc121aa8c6389493a2e8ed9b6ee6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d86e95a669322b9c8732a2dfdc651384-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c012033f05941d4c4cf23cb07f3e08a3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6a6ad29638e2e31dc825d3201f611c71-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9509f62e23d9119751ab0996d1bcf234-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "13818 NE 93rd Ct, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "3 days ago"
+        },
+        "detailUrl": "/homedetails/13818-NE-93rd-Ct-Redmond-WA-98052/49134572_zpid/",
+        "zestimate": 1694900,
+        "daysOnZillow": 3,
+        "datePriceChanged": null,
+        "price": 4250,
+        "bedrooms": 4,
+        "longitude": -122.15475,
+        "hasVideo": false,
+        "latitude": 47.68457,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49134572",
+        "listingSubType": {},
+        "rentZestimate": 4263,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/490430bbed8a6c0b9d9db1e32447b4c2-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2510,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 1,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/408cf01cbfa7c64dba7665251b7ef9fa-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f913a4472b98611a5807f3bfb788af2d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/eea6c572d3229c97e90731a799365b12-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/123cf23c7da20e5f0e4348295db678f2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ad76c97b2aff961984b5f045b4ebb20f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4e315662a041694fa684514757edc1bc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/70518f9075b8c208e2f4c83bf353e433-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/26aa834c512cbee77e652c084cbcfba8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e0ae2c0dbcaff070c442ca3a5fa93586-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cdd644cb7bcfcf27e868fee12ff2330d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ab0ad79343236669647cba899b130bfd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/30e653f9c8f3daa12ab28c225fac76ee-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ae82b73684220e5870aca066ec94fbf2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/00380be25bce07a0e64db6cf8ae52835-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c38bd34cf93fff8c5ba99cc7d8aad6ba-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/23339bdcbe78d28f688591a0295ad5d6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/13016ca363eb0a7d3293cd15293fa4d2-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "13796 NE 75th Pl, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "7 days ago"
+        },
+        "detailUrl": "/homedetails/13796-NE-75th-Pl-Redmond-WA-98052/49088076_zpid/",
+        "zestimate": 1244400,
+        "daysOnZillow": 7,
+        "datePriceChanged": null,
+        "price": 3200,
+        "bedrooms": 3,
+        "longitude": -122.155266,
+        "hasVideo": false,
+        "latitude": 47.672234,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49088076",
+        "listingSubType": {},
+        "rentZestimate": 3252,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/408cf01cbfa7c64dba7665251b7ef9fa-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1200,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/440ec78243a493caf1c84634da844db0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/75d2fbd8d424410c4c9608d50ecd5cea-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/11dc723d00d062a13535c425e9f2f86c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bf24bc5b01fc867ecfa8a88a7ec14dcc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/96c5ae905161bb92a418c2fe54959a6d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/407a7d1c052976d6191e3c3dd49d1a75-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ec8db9c6dcd2cf66cb5cdcf680ccf9e4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8c8e41b452f6a4e51e01fddd695e5c00-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c3f52f8acae3a232f2d5995939bda866-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/576ece3074eab41fe7c8dc176208d16d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a4d4b3de7e867a074397e1b24f4d6467-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ec85f5211b5ff801e01a25829367144b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6533b9b9c0b9095384df542a92445cf7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4e4292799e73f74aa04832d20b484e45-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/60d0d4a1da410a0db58dca2e66cf50bb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f7446daf9dfca563c440b013cb13badd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/59a3ea92b64f9f73f15838035134d93f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7b25164a840e8487c742595be62c42a9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5e9d0ddcd3b62842557f122a05dda5b3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d155215c25101e89e9254e601a7899c3-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "6810 153rd Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "8 days ago"
+        },
+        "detailUrl": "/homedetails/6810-153rd-Ave-NE-Redmond-WA-98052/49068486_zpid/",
+        "zestimate": 1500300,
+        "daysOnZillow": 8,
+        "datePriceChanged": null,
+        "price": 4000,
+        "bedrooms": 3,
+        "longitude": -122.1363,
+        "hasVideo": false,
+        "latitude": 47.666843,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49068486",
+        "listingSubType": {},
+        "rentZestimate": 4116,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/440ec78243a493caf1c84634da844db0-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1930,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/1b54d0af92ef1bb4f238887642ea5dbd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1cd05f831f5b8a577921aba39490d2d3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ef7283da823ff421caa083a31dc78328-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/df91de7711d0b82045f8a09abbda0498-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/302d428edde8a8b2acbd7814323e5822-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/00b7a975e3b4a9e84ea45ea54dc0494f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ffb585c9775fd1b5c773f6ee86f92c4d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f39ebea1ef0582b0f885933e2c2a2b18-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0d46c649b8d946e32ca40259be5e905d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/55acb82331a9d19116ceb6db4032368e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/12fc73b8a46acadf3b9ede77d6d1ed11-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3a25ab88f37721078029daaec7f05432-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d235b0d2477e1e184792d7bd3c9069da-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4278d4c77046e6a370440a57b2dd4777-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac48af2e5e5f009b311b1d4e3646a0f1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1289261c17330e23b4937054e6f26860-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/680da5acbde5e16f6b63a550e90e6f22-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7ba4ac92dced63e88828826f168c2305-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/866d54d7ad146e731fb7a6b116e951d7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d251207429ad4c0f85204ce3271cb13b-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "11656 179th Pl NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "12 days ago"
+        },
+        "detailUrl": "/homedetails/11656-179th-Pl-NE-Redmond-WA-98052/61719025_zpid/",
+        "zestimate": 1652700,
+        "daysOnZillow": 12,
+        "datePriceChanged": 1736755200000,
+        "price": 4500,
+        "bedrooms": 3,
+        "longitude": -122.10031,
+        "hasVideo": false,
+        "latitude": 47.704,
+        "listingStatus": "FOR_RENT",
+        "zpid": "61719025",
+        "listingSubType": {},
+        "rentZestimate": 4200,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/1b54d0af92ef1bb4f238887642ea5dbd-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2323,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/c30a425a84ec13fd4a904afa9fc5fa27-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1a5243c051377207ae8054f7d59c0861-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/159c1023ffe15a3763cb01bb6a214c23-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1f12db342111a38abcdc23e6134f7b80-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b94df89072bd8135b72ba7f43a4581fb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/af8cd2270c9f8b249b10c18352625327-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/00b9a090f4454bca9c0901d8f12d7e19-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a5ebf75340d60ab24f8e8506b5ad887f-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "19105 NE 64th Way, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "16 days ago"
+        },
+        "detailUrl": "/homedetails/19105-NE-64th-Way-Redmond-WA-98052/96684830_zpid/",
+        "zestimate": 2054500,
+        "daysOnZillow": 16,
+        "datePriceChanged": null,
+        "price": 4999,
+        "bedrooms": 4,
+        "longitude": -122.083206,
+        "hasVideo": false,
+        "latitude": 47.663395,
+        "listingStatus": "FOR_RENT",
+        "zpid": "96684830",
+        "listingSubType": {},
+        "rentZestimate": 4884,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/c30a425a84ec13fd4a904afa9fc5fa27-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2917,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/9169e3aeb035af45bbf1309196d0da2c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/963d5ccc0ff6c5c3a7a0b5d03bb555b5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/976ad52abb9176c62cc755f877f812e3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/325aad6b0500555f00d11968994164cd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/436305405e9278775c844a609b9489fc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a87204b59a573bc536ef52b8cdf37190-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ef0adf43faefd7ac5dec6df628333ca3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/96f683f9c6fb7309ab33a1beb208414a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/063769455edf6cda289168fb7fb34fc8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c753936d48faaa54ec63f1ee0e102ddc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/698151f2a9355138e47c5d164892b826-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2c35b7553d43ef503a9239c1f6c624eb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3c38baa166919d8d05729ed14c735334-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e5f9a98752b5b8e13424bed1b30bb356-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4fb2007a406328639ed9130883c23a98-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1b170c65f1c9da75a21729a59aee17a8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/08c4f9f7544e8f99394fc7acfee18ab2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/249915267c37df4aa771994b641bf3e3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/556c8b496e973c3f65a4c1b1618d8676-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8f32dc05bbac289f21ae06d99abfaf58-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e1954a27a72232fe03005229c6e8328a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f6580fcf200c1556d127b583f8ac7414-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d8a471742609bd1ea653d407933b903d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2a731ef9d024205eb1701084efbb722a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0b953324b1419b81fad656b611ccb30d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/668d194ef45b33247d8f71eb0e6b262f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cb25254accde2d874f21400e42dd4f63-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "7020 137th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "22 days ago"
+        },
+        "detailUrl": "/homedetails/7020-137th-Ave-NE-Redmond-WA-98052/49088201_zpid/",
+        "zestimate": 1717700,
+        "daysOnZillow": 22,
+        "datePriceChanged": null,
+        "price": 4750,
+        "bedrooms": 3,
+        "longitude": -122.15669,
+        "hasVideo": false,
+        "latitude": 47.668766,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49088201",
+        "listingSubType": {},
+        "rentZestimate": 4627,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/9169e3aeb035af45bbf1309196d0da2c-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3000,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/6d9ba5522b2c70a08be458ba56daef01-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac7a2923640de81a1819e21c77a3a589-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ede853f2cca5dfd8a7805a3df374b243-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f2fd2ee6815fe188c9e58431e8cd0eb7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b7294f0cc2d1a1585397fe878c1483dd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/877d215c11c9f8306e35d65c564bb2e6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f4072a677a0560de2c721e47ae47d72b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0c83cf0d5e6c3d62dab5018643eb14ff-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62d31c80aa4e663c394673d808586620-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/691ddc625ba855ffd09cf308fc2ddf7b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9f79186acf4575ebacc0472b2d48f0eb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/67bda9036f7b973e2b25db683589f890-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3aeb160db64108f2ce23bee5d6fbe408-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5b0df32167131198f07461283bddef4b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c8b67802eff5ec19389a2579d512997c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fcc9bdbbec173428aa12aa2a7801cd1a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a8816f256756ad003b97c44b9887732f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/83d043c0b71d1959d3fe0c90f066ebaf-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/18749e1f8d445fbdb938c1d294e536c6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/24f9e45d3b2a9051e9e9c85b65f131a5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/efc51405c928d66f9aeed60de4ff22e4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4efd276697e7bb7242c6bb70207cc878-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/99e24c635580e2b745a872832979f763-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a671a25766ec5c87d2270c5224698e7c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/84a954956e1ac7fbb5750bdf483a7d80-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f26ca530c7ac08f0a6be83ff08f31f4e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4e1877413e0c202e400961aedf2d707e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a751e29436e2378f9d4baef5ca52138b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d64a71f20266ab8713a9baeb8da22981-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/85af7ce06c8eb0e1a6ae104ce769b01c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5191b09013e4afb3128b18c739c969d8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5614f0e1960b10da663fb9b2cde8d173-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "(undisclosed Address), Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "26 days ago"
+        },
+        "detailUrl": "/homedetails/Redmond-WA-98053/48796223_zpid/",
+        "zestimate": 849300,
+        "daysOnZillow": 26,
+        "datePriceChanged": null,
+        "price": 3600,
+        "bedrooms": 4,
+        "longitude": null,
+        "hasVideo": false,
+        "latitude": null,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48796223",
+        "listingSubType": {},
+        "rentZestimate": 3594,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/6d9ba5522b2c70a08be458ba56daef01-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1660,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/4d52c25d0ba2cfa2324760c97babd685-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/47219e1670a9ae82a49e02d70d6cadc5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/12e0f36bdc578c1ed3a7d17186ea72a6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3dcd9526e7bcdab55bfe1f6d1ffdc9a9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/30e2485540830796216ec6a234711057-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/448481f2a247159d625e273f8c3fbf46-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c03b1385c1a2c42e109bd4408759348f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/474a3c58bebe6055e9c70f4366e10a73-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f0ecde0d45a11129e7d6881d789b2ae9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/07fec917ba83f66ef308b53cef91f050-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f801e769ec62970e292687e3571aef25-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/84a553bc1cb8b1460f7c430d2b6e9164-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1b1e5ba66b7ae0268626476c75d8cd6d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7bf9b1739960e2c18846164b151d21a8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/77d59d8dde94f13855ec7278d670a7b9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be222ff96128c0f5edb336e719f87054-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d32429d942ac66b8f2954082c46f326d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c04b5d8511c2d7d2e24e1b47bf11a8d5-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "7704 135th Pl NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "27 days ago"
+        },
+        "detailUrl": "/homedetails/7704-135th-Pl-NE-Redmond-WA-98052/48966124_zpid/",
+        "zestimate": 1176200,
+        "daysOnZillow": 27,
+        "datePriceChanged": 1736928000000,
+        "price": 3550,
+        "bedrooms": 3,
+        "longitude": -122.15881,
+        "hasVideo": false,
+        "latitude": 47.673138,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48966124",
+        "listingSubType": {},
+        "rentZestimate": 3625,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/4d52c25d0ba2cfa2324760c97babd685-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1340,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/2d983893284428514dcf0c69b904a3db-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/71cb3eb3cdcd362ae3885ef2d663a395-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bdee9b01e03fb3f0b4e4d939d04e21b4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3751f5fe574fef3b5c27d1c2da2f8d13-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7351a1cfe1fabc9c0e403db310b3fae7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d7f23a91a1329fbd86cc9b4babf3acf1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ee8e6e5fc0698a97e30f362d2bdf2340-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e71b792817ac630cf21d9e7376e2ac6a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8a4055aec7163cebca01188df911ee1b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/877865f57b8999e992096a2a37cd77b1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9147ca39cf688748dbaab8fbe39f7f5e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6be44682376f61516d61cb4d28765e52-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bb5efa8a9af7a5e0dfd67621643b33ae-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/63051c16e04c6ab8f56404f8516a1ab6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/252445bcddeaa313b18fcb62e71ea688-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dd30bb77076de983c9fd8843ee0f5cc9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5fa7d9061a30c1f1e1ba07dac53e53bc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/53701ecc3f72166d2c5c88aea3125a33-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d427d31ab35bff6928819bd93575c07e-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "9414 225th Way NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "30 days ago"
+        },
+        "detailUrl": "/homedetails/9414-225th-Way-NE-Redmond-WA-98053/58388349_zpid/",
+        "zestimate": 1608300,
+        "daysOnZillow": 30,
+        "datePriceChanged": null,
+        "price": 4300,
+        "bedrooms": 4,
+        "longitude": -122.03979,
+        "hasVideo": false,
+        "latitude": 47.68417,
+        "listingStatus": "FOR_RENT",
+        "zpid": "58388349",
+        "listingSubType": {},
+        "rentZestimate": 4431,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/2d983893284428514dcf0c69b904a3db-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3120,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/1ab1f67dd3cfe904fd17400e35bd8df8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9b6db3cdb5127d4bb04222d8c059a95a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/518d7c80b5ef5c412c75ae860ef57d50-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d5a90102806b32cac2df89e47873aaa8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac4b1e5a74401211d9883d8e0f84b8c8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ec7a142634e17686df8971b6ffa5b0c8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2439c9a6238edea391a420341ed416e6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8986061527f507a1ed9167e336d16905-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7e515b56df68da6f7482cbb6ecb77130-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/90d8bc6994318875863b97483408573b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8c4256b150c0c3a5dba3c1af5eb07084-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8cce574f7a567bf422180e02ef0e41a3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/32169d7920633eac143013d2916e3bef-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f140275867f0ee67184ab9b14f624af9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7d6e9220ac9a270b4583e114cdd06e9d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/61e02fc2e03d589d160ed26f2e1dab54-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/36c1e3b6732de60712cf96423c8f323f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ec166eb0dbbf98da8165176fe01cb8c2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f5f3c6696f85322760586b4f3e05a796-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "7525 140th Pl NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "30 days ago"
+        },
+        "detailUrl": "/homedetails/7525-140th-Pl-NE-Redmond-WA-98052/49138832_zpid/",
+        "zestimate": 1365100,
+        "daysOnZillow": 30,
+        "datePriceChanged": 1737273600000,
+        "price": 3200,
+        "bedrooms": 3,
+        "longitude": -122.15287,
+        "hasVideo": false,
+        "latitude": 47.672142,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49138832",
+        "listingSubType": {},
+        "rentZestimate": 3746,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/1ab1f67dd3cfe904fd17400e35bd8df8-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1700,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/b2d3893046d041c43d02c372961073a4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/00ba57a4cb2c0ca5470cb755e6840645-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/838718ae903ced27494ce4297bb5033b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/79b59e34e907974260fff5ebe56a4eb0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/279b442206fe3654848bcdc29040b116-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0eed63c7a2804643c0bd7e1b0500c33b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7f705349401bd76775a49a82ef13c51b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a046bf5ac1e0fc0a855af95fd7c7aff3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d50a29f5b7d9e5c70bee98d3d124f569-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dcddb6e3b65d1b3984a51ec56e0c52a8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c72d284222f0b9b917e10175c4b4f3a4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de978d93406ef4f4ba57ec97fedff2e9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a082e80d947df88e52c20552c2059657-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/aec8a3ce2c1b3ab09141bd586943188d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/76731f698ee89c1f8efa183cf9f75190-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c320d7d16abcf697482373bf4f6957ee-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/59f2996f7030a067f93b193fee21e994-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4a41876a8200718d2e2b6d52b6c8b87b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/256b266de7db0bd96910fc34ff1759e6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ad01553f4f4b40e22f0446972d7a6846-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/357e9b2afb02d528823c8207132620d1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e875edfdfff7002cb5cb68411c7644ac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ce7508497f4be1bccf54ca7872f5f71a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5a0b57f7f75a4ea742970f3ab0b11641-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/67bf214aa13de765137981287adf58d0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b85cbd114d3442855142f48e34c88fe3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e33590a3ba6eca7f6205ccec9a3ca35f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/044b550df4484f133611d8805838abbb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ae02d50dad44850840c8b57883d3aaff-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5ebf14aa2562f29d05b7e4e0873c3160-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5f4512251aa2d1f5fecb173342914aca-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5d89c56faba4ec990c9161521f38a1e9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/93c7005bd74a9ec9336ca07c3e14f2c2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e9012718c3f16fa601488c3bc3068445-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e39751c05cac7c06167b15c246e4f34c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4874efbf729b297c1230d8778e9ee236-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/65e7f5edf20bc3242b0fdd4b65de4cd8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0c1021ca60fe26f2c64f853255256cd7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9cfbdeb43a4f121b25dd5b519c99a040-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5b4bc9c715d0ddca4ae5050abe4d5c0d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/df27145c38c27fbe904c2de956308a5b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c87b41255a17ba63ba04cf21bec085fc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/074215b07971c9d080587833ce2ec625-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/27139d97d3a8c33f63d640ef766935d7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b8598360ed178c7ec382c9bc714ad2eb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a515e8a41f429814ca15943d92d731e0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8ee9ef7e292863450823d7fd7c820ef3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a42a1f44f253f30dac3f87d600295af7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/87c9c8256cc02f96e094bf71dc7643f2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/43b33db4932580024b96fe3ec1c0aaf5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/80ae4713d2bfdac3473e407bf5fe7fb3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/33346623d9cdb18fa232550e67044a84-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c1f4bdc680bb0761c370f54a28bf32c9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d9146a29148eaac18477ba07d1c9790a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a696abf0a6f0ae315f10f4eb716fc475-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac36c3a8e8493a0d0df3f1d5780ba83c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/27fa963885c74a4d51b116b16fd575c9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c46c711c8aa14db5bb75acbb0d356fe1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c2db8f7af651d402c653bbada15c10f8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0b3bb13359d5b6fb98e2f414dec08bdc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7004b3b3c92b6e9a316ca5fa102aa9d4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cebdf183bd1269ad61d3d1ab4d34e376-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/215e64eaf9c9ab979ec763556c97363a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6008b450aea84d683085d667142f8899-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/af976e178068f15da83467ee6da11a6b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b46948017b9cf6b74e9ed7fd6fa12a11-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/63c558b0ed282571a021e6e8c4b0a585-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6d8f8d79159633a30eec6d538ee02d53-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c10cf38901a87d568700f6356a98e967-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1f3caea57a16bb5a39181f8ed70801d3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e5c5f8eadbef054b9b5fdc0638ea69f7-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "13827 NE 93rd Ct, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/13827-NE-93rd-Ct-Redmond-WA-98052/49134564_zpid/",
+        "zestimate": 1753000,
+        "daysOnZillow": 33,
+        "datePriceChanged": null,
+        "price": 8288,
+        "bedrooms": 3,
+        "longitude": -122.15459,
+        "hasVideo": false,
+        "latitude": 47.684155,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49134564",
+        "listingSubType": {},
+        "rentZestimate": 4393,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/b2d3893046d041c43d02c372961073a4-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2300,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/98d6bab0c18478a905ee38708cbc5637-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/38f52b724608c94961e0a6648df9b335-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c0cde95ab4064d772766302622431d81-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e75895caff37070b113ed66f22bbe34d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/87a5e4841f77e8ff5360c988138acd3b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/63c1aff583cceb233a1be3bdb96e1ff9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/876c292ab10e733f32d0a8dc95d4cb12-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c2e4976d1f579b1990c40bd801a84bf0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b18f3068555acaf28daa2da219bd608e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/881cb211f28eea66c6448b1f1a195d1f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1c113e6c087aeb60c30779b68a6227ca-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bafdf180e719131eaec4ad96bfa380b8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7d751ebdc343a49a8f14ce56e12c6ecc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/051a7ba22216f5b9bbc210793d43fae0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ce4b2c9ce15394efa0b2fbcbc0d11b1c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3b28f03337bb08007581403b39b04ed2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f28e42284022d469598c1127311d3ecb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f8e8482c2cf34a247a49ea202b87d251-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5cefe75b8e2c2d48a4a2ff630e160f09-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/02071ebf72e0c3ad2c805096682cc843-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e4a97232da87c02774bd88aef05d41da-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/43a6f09caddef989f9f510f6acd0f67f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ea4614d9da2d70a5551a361909b3ac51-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/81fbe7e41bf374ca2782ec8b394a4fe8-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "10507 164th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/10507-164th-Ave-NE-Redmond-WA-98052/49021774_zpid/",
+        "zestimate": 1469600,
+        "daysOnZillow": 43,
+        "datePriceChanged": 1736582400000,
+        "price": 3950,
+        "bedrooms": 4,
+        "longitude": -122.121376,
+        "hasVideo": false,
+        "latitude": 47.693882,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49021774",
+        "listingSubType": {},
+        "rentZestimate": 3968,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/98d6bab0c18478a905ee38708cbc5637-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2120,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 4,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/4af2a3cc20bd8ce6f98ace1293912365-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6965974806357d8554dc358324ec4861-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e335ee87f6ee6c8a3962e3ac2a86eb20-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/419fd6b7b1b51c1f72378c2cb520ab74-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1b92b8b20e467cad80bae30f1c7fb36d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/727a0ac038b5d2cec4e4b433324540d0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/79366f29d99f3f437c16c1c4a1615dd5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/15f8e4e079fe2d2f171bcdc8c3eaccb6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cea8cb53abd5518d01d64267b477241e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/79b4a08a01fb6ea323ca2947e77452c6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/addfb0accfcaecc619bd4ea1d18b9c73-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0f5312e12c4d112cbe4d0a95d7a74495-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d1f1bd41bedcff22eb00ebde6893bf2d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/58ffc201ce197b9651bd66532b2eef50-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ef17badf1629e641fe2bc05c4e86a291-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/35036b4b8ddf088212e09866190a1de9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/00de8cc3bed03dc6da2b743883a9c2f7-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "16302 NE 104th St, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/16302-NE-104th-St-Redmond-WA-98052/49020672_zpid/",
+        "zestimate": 1712500,
+        "daysOnZillow": 58,
+        "datePriceChanged": 1733817600000,
+        "price": 4250,
+        "bedrooms": 5,
+        "longitude": -122.12344,
+        "hasVideo": false,
+        "latitude": 47.6931,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49020672",
+        "listingSubType": {},
+        "rentZestimate": 5130,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/4af2a3cc20bd8ce6f98ace1293912365-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3000,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/66acac3fa51f79d1b846aac3a7d38980-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0ffc4c5805b65ed560556a5c1b22aaeb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c3bef72c3e143d46cbadf6067ad59e64-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/feaf24119c6a89657697b6dd37a2f28e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/100e9ea242c1f08cce2918c21b5a536a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9e47f6267fe666c54392abad75315c1c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/89da4d3f53dca22705719bf5ef76799d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/91951598f366c138963d186cb0479cbd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/12980d2ffb3a05c12dbe42135d0d1d74-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b80363e6d7a315506a7c3b726b4d811f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e94ee39d41dd9268b736224dcc1e9d24-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a7964d5bb096c98a3328ad0c1ac5f1bc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b566a3202273d19ce13b86c437f93d2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c8e8d100e3b692ca43c2d857e9d5d0ac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/434d04c1d7c4364bad8a65c30dba2b9b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e68fd9d0e0a92489210e286a306265b7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/11dde8e42fcc32c18c3cee67974a7204-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "21328 NE 92nd Pl, Redmond, WA 98053",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/21328-NE-92nd-Pl-Redmond-WA-98053/48671164_zpid/",
+        "zestimate": 1324100,
+        "daysOnZillow": 90,
+        "datePriceChanged": 1730966400000,
+        "price": 4600,
+        "bedrooms": 4,
+        "longitude": -122.05482,
+        "hasVideo": false,
+        "latitude": 47.68373,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48671164",
+        "listingSubType": {},
+        "rentZestimate": 4097,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/66acac3fa51f79d1b846aac3a7d38980-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2450,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/854638582d9c4424fb58d0b15ad20b0f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3d590d8aed6451f18d7d44cf9f14f540-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/99952c7a917bdab7ed07c913321c3376-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/204c4db70fcdffee453f00ccba2812b8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/38707fe6f3a4a7d3d737c882867f71ef-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fbed3083a5a08bc6805c1e7b1fd10cac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1321925521ac8d1407e922c9dbc00ba6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fabce095bd67c461c9013ba62503d1ab-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ff5067f2022a34392a303d78d1bced0e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d59c108c935b8bb30bda7168c2e3d1ba-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62b4a88b110c9f78e241a9470e1198f2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a10d50508e93f8b8831138ffe56c2d61-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/80f25c0b0c525b7a246d9dfee9bcac2e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4fe19c536ef43aab9862cf5a0e915ce5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d389529d89d064a67664b21f4b6ef96f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/84046de043474c3eb57f79c97837b4cb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7f522335d4233ebf082836969bc46f31-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b5778221f0cd02f931c392fd8154e83e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/915251a9bee2a3d9ac76a7a2ed7f9511-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/81c0173a4d96d45bf8bff80091108a8a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a6952626800a644bf32fac43e342c568-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4d8971004d1a592237f85194c13dc38d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be010f2bd83aa5a0fb8ce1e8709a475d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/77012178e70736d5331f822b3d49823b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cc7469cad2ab5cb5cd735bf16b816199-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/03208c8d76a04ce2f33babcaf6fb6f76-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/52ac79021765d3ae55134fb282f303ad-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e2158aa0e121408497d8594113ede513-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/67f0f58665adb835d5d4479c1e57fa07-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cb359fcb7ca85779cef145f5a12d6ebc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/16d45942974f6bd98cc20c47ec55f066-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/909db73e2e7cdbc4d40bdfcabf0412c9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bd6829ef4cc68dadb6b034243c5e3732-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d5d997cc1458db5211d9b9c55455cacb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4f5555e7d707ea00c8ac746b5f8256f5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ca734f81f3c26cedb498d10cca0266d6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7fa48fa3e738616825566647c7637157-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c7d8feb619f58204e1200227524afdac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/eef17525ab10659d2429c23c69b328f6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/998bcd1fb6ee7816fa6b3bbfa6d9226a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1b9b65d099808f6f119a97ee20c12745-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "16409 NE 98th Ct, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/16409-NE-98th-Ct-Redmond-WA-98052/48763448_zpid/",
+        "zestimate": 1429200,
+        "daysOnZillow": 99,
+        "datePriceChanged": 1732348800000,
+        "price": 3800,
+        "bedrooms": 3,
+        "longitude": -122.11995,
+        "hasVideo": false,
+        "latitude": 47.68789,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48763448",
+        "listingSubType": {},
+        "rentZestimate": 3789,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/854638582d9c4424fb58d0b15ad20b0f-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1860,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 4,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/572c8fe36a74feb0fb7bc43c9b1cf785-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/206574cabf28d573ff45ec61d49f4421-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/98f44b63872e8e7bb2626bfb8396f616-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/01b87ffbbad036e000ff27de264288c3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62f502074286f31b6b148d3944260fc2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/99d951ed74086df1be51a65b11fbc4b3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/87b80808465fec1ffddecc601eb77866-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a2a6316a3864acb2e1440a698a5dd3ed-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a87d85b9b7c5d671eabf04e99e915aaf-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ee54d8ec3a91a7d22cd1b92ee8b423c6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8e125c9cfdb5622f31c1821d6dc671ab-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a71d54dadfdf3c268dd76fc80427cb3e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1116d05958adc81ee27433fb8c6e8b9e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9934d7453e0fa2d49185343125fb0a64-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0630c4c940f8d0ae40ff9835834dc989-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9020a3866d5db341fa53cb0b912634aa-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a187b9f29bcd5ade75f6ebaccc95d4b8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/66979ec16dd44537838271cbc255d064-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bc467611934fb9168354d6ca9f305e03-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0ac442fe27e6ab33a9cd82cb98b28951-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b58b89ac87b3e8dc2b098d69f927c810-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/66c3f2e526aee671cd6cbbab6a607e5c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/987579b9f54268e1836dff2d77a7f799-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ebaa2184124028fe40fcb75f2c73ac4e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dc81c2b6109ca0f3f046354526eb1176-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1c0669b25dce755e89f5969b22de7542-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/11526f3dd10eda2116d5c4d190b0ac2e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d164a49584e729c041af858f9bfcf6b7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/967b4d07777eb9a6bf1c0daa0fbd23e9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de72058976d1c466a23e70807844b761-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0eea4ddc37b2c0652c8196c7018d4c65-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6724f096fb92a70ccbebc2234507ce90-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fcdcfb4c63719f205418bf09a5c3ac50-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "10351 156th Ln NE, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/10351-156th-Ln-NE-Redmond-WA-98052/2062302732_zpid/",
+        "zestimate": 1234500,
+        "daysOnZillow": 147,
+        "datePriceChanged": 1735804800000,
+        "price": 3580,
+        "bedrooms": 3,
+        "longitude": -122.13152,
+        "hasVideo": false,
+        "latitude": 47.69312,
+        "listingStatus": "FOR_RENT",
+        "zpid": "2062302732",
+        "listingSubType": {},
+        "rentZestimate": 3559,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/572c8fe36a74feb0fb7bc43c9b1cf785-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1546,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 1,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/150d5c58c0070b722aeee3b226a10f27-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e09369ffd1215a360aad7a7316970185-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2a0a30b98ca143b3195b2b42dfb172dd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/47958ce61abb6476026f50c57431083f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2f633c60f6f1239f69b237924a997824-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7864c17fd29f406b5ebfaadf6649c200-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f6be6d74d86d13988e3d3db81856e315-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5914704e44d61d6343ce8ac3e94cbb1c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0847e31f83ced9f9d5c7947cb65aed90-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e2e3a64fc7cbaa0996c9315b23efad11-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "16908 NE 106th St, Redmond, WA 98052",
+        "variableData": {
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "type": "TIME_ON_INFO"
+        },
+        "detailUrl": "/homedetails/16908-NE-106th-St-Redmond-WA-98052/48966266_zpid/",
+        "zestimate": 834900,
+        "daysOnZillow": 196,
+        "datePriceChanged": 1735891200000,
+        "price": 2600,
+        "bedrooms": 3,
+        "longitude": -122.11381,
+        "hasVideo": false,
+        "latitude": 47.69527,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48966266",
+        "listingSubType": {},
+        "rentZestimate": 2596,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/150d5c58c0070b722aeee3b226a10f27-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 910,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/9ab58540fbdc5c3fd8db789b92386b76-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4227a2c6b02ccad96a1fe956d9781393-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62ea12000650fbfa098b12fc4e049024-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c108c595612ae7e11453e68506fec892-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0dc98a4d04a6bfbe1e1efbcde7cc6f51-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a495d60c59206fa2518b7e0a2508c770-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/33da207782544f60e186854d641c45ef-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/17554e8b4d928976481d768356be824c-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "9004 171st Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "2 days ago"
+        },
+        "detailUrl": "/homedetails/9004-171st-Ave-NE-Redmond-WA-98052/49020632_zpid/",
+        "zestimate": 899800,
+        "daysOnZillow": 2,
+        "datePriceChanged": null,
+        "price": 3800,
+        "bedrooms": 3,
+        "longitude": -122.11181,
+        "hasVideo": false,
+        "latitude": 47.68219,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49020632",
+        "listingSubType": {},
+        "rentZestimate": 3161,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/9ab58540fbdc5c3fd8db789b92386b76-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1350,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/3c171abd6031ecab0940755f90a23d95-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/264f287948b2b064ca2982a500465261-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac350f9277aa0e6e15423aa447ad22fb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/286c2c788b0ad0123b04fbb43f3fb3dc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/44ee79a345be1f1b3e1c7cd708f163ea-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cfe07b77ffdd99fc61a7ead7156ae590-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ad27c9896185c14089eafba16b2c0e1e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f5c99da6eebac1cf246b7925f0d60c68-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/159576904314c68a04b5bf520a310d64-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f37eaea46292d43f14d310768109e858-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cbb54c0bfe2b0072b40b5e28bac36038-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fa499b126e6575279ab30dc3203a13c0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62b8e2646e0b1c9e2fa5dca8c2590c8b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/605c0f9f133e3698b104a23d0e0e6da5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5f9a64dcaf44520a368bddccc4f972f5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/745a614eebf32ff57a56ab36a5d17b43-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a45de23fbcd762eb6656949110d386c0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/89090a3420752abd8e6ceeb72955cc6d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ecf31e39b7449bd25633b55d37ba6e89-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a571ce09ade96cbfd82945fe88b61148-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "8212 172nd Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "2 days ago"
+        },
+        "detailUrl": "/homedetails/8212-172nd-Ave-NE-Redmond-WA-98052/48737868_zpid/",
+        "zestimate": 1322000,
+        "daysOnZillow": 2,
+        "datePriceChanged": 1737446400000,
+        "price": 3900,
+        "bedrooms": 3,
+        "longitude": -122.109344,
+        "hasVideo": false,
+        "latitude": 47.676353,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48737868",
+        "listingSubType": {},
+        "rentZestimate": 3846,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/3c171abd6031ecab0940755f90a23d95-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2060,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": null,
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "11155 134th Ct NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "4 days ago"
+        },
+        "detailUrl": "/homedetails/11155-134th-Ct-NE-Redmond-WA-98052/2054759031_zpid/",
+        "zestimate": 1127700,
+        "daysOnZillow": 4,
+        "datePriceChanged": 1737360000000,
+        "price": 5000,
+        "bedrooms": 3,
+        "longitude": -122.16116,
+        "hasVideo": false,
+        "latitude": 47.665695,
+        "listingStatus": "FOR_RENT",
+        "zpid": "2054759031",
+        "listingSubType": {},
+        "rentZestimate": 3531,
+        "contingentListingType": null,
+        "imgSrc": "https://maps.googleapis.com/maps/api/staticmap?mobile=false&sensor=true&maptype=satellite&size=575x242&zoom=17&center=47.66569519042969,-122.16116333007812&key=AIzaSyBWYJWCA8FNMQvSe_k3LKfDGJaEgdKwsco&signature=wOYMM6hLG06SLEVmJnrO4ry-uJc=",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1500,
+        "hasImage": null
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/37ed3251489736e6ce18bbf83b09bedb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/aac0267910477f6921808085481ca7d3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c31145f56b6ad63bae4e96b9f67c558b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/70a5b2cde0128f75bcbf35284bb69ea8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7d82546d61bfcc3c2470900b998f627a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/49b6e026416804d6181cc628f4392253-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d6c9ee011ea8f9abbf5a910485cfddb0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d6a2e9f4d2b884734f0b48de80bac247-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/151ce2339619ed791c910e71075918df-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d9c0a4579fceb4487f8e11975628d51b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e998500663742fe5676b87f21db0ba8a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a73ac82c699b6fd73e8c5e96971bf0b9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f181f4ab15f55c07be43f96364b15cb9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0bb788dbbe4d32c16f23cb1217400875-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cd34811d4b9bf6acad5f3ec59ace17cb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fe3de1624a6ecbed8b92e3546a54897d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5fd0789d384c187995f342bc491bef0f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0edf1477f26a3f2937f45d5bef62f287-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1d337f9e894169d8e73ddd2c4b27a4ad-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/740a1269f9f5def4084ab59f367e3717-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/625c34af45fa89deafd4483422bbe423-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "4306 171st Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "6 days ago"
+        },
+        "detailUrl": "/homedetails/4306-171st-Ave-NE-Redmond-WA-98052/48871250_zpid/",
+        "zestimate": 1497200,
+        "daysOnZillow": 6,
+        "datePriceChanged": null,
+        "price": 6500,
+        "bedrooms": 4,
+        "longitude": -122.11206,
+        "hasVideo": false,
+        "latitude": 47.64923,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48871250",
+        "listingSubType": {},
+        "rentZestimate": 4207,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/37ed3251489736e6ce18bbf83b09bedb-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2060,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/3105f0188984bd7b0b4470e73580ebf5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ff985fe76ba801686973e8fa36dd0315-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/98491525dca0ce3fef8faa91865c3173-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/022bf0b0415ecd4d280ebcd30aa8895f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/32e606a76cbb9fb766772e4fba099f1a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a3e51d034930becd326b756590b53b55-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/42e161327e7ffd7a8848c8e34e1f6c0e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dec529e83f4ab9670d2c3e6c4ced4e32-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e3e5c43d87c8552f7bb7206dc02f3e2e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/68f6174a7a8eac21e5c951057b1830ff-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7e8cb330fa5de97bdee00c043338ac5a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b5b72f7a286be22bb58b8b21a82c875b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/78a8c7b999378d416a2611294b4928b8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/28ecccbd03058732a1efbdf26b33f9bf-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/79dd70baaf578867b1dcd51cdc3f5175-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d9cfebcc35f98ea571515440b395250a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b194c4e149a7163928224aecd580f5e0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/727c8a3123c849614ad24d04b652fc5f-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "13666 179th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "7 days ago"
+        },
+        "detailUrl": "/homedetails/13666-179th-Ave-NE-Redmond-WA-98052/48871399_zpid/",
+        "zestimate": 1392300,
+        "daysOnZillow": 7,
+        "datePriceChanged": null,
+        "price": 3750,
+        "bedrooms": 3,
+        "longitude": -122.10053,
+        "hasVideo": false,
+        "latitude": 47.72297,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48871399",
+        "listingSubType": {},
+        "rentZestimate": 4053,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/3105f0188984bd7b0b4470e73580ebf5-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1977,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/60ce0e56fe19af8c1fb6f08dd41819d0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5d03daeb5bbfb5916e40cfef9589c416-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4d89c1808fe06ea0f676c6119f9d654d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/146f06fd1d00039023397d2716096148-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/26cc2abcd11facedd041a5096d44092a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/25b9f38d78c4bf28ceb7acfc2469ec07-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e37cd3535dbbb948b6118f157fbf7e58-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/88ac0bc004a6e6f75f02486e1a4d9aee-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/18f06fa87774b8abc152667efc7c11c6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be3f7c2971e04737563eb84e9d90bd88-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de7ced593c4c2a2bd97fb3a8e1699516-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bc9076c493d68a379467c7a7fc82532e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bdee53b49c998b46a0f88d682bb6a950-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7e77245d2df4c16593049e42a87c6af9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7ecea06eeccaa31c4db1ba4d45eb7ddb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c482ae4a9fcf6f483a821fb5de80fc52-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/99038bcd4bd94f9f96a13a98e87b2298-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/89fc4ac433c1447a0dae79cdf068c765-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/17b1d1133a2b220f31f1b2b29969691d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9b6575724d8ea352cc7607b5f2ce970f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6fbafd166e2799418ed4cd05d87ffa94-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "6063 212th Ave NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "10 days ago"
+        },
+        "detailUrl": "/homedetails/6063-212th-Ave-NE-Redmond-WA-98053/49102161_zpid/",
+        "zestimate": 942600,
+        "daysOnZillow": 10,
+        "datePriceChanged": 1737360000000,
+        "price": 3500,
+        "bedrooms": 3,
+        "longitude": -122.05771,
+        "hasVideo": false,
+        "latitude": 47.661816,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49102161",
+        "listingSubType": {},
+        "rentZestimate": 3139,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/60ce0e56fe19af8c1fb6f08dd41819d0-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1250,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac7bf10013ad13f66759428e1bb56822-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b0cbb82c2234aed2690e6767fa2ab8c0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6d592c0b41209a56cf9924b7739862df-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ce93988820d5da823a63bfe25ca04ef4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/61d7a075dbf8ee8b5284d7d6b074f890-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e9777a48d3535a85cb8f246a9130eea3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/870e753a314deeb41c4bd351516fd68c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3f3983c0cba512db63549b250b54ac2f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/98e6811fa01d92f5b7702c1aa3e4ef1c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f163f898c3b2b62db6b4612654c11b01-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1bc2bf08d3cc0f37633c02fd30201060-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e1fa53a00a2214f10da25203af6292a5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3da509eb3eb7d83e9e148259f10f2372-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/14323456852a236599e7072a15ba97f6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d6e2826b1519f2bd88437e5e5fcfff8a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/565cb12337ba8d01c0200de2a7313f18-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e78506adfe9546abfe1174cf16c37a0f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/30a35da48ea16e8d7ab909539a59d424-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e937b310e8bcffd470cf60c1c973331d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c6b7e04ea7910a2f51a77af9e9a9692a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/412bccc4dbd723b51c5415a561b2f497-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/384ee0b7e6b9afae846d39c564709ae7-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "10629 240th Ave NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "11 days ago"
+        },
+        "detailUrl": "/homedetails/10629-240th-Ave-NE-Redmond-WA-98053/118556905_zpid/",
+        "zestimate": 2101500,
+        "daysOnZillow": 11,
+        "datePriceChanged": null,
+        "price": 5300,
+        "bedrooms": 4,
+        "longitude": -122.01772,
+        "hasVideo": false,
+        "latitude": 47.69274,
+        "listingStatus": "FOR_RENT",
+        "zpid": "118556905",
+        "listingSubType": {},
+        "rentZestimate": 4873,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/ac7bf10013ad13f66759428e1bb56822-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3360,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/202041b46016e8066772dcba957c0918-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/041243144c0ee26b8dbdbe172b4fb2d3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/19029860feed536dac6dc5622eb5ad14-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4ac05394c60ef62070c2dce38f11928b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c646cfafdc492f969adb853c15ef1ba4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0020b5027fcb392a9404706928acc5fc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7301edb360aded5fba1bb12e11cbb1a7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c933ed394ca6f689de3f324553b65dd4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/240f2033563c7f6127550d35ed144c8b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b92ad24bedb2a6373bdf41c2c1f7b991-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3fc4be01b8e1f73a10a5798616de0417-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a89a80c6d6e9c41b48267dbd70cc86e5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7b316deac9bb51d47464267ec29f8bf9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/445eb9a6b2479012bd739a7fa974719c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d2bfe82c5caa386d18798ddef4ac6f13-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/512e10127796e64f35ea066b6b8b9714-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d71e12687fdee1d7bd0206c5a21db6b2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3612217a1dad6d91906c40f4901779cc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/73a29b3d1f890fb7ee4e0dec22b5eda6-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "6429 157th Pl NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "12 days ago"
+        },
+        "detailUrl": "/homedetails/6429-157th-Pl-NE-Redmond-WA-98052/48961185_zpid/",
+        "zestimate": 1032300,
+        "daysOnZillow": 12,
+        "datePriceChanged": 1737532800000,
+        "price": 3450,
+        "bedrooms": 3,
+        "longitude": -122.130936,
+        "hasVideo": false,
+        "latitude": 47.663555,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48961185",
+        "listingSubType": {},
+        "rentZestimate": 3251,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/202041b46016e8066772dcba957c0918-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1360,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 4,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/727a422b1abae7bb254c3747d4df5bcd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d1f70308a5c9d09bfa5c8ac1d6d8e778-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fd5930354e4ed733d03be28db280efd6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac97c54761577cfe85cc44cdc5bf1568-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b014ec7031530cb7fcf0770c381cb7f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b921e77966da939dc2d6dda7a5086e17-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/481e1e9ab96feb690e1592eb46be2d96-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9dc9b514be39b7a4a141fea4a94f2d68-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/69875f3db8169c6b1d004b97b002dbd1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/22f1f26676d96969730666c99c22d8a4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5b15420545c79f3a36ddab3a3c309576-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/10244a8012a7f98712573030dd605e2e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/195dbc72a0cf9d06600508cf76b31b39-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/df8013ae73323edaf021541b112860f6-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "12135 167th Pl NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "13 days ago"
+        },
+        "detailUrl": "/homedetails/12135-167th-Pl-NE-Redmond-WA-98052/84760547_zpid/",
+        "zestimate": 2188800,
+        "daysOnZillow": 13,
+        "datePriceChanged": null,
+        "price": 5300,
+        "bedrooms": 5,
+        "longitude": -122.11739,
+        "hasVideo": false,
+        "latitude": 47.708073,
+        "listingStatus": "FOR_RENT",
+        "zpid": "84760547",
+        "listingSubType": {},
+        "rentZestimate": 5337,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/727a422b1abae7bb254c3747d4df5bcd-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3661,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/e52d14677acc23119ddb375061366a7a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fbf90470da1363d5df5ae6a703abdc9d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/93d9b832b41100f6b23aa00198209a8a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be90037376e63c2c53cf3d97fe8f2fa4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e3214b5d482582a3b33dbd0762d36524-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/022fafabd9958d59244e287aa0250409-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f9175c5c9b4268322d476e05784ec13d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8e3c97a08f4bfa050186748f17382f97-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/10df4d9583ea8ee809545c519c67cb51-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/254fb570447c1b35cd45aec856545bb1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cf40a55e8dc719b3ef886878cdf30146-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d3e09d2f36af7d9c1e553ee3121f3847-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2d8a54ac2f3fc510b389eee39eab0273-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3521dae2444c7a91f4768c829358bcb0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f3fed0373adb90e64eabe5b346f4a8d0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6ab504c88ae5af493c3e51c3811c2262-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a67ee6a13630ca0ba6f1359feff0e729-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/308eb287425b727b35594ff3f6329417-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dae74844fa4744301244db5dadab1fed-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e6a2cb4e85d4febb69bd5fb77aee322b-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "10516 171st Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "13 days ago"
+        },
+        "detailUrl": "/homedetails/10516-171st-Ave-NE-Redmond-WA-98052/48870017_zpid/",
+        "zestimate": 958200,
+        "daysOnZillow": 13,
+        "datePriceChanged": null,
+        "price": 3400,
+        "bedrooms": 3,
+        "longitude": -122.11115,
+        "hasVideo": false,
+        "latitude": 47.69444,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48870017",
+        "listingSubType": {},
+        "rentZestimate": 3542,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/e52d14677acc23119ddb375061366a7a-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1170,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/0aa3f81181d41fe18d2add8c19bc3397-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9e920aedaf5beefb08cd9788ae599268-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dfceac182ead1ca2f4bb575882b99c50-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/904e99fa54ed1e79b6713247a7b8436e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a769e8e02fd2cb256492c8db4ebe1c0d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/eeb25a7b2ecde53f546b2d3b5aeea698-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be98ff69b44f8481a2088c7725dd4e32-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ebd7402b9317102c90bd22136eb69fc5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/47ef56d7e3c158d936ac3016c040a7de-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fd818e4655b2cce158caf51ce953a4c0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/551d871b7b005cf150ded7ad82439e2d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4bfea8c45a540c22f9dad6d1d986fdf5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/800287d19a2ed9ee9fa004c9ec8462bc-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "14819 NE 70th Ct, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "16 days ago"
+        },
+        "detailUrl": "/homedetails/14819-NE-70th-Ct-Redmond-WA-98052/48952616_zpid/",
+        "zestimate": 1445700,
+        "daysOnZillow": 16,
+        "datePriceChanged": 1736755200000,
+        "price": 3700,
+        "bedrooms": 3,
+        "longitude": -122.14205,
+        "hasVideo": false,
+        "latitude": 47.668068,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48952616",
+        "listingSubType": {},
+        "rentZestimate": 3809,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/0aa3f81181d41fe18d2add8c19bc3397-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1460,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/25b91e5247f8257f75bc2781c16d1c9d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3f53dc94ac63b949eef41e760123cdb8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/64497567addfed6bbade1fd39f2c0d2f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/77fff9ef61ca6dc0b4d15df1d13bf117-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8c0c8c4d5de22f347d9bbfc06d568b0c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6f3545797c2f2aef6f67cf9422e0d172-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/080155431c1d0ef53ce51328d88ae243-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a55e780db14d2e5f19813200ed746060-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4734666b30fe101ec1c05b2a7396ad7b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8a7443708f3c9f64d305d210c2966e1a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ca67012fa61834940afa90bfeff0a643-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8e55e9e8110b0ff058223ca78506d8db-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7ff23a3e03b384b9bfe66024e6d2bf81-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/65478560dd299bcbcaa662380e2d8306-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/551546356264ea601866f25cb5e2cb08-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2d2678fa4e2ed3091e56431846e9e8c6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/15e4200cd4fbd214e286af9d350a9e40-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5ac28e241d1bf410109b6c4188bc80fe-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/52fe28586804aecc41c2e744ec1cdc92-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ca14dc5ab09088cca506cf7fc7c43dc7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fe3dd6009a70504b9ed287e2f1200c18-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de2d7bb18076ab02001a8c42de088f3f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/37733a28dc54542033f1f0051e56b427-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0da16187aeae1edb24bc6fa1b2b8da3f-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "3050 180th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "16 days ago"
+        },
+        "detailUrl": "/homedetails/3050-180th-Ave-NE-Redmond-WA-98052/48768304_zpid/",
+        "zestimate": 1297500,
+        "daysOnZillow": 16,
+        "datePriceChanged": null,
+        "price": 3900,
+        "bedrooms": 3,
+        "longitude": -122.099915,
+        "hasVideo": false,
+        "latitude": 47.638126,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48768304",
+        "listingSubType": {},
+        "rentZestimate": 3929,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/25b91e5247f8257f75bc2781c16d1c9d-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2540,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/de4b7ac4e82add74ac8d5b71b70e9fcd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9d827e1bd87e7fb72ccca09650ab6d95-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/16bb13676a096c11c427b14f19089e93-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ce58bddcef087b93657b869c963e2447-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c1fd9092b04a1919e8c0431d15c350f6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/de0906a8d617ad850e72b4711b82a2d9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1ebca86b1ba41573f77b30b48a1f4129-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d46b586c669314d7a37f65c2b030a787-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/be542d7699fa3d8be35dbbf5afd4cb46-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4c8ce7ef1c207ed59d0947a9cbc9c0e4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ab28b128001dd4efa3eed005342a018f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6e9d055503a34ad5c129d9f244539ace-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ea6059592805b761e40fccff5f0dc139-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9fe46654a0b2b9d98db96918d00166e9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/48d4e084f759cb11b32fc012f027604a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e34b4482dd374627f8d53828e404f665-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "16412 NE 110th St, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "16 days ago"
+        },
+        "detailUrl": "/homedetails/16412-NE-110th-St-Redmond-WA-98052/48650055_zpid/",
+        "zestimate": 1446100,
+        "daysOnZillow": 16,
+        "datePriceChanged": null,
+        "price": 3400,
+        "bedrooms": 3,
+        "longitude": -122.12031,
+        "hasVideo": false,
+        "latitude": 47.69858,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48650055",
+        "listingSubType": {},
+        "rentZestimate": 3601,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/de4b7ac4e82add74ac8d5b71b70e9fcd-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1800,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/b8f96e945560dd2e4c3ea3f891555b9a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/29e899759562a050e5b909c891b6f186-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4bcc21c4adb78d1854acb048f203ff49-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/28f53be7a9b8d15fd60dd1c39d4d55ff-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f7f2f95bef3ef435c112a64610c6ee6a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7c3f47ea11955c635e4d4e2759a55be4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/05429468e386254811d6f46424116a53-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4215feb2e57697d8c0ce1cace20a2554-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1dbe9568ce3f3777f77eb2ce03156338-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6679be4c63943e9993dce9c66bc32213-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0b33993ca25714dcb7cf319d3dcdfe37-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d1e9337613b212eb0947a0a585b6cfb1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c7e3c241c8a541011128ca8a43c9c324-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fbcf772ea0d681f6ab65d4527799cba1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e2eca75da60520e1995fe568b7409282-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/61b458c902e0c7eaffef7a7d26f0f28f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6e8c82ab2493c7f94fb7926898b5af11-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6694bb7691625cde85fd5e98429d9530-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/347248d3827673f7dac02117a8584214-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cb3d934f096fd831b03ab65cf60c9e0b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/17279c6cca0546b51da0928404225d0d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ebdaae100c094b65823c36385b5eb55a-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "11702 157th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "16 days ago"
+        },
+        "detailUrl": "/homedetails/11702-157th-Ave-NE-Redmond-WA-98052/58385325_zpid/",
+        "zestimate": 2173800,
+        "daysOnZillow": 16,
+        "datePriceChanged": null,
+        "price": 5500,
+        "bedrooms": 4,
+        "longitude": -122.13043,
+        "hasVideo": false,
+        "latitude": 47.704994,
+        "listingStatus": "FOR_RENT",
+        "zpid": "58385325",
+        "listingSubType": {},
+        "rentZestimate": 5191,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/b8f96e945560dd2e4c3ea3f891555b9a-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3388,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/5ba09c3bc3d85b61a2a96d65b49a483c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/466680cfb2f06f11a50b9bfa36479ad4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/41c33fe30a85cbf0a2eb5c239fd777da-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/452d73143298260ae2c0f485aba51426-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a1c06e5bc3668b052cf26bb1f95f06d4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/50555ffd54a3dfaeba65e60aed5fab50-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/aa3c77df97be97f8567da72bb3e771b4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/700102508dd21a42b6792f7bc327b12d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/535172bb97258853ea37074fef69943b-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "6638 190th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "21 days ago"
+        },
+        "detailUrl": "/homedetails/6638-190th-Ave-NE-Redmond-WA-98052/62945071_zpid/",
+        "zestimate": 1598200,
+        "daysOnZillow": 21,
+        "datePriceChanged": null,
+        "price": 4250,
+        "bedrooms": 4,
+        "longitude": -122.08528,
+        "hasVideo": false,
+        "latitude": 47.66483,
+        "listingStatus": "FOR_RENT",
+        "zpid": "62945071",
+        "listingSubType": {},
+        "rentZestimate": 4088,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/5ba09c3bc3d85b61a2a96d65b49a483c-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1900,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/7997dd2bab83c76fff9acb3d410bc4d6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f835f6b2fc8ac9a76321efced164f313-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bbcbd1e7d239cfacb9203639e24712f4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/62f64e4858e01c823cb832aab139071e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/beb58071991dc1bb30e7484427787875-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e5a4f760a2d4820b349d2306fd7f146b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b853946ee4cf7b4f2478a43a4b690f1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f96c0f1e32a896db3f77c1a77178f186-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/143de3d1b66d8cddd75058296c74c076-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4e4d20fd781a9e50ff8e8ba9c5c26123-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/77ec8e318d20d88babfb92664a3beeb9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/398614869c0b4a1591da49d525b5128f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/45e4c9785d822fa2d21bd43cbfb98388-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/735316a83fd03cddd8bdc528627554ac-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5a94b4850d12d9f6d2e0b96d36e6fd59-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7f7f7facd64903d6157e3a7095ddb74b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/223555745a5f66094bd3443909b10f7b-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "10526 160th Ave NE, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "22 days ago"
+        },
+        "detailUrl": "/homedetails/10526-160th-Ave-NE-Redmond-WA-98052/49020451_zpid/",
+        "zestimate": 997300,
+        "daysOnZillow": 22,
+        "datePriceChanged": null,
+        "price": 3350,
+        "bedrooms": 3,
+        "longitude": -122.12619,
+        "hasVideo": false,
+        "latitude": 47.69463,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49020451",
+        "listingSubType": {},
+        "rentZestimate": 3332,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/7997dd2bab83c76fff9acb3d410bc4d6-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1230,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 4,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/38db05c3ad926dd8d04e8575b40e1a57-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4b9ca4f48bf1405781292a0e46b74664-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/539b90d7b9c63bf8e25f3a7e37c9fd20-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e418ae2160dfc1fec460c7fb3e6d1635-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9f27d3d3e3bb05c9b17710b4919008a4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/84444c336d045cb9febe1392bb19c29a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/eacaa01cf3a561c29aed55bc52035ea5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fc623d40d2b6e256ea29b7e4e1800738-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/28a094df6dce6720620dd2dc18eb1462-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8bbcd9dac5c7603e3bfdff464a6fe49a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7a1fd6b86d288359b6fb1f8c49d3f0c9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7745f1d0230a1b4610ca13c46d39b7d1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9da968c3c1f93b5e0f35be198aa52483-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/342a3f222608a050bae04238098c6cb3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e4332c69f56f8b3885a5aa4bb2cf5e02-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2da6c7a73a34b2174009d04ff6764940-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/acc8a9a79e612897400d8bf527146e08-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6d8bac75ea72434f17f6ccc343d8b54a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/85bf6a8a76237231303815b6112f0ee4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/136ace69f48ebfcef27ea4f56aee1ab1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/68999ec94e6c5c8807395223a8132a59-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dbb1ca1e241046765a33077b45d47963-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9f81b0b19e0c56b82c6c7691d443d8c3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4d1099ab0ed21febf203e2c48873951c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/37b3f84e7c08514872fa4a7e005fecd8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/eae8f62636fb513117443dcdf6dcc72f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/05fea4a15ffabb4bdd85c1bc8bd4fab1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9c8a4d05edda3d227155c6170036dde4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/15f6fe8f642c6256ae5d6183108f986a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f8f3f4e7c5ad2db995aebe7285d221fe-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/42f344753b8ce589ef9275f4d3a1ce3e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1f525c3f1db5fbbd57d4cb5a7a14245d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4abe091bd97132ece361d9e4829eaf22-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f72f91a4a2f96593cdd4c1b0758eedf3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6a57300a8f6f4f0af09d7f7524744e50-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "9807 218th Pl NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "24 days ago"
+        },
+        "detailUrl": "/homedetails/9807-218th-Pl-NE-Redmond-WA-98053/96651081_zpid/",
+        "zestimate": 2412400,
+        "daysOnZillow": 24,
+        "datePriceChanged": null,
+        "price": 19000,
+        "bedrooms": 4,
+        "longitude": -122.048225,
+        "hasVideo": false,
+        "latitude": 47.687355,
+        "listingStatus": "FOR_RENT",
+        "zpid": "96651081",
+        "listingSubType": {},
+        "rentZestimate": 6168,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/38db05c3ad926dd8d04e8575b40e1a57-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 4240,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/a2a7202bd2696e094a5c65c99f4b76fd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9ab4148be4a6f9842a0d1d4334a8e9c3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/008bde7e81f41195e89f91e0a2825cbe-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b122eddfc7b29323d217ddcbc9d7bfb4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/44b621b64e9d66de245d6e9ef68f2710-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0b56927cdd38211d85f31860118a4000-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c7aa54b242b61809469213eedd99ca80-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/26eb8165460ee77625e0c4442343dd54-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e0d3a4249f1c5c8a827545e07c7183ae-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fc073cdcec691ef7bbc246190c796b1a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dbf0f18c9ef389a52a1d8a1b114728ad-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/befa26a7aeecadd58dbae5bf36b68569-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c0fa155822dbd8f247443729cfd4dbf0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/724cc965692316be595c8a9543cdf422-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f1ee8326d8512a8613d1f55af5af641e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8e50489af9395b80eebe1da3e9be7ce3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/612834aee62b1f9102ccc671313f17d5-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5783e99d2026f82c91146786d81c0d9a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/28546bfc0dc2360386c6cab00fd8247a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9359373d10e432d9e5903e490013785e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f2308906ef6a58fbad62f61ffe430a16-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d92a10e072afcb1abcfa4ef368ea4451-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b23bf6806270ecc7406dc7b0bfe9e990-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7d30bee931de58e8593556f1ef2c3856-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ecfad3534fbfefbcff646a0b6fb20488-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "9611 213th Ave NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "26 days ago"
+        },
+        "detailUrl": "/homedetails/9611-213th-Ave-NE-Redmond-WA-98053/49126510_zpid/",
+        "zestimate": 1936900,
+        "daysOnZillow": 26,
+        "datePriceChanged": null,
+        "price": 5300,
+        "bedrooms": 4,
+        "longitude": -122.05643,
+        "hasVideo": false,
+        "latitude": 47.685913,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49126510",
+        "listingSubType": {},
+        "rentZestimate": 4988,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/a2a7202bd2696e094a5c65c99f4b76fd-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 2720,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/bb0af39d44a7ea18cd48bcae01c2f31a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4d181b337f140f8e223dcaab185d09a8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5164fa3c67ee34cb9edb110786c900de-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d22daa6a256e23459b566b7f0ae44dbc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9aca142d5484d0cf28d7e5f85ffd52f8-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/0038a9f340ab4a6b62c508eeb023b06e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3a5c6cc76ab66b6b1d334f2ec39bf21e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6e8e3221c366f13ed0202937a482fb22-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/14e52645e85301e7da407fb88c1d6938-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ff43fb81791f995e29a32785bbfb18c1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b462ec216a74bf2bc0a1b3c835698981-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/063512c03201d18991bdc273ba511bb0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a203f397e7c2e0cf2a8f5cb24830319e-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/aa178c87b2d9cee18e13bd4503eba50d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/03e5da3946388a4370be2f77fc955a12-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/375479a7479381044dd2534604dc5a9a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b0a9555b69c181b3d38a78fcb64320af-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3c0771730556ae92d52c168629cbc12c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/53fd6e212d48099243732752e42222db-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/968dcdcfe7573325e38a2c8cd8d96e8b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/610a50a4be9ad1ea890e8382dcf5ae73-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a955dde5abd3639ef36d3cc36fc26951-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ffd48ea50bc1b4cd790ece64be6e892b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/542fa137a1f609a248a0f3ef51addfdd-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/04fe000e4be83e5b962149d0735c0e1f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e718c4db59e4fa6fd03a6c5ae5185f34-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d0ecf61afb999619498fc3d797e9279d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d253b69bd05935e2a9339b26bb9b67a7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cbf9047a3e1c9cda779898dd7de37b96-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c0c952c607605cb4d42fddb0827e2f7a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/93a6f24f26fa009df2c91c34e4b3aa6a-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "17738 NE 24th St, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "27 days ago"
+        },
+        "detailUrl": "/homedetails/17738-NE-24th-St-Redmond-WA-98052/49022244_zpid/",
+        "zestimate": 2323400,
+        "daysOnZillow": 27,
+        "datePriceChanged": null,
+        "price": 4795,
+        "bedrooms": 4,
+        "longitude": -122.103676,
+        "hasVideo": false,
+        "latitude": 47.63283,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49022244",
+        "listingSubType": {},
+        "rentZestimate": 4842,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/bb0af39d44a7ea18cd48bcae01c2f31a-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3460,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 1,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/bf18bbd4255de829662a70f6a9d0a1df-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a4c8bf75751bb3a209c022aaa1632cda-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d9ed3517385a6d4cb84a9146db3210ef-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8726ccdfb745bc4d1457bc302b70bbbb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/83f2fd074dddd73d56ae127153cf5284-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/3ec279d78e00e1e95509b0f567943a1b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/cc659a2fec1e574f54c98e11ab58b006-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b420041aa6d83e5beefd673e87a088d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ac4f9b161937d3476516f9ddb4b67c8f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bf4d8046ab1773ff9f60beb7a0739029-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e76977fda81ea3b8b6ce5038fa1550c0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6698b34fc9834b9b59f3fbc3f26e1a1d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d4b8cfe9ba142e23be1d1fc584546c16-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bcc5dd20ea6d6d61dc0505e38df4fc9c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/1d5374d32c07d1f3d60cff95096177a0-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/539b78a8a087c09eb302cd9568d3152f-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/7198a98e57904e8662673c84797ab46c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/5e98d64164415152f96cefcb04031716-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "9548 132nd Ave NE, Kirkland, WA 98033",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "29 days ago"
+        },
+        "detailUrl": "/homedetails/9548-132nd-Ave-NE-Kirkland-WA-98033/48667291_zpid/",
+        "zestimate": 954500,
+        "daysOnZillow": 29,
+        "datePriceChanged": 1737619200000,
+        "price": 3250,
+        "bedrooms": 3,
+        "longitude": -122.16434,
+        "hasVideo": false,
+        "latitude": 47.687202,
+        "listingStatus": "FOR_RENT",
+        "zpid": "48667291",
+        "listingSubType": {},
+        "rentZestimate": 3020,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/bf18bbd4255de829662a70f6a9d0a1df-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1600,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 3,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/914efbea1da3c28085708af505786035-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e10d2f1e0211bdeccd96f70712f2f0bb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dc29afd115c4af5832ce1ffa4fb8409a-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ab48d90ab59974f6450a8aa9139f98a9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fccdc4fc515d15ba608adbb33aa3058b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fb7a5413a59aa45528cf4063cd4c0bbc-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/11bcb572d517acc591da645c9368d9ff-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/651d7c0991066192c8a0e0f0c46bce18-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a834e44b2111b11dca504ac9fabc5e8c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fe8e2db8d39ed27865e06212eef66085-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f1071a48826011523a42cd9c1f600862-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a03ba6cbffcad6a03dad7006d509248c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/f363c362aa53dd8bd93bffa6e3c54013-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8bcb85beacc265899db0efa708afa979-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/aa972902c0d11a73b47a41a25bf21a10-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ee83b3081222e60c0889f53345d98cf3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/07c126d791ce3b29b6deae823f8318b9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/d8c4dd2d346ab720bf077622d2834696-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/701ae627bdf5aa2a1165afdb84032c74-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/4bef9dd1675e26e3147708daa0b37e93-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/54ba9a076f148adf5d4ebbdade889e21-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2a06ab9073486f02d90033c5eb2b756d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c501c9ca7fa2dbd42924507f0830a1ef-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bfbbf4cd7726e52720819af846abcfa4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ed765d895df1f7983a61f83e0e73900d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8f026b4ce59efb6802e8b703593468ee-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "8848 237th Pl NE, Redmond, WA 98053",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "34 days ago"
+        },
+        "detailUrl": "/homedetails/8848-237th-Pl-NE-Redmond-WA-98053/63338131_zpid/",
+        "zestimate": 1888800,
+        "daysOnZillow": 34,
+        "datePriceChanged": null,
+        "price": 5900,
+        "bedrooms": 4,
+        "longitude": -122.02363,
+        "hasVideo": false,
+        "latitude": 47.680386,
+        "listingStatus": "FOR_RENT",
+        "zpid": "63338131",
+        "listingSubType": {},
+        "rentZestimate": 4868,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/914efbea1da3c28085708af505786035-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 3500,
+        "hasImage": true
+    },
+    {
+        "bathrooms": 2,
+        "carouselPhotos": [
+            {
+                "url": "https://photos.zillowstatic.com/fp/cd261f1a39143249202b25d4a8f4d714-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/e71260b3fd53009a84c5ace73a22d1f1-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9d686eecf8ae391d4ae8698ccb31a717-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/38311b96e7f4c154d6978b9cced0c983-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/116dc9fe2bf04a8c89fd6dcf4cd00da6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a55432cab546d068abd72c994d0cf225-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/904e4f696c35bf8724d79c9aa1c5c508-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9b39f2fd5242d9b3a536c43216fb57b4-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9c71a65915b9860ef18158ba970c0357-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/6b9b808d7bc6fd1ef1f5db25e3e09941-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/b12d7b2e237836ae1bde9b3518b827c2-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c96298a85beaba1a619972096bae7311-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9dadb9219560b236254f256b6141149c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/af325e1d9afdc81035e28dc37abf3a17-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/bb29a49a68fb1dec87568e144b4a0d96-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9b4924bd5f8ed8e37403c9a41101f38b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/a13b273f49d15c3007ddc9b188dd3672-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/2b966681a671bcdb66b7112655bde024-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/94214545de987d775e69259bdcfe637c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/798b765da566d4d96a4a9de5ba825b79-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/57a5d0d85af5b26754bc8e6e06aa2bc9-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/ebfbbfdb82c27b92ea40420e27ebe25d-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/194f6f28d8c279a9a65df9a28078ebe7-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/fc73fba769ff172c02abab81c9c32d56-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/468abbf557b06858307df8768356332b-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/05b07788fe20c224bb6ca389f3545ddb-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/9c4f1015e713b5dcc135459392e1a5a6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/8a71eeb23e18bd1892eb4d7b5a903fa3-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/dc27aefb08d57b5d2ec05e71d2cd0e0c-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/c9d855d2b5a69d2b4546e1644ec4f7f6-p_e.jpg"
+            },
+            {
+                "url": "https://photos.zillowstatic.com/fp/51ca60b86896c00615638f21a29c1630-p_e.jpg"
+            }
+        ],
+        "has3DModel": false,
+        "propertyType": "SINGLE_FAMILY",
+        "lotAreaValue": null,
+        "address": "15710 NE 62nd Ct, Redmond, WA 98052",
+        "variableData": {
+            "type": "TIME_ON_INFO",
+            "data": {
+                "isRead": null,
+                "isFresh": false
+            },
+            "text": "35 days ago"
+        },
+        "detailUrl": "/homedetails/15710-NE-62nd-Ct-Redmond-WA-98052/49134696_zpid/",
+        "zestimate": 1704800,
+        "daysOnZillow": 35,
+        "datePriceChanged": 1735545600000,
+        "price": 3800,
+        "bedrooms": 3,
+        "longitude": -122.130745,
+        "hasVideo": false,
+        "latitude": 47.662605,
+        "listingStatus": "FOR_RENT",
+        "zpid": "49134696",
+        "listingSubType": {},
+        "rentZestimate": 3708,
+        "contingentListingType": null,
+        "imgSrc": "https://photos.zillowstatic.com/fp/cd261f1a39143249202b25d4a8f4d714-p_e.jpg",
+        "lotAreaUnit": null,
+        "country": "USA",
+        "currency": "USD",
+        "livingArea": 1500,
+        "hasImage": true
+    }
+]

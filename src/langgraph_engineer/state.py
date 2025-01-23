@@ -5,6 +5,7 @@ class AgentState(MessagesState):
     code: str
     accepted: bool
     report: str
+    properties: list
 
 
 class OutputState(TypedDict):
