@@ -18,8 +18,11 @@ Langgraph-Reagent is a state-of-the-art real estate search assistant that levera
 5. **json_to_properties**: receives API data and populates `properties` key in state.
 
 
+### Nodes
+#### gather_requirements
+Once the node finishes gathering all the requirements from the user it populates the `requirements` key in state. as seen below
 
-
+![Gather_Requirements](https://github.com/dcflorencio/reagent_ui/blob/main/static/gather_req.JPG)
 
 
 
