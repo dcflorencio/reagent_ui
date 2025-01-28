@@ -1,6 +1,5 @@
 # Reagent: A Real Estate Search Assistant
 
-![Workflow](https://github.com/dcflorencio/langgraph-reagent/blob/main/static/agent_ui_2.png)
 
 ![Workflow](https://github.com/dcflorencio/reagent_ui/blob/main/static/graph.JPG)
 
@@ -81,7 +80,7 @@ the sidebar has two options `History` and `Saved Properties`
 
 **`Saved Properties`**: should show another page, just like the main one but now with the properties the user has saved in previous sessions.
 
-we will user the chat to connect to another graph to explored the saved properties. for now you can just connect to the same graph
+we will use the chat to connect to another graph to explore the saved properties. for now you can just connect to the same graph
 
 
 
