@@ -7,13 +7,21 @@ Langgraph-Reagent is a state-of-the-art real estate search assistant that levera
 
 ---
 
-## Features
+## Documentation
 
-- **Chat-Based Interaction**: Users interact with the assistant in a conversational manner to define their real estate requirements.
-- **Dynamic Agent Workflow**: LangGraph orchestrates agent workflows, dynamically deciding the next steps based on user input.
-- **Zillow API Integration**: Real-time property data is fetched using the Zillow API, ensuring up-to-date listings.
-- **Customizable Search Parameters**: Users can filter properties based on location, price range, property type, bedrooms, bathrooms, square footage, and more.
-- **Detailed Property Insights**: Retrieve comprehensive property information, helping users make informed decisions.
+### Workflow Description
+
+1. **__start__**: The workflow begins.
+2. **gather_requirements**: Chats with user and collects property requirements from the user. Populates the `requirements` key in state.
+3. **api_call_builder**: Constructs the necessary API call based on the gathered requirements. Populates `api_call_parameters` key in state.
+4. **Api Call**: Executes the API call. Uses `fetch_zillow_data` tool.
+5. **json_to_properties**: receives API data and populates `properties` key in state.
+
+
+
+
+
+
 
 ---
 

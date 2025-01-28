@@ -2,10 +2,10 @@ from langgraph.graph import MessagesState
 from typing import TypedDict, Literal
 class AgentState(MessagesState):
     requirements: str
-    code: str
     accepted: bool
     report: str
     properties: list
+    api_call_parameters: str
 
 
 class OutputState(TypedDict):
