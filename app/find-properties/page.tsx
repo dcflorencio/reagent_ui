@@ -17,9 +17,13 @@ export default function FindProperties() {
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
     const [properties, setProperties] = useState<any[]>([]);
-
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const handleNext = async () => {
         console.log("Input:", input);
+        if(input.trim() === "") {
+            return;
+        }
+        setIsLoading(true);
         try {
             setMessages((prevMessages) => [
                 ...prevMessages,
@@ -59,6 +63,8 @@ export default function FindProperties() {
             setInput("");
         } catch (error) {
             console.error("Error:", error);
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -70,6 +76,7 @@ export default function FindProperties() {
 
     const handleBuyOrRent = async (type: string) => {
         console.log("type", type);
+        setIsLoading(true);
         try {
             setMessages((prevMessages) => [
                 ...prevMessages,
@@ -109,6 +116,8 @@ export default function FindProperties() {
             setInput("");
         } catch (error) {
             console.error("Error:", error);
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -154,8 +163,8 @@ export default function FindProperties() {
                                     if (e.key === 'Enter') {
                                         handleNext();
                                     }
-                                }} onChange={(e) => setInput(e.target.value)} disabled={messages.length === 0} placeholder="Type your message here." className="w-full" />
-                            <Button disabled={messages.length === 0} onClick={handleNext}>Send</Button>
+                                }} onChange={(e) => setInput(e.target.value)} disabled={messages.length === 0 || isLoading} placeholder="Type your message here." className="w-full" />
+                            <Button disabled={messages.length === 0 || isLoading} onClick={handleNext}>Send</Button>
                         </div>
                     </div>
                 </div>
