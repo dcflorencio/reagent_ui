@@ -85,7 +85,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
         <div className="w-full h-full relative">
             {/* Initialize the map centered on the USA */}
             <h1 className="text-md font-normal mb-1 absolute top-2 left-1 z-10 bg-white p-1 rounded-md">Property Map</h1>
-            <div ref={mapRef} className="w-full h-full" />
+            <div ref={mapRef} className="w-full border-t-2 rounded-xl border-green-500 h-full" />
         </div>
     );
 }

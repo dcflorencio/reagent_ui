@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import PropertyCard from "@/components/PropertyCard"
 import PropertyMap from "@/components/PropertyMap"
 
-type assessmentType = {
+export type assessmentType = {
     role: "user" | "assistant";
     content: string;
 }
