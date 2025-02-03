@@ -137,7 +137,7 @@ export default function FindProperties() {
                             <div className="p-4 flex flex-col items-center">
                                 {messages.length === 0 &&
                                     <div className="flex flex-row items-center justify-center w-full gap-2">
-                                        <Button onClick={() => handleBuyOrRent("Can you show me some Houses to 'buy' in chicago city, illinois, US, with 2 BHK")} variant="outline" className="font-medium">I want to buy</Button>
+                                        <Button onClick={() => handleBuyOrRent("I want to buy a property")} variant="outline" className="font-medium">I want to buy</Button>
                                         <Button onClick={() => handleBuyOrRent("I want to rent a property")} variant="outline" className="font-medium">I want to rent</Button>
                                     </div>
                                 }
