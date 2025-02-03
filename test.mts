@@ -52,29 +52,29 @@ import { writeFile } from 'node:fs/promises';
       if (responseData.properties) {
         console.log('\nProperties Found:', responseData.properties.length);
         console.log('\nDetailed Property Information:');
-        responseData.properties.forEach((property: any, index: number) => {
-          console.log(`\n=== Property ${index + 1} ===`);
-          console.log(`Address: ${property.address}`);
-          console.log(`Price: $${property.price.toLocaleString()}`);
-          console.log(`Bedrooms: ${property.bedrooms}`);
-          console.log(`Bathrooms: ${property.bathrooms}`);
-          console.log(`Living Area: ${property.livingArea} sqft`);
-          console.log(`Lot Area: ${property.lotAreaValue} ${property.lotAreaUnit}`);
-          console.log(`Property Type: ${property.propertyType}`);
-          console.log(`Listing Status: ${property.listingStatus}`);
-          console.log(`Days on Zillow: ${property.daysOnZillow}`);
-          console.log(`Zestimate: ${property.zestimate ? '$' + property.zestimate.toLocaleString() : 'Not available'}`);
-          console.log(`Rent Zestimate: ${property.rentZestimate ? '$' + property.rentZestimate.toLocaleString() : 'Not available'}`);
-          console.log(`Has 3D Model: ${property.has3DModel}`);
-          console.log(`Has Video: ${property.hasVideo}`);
-          console.log(`Location: ${property.latitude}, ${property.longitude}`);
-          console.log(`Zillow Link: https://www.zillow.com${property.detailUrl}`);
-          console.log(`Main Image: ${property.imgSrc}`);
+        // responseData.properties.forEach((property: any, index: number) => {
+        //   console.log(`\n=== Property ${index + 1} ===`);
+        //   console.log(`Address: ${property.address}`);
+        //   console.log(`Price: $${property.price.toLocaleString()}`);
+        //   console.log(`Bedrooms: ${property.bedrooms}`);
+        //   console.log(`Bathrooms: ${property.bathrooms}`);
+        //   console.log(`Living Area: ${property.livingArea} sqft`);
+        //   console.log(`Lot Area: ${property.lotAreaValue} ${property.lotAreaUnit}`);
+        //   console.log(`Property Type: ${property.propertyType}`);
+        //   console.log(`Listing Status: ${property.listingStatus}`);
+        //   console.log(`Days on Zillow: ${property.daysOnZillow}`);
+        //   console.log(`Zestimate: ${property.zestimate ? '$' + property.zestimate.toLocaleString() : 'Not available'}`);
+        //   console.log(`Rent Zestimate: ${property.rentZestimate ? '$' + property.rentZestimate.toLocaleString() : 'Not available'}`);
+        //   console.log(`Has 3D Model: ${property.has3DModel}`);
+        //   console.log(`Has Video: ${property.hasVideo}`);
+        //   console.log(`Location: ${property.latitude}, ${property.longitude}`);
+        //   console.log(`Zillow Link: https://www.zillow.com${property.detailUrl}`);
+        //   console.log(`Main Image: ${property.imgSrc}`);
           
-          if (property.carouselPhotos && property.carouselPhotos.length > 0) {
-            console.log(`\nNumber of Additional Photos: ${property.carouselPhotos.length}`);
-          }
-        });
+        //   if (property.carouselPhotos && property.carouselPhotos.length > 0) {
+        //     console.log(`\nNumber of Additional Photos: ${property.carouselPhotos.length}`);
+        //   }
+        // });
       }
       
       // Log all API call parameters

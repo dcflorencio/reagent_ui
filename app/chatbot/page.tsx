@@ -5,12 +5,12 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { useRef, useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 // import Loader from "@/components/DotLoader/Loader"
-import Markdown from 'react-markdown'
+// import Markdown from 'react-markdown'
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
-import { Loader } from "lucide-react"
+// import { Loader } from "lucide-react"
 // type queryType = {
 //     role: string;
 //     content: {
@@ -37,10 +37,14 @@ export default function Assessment() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const handleNext = async () => {
-        messages.push({
-            role: 'user',
-            content: input
-        })
+        console.log("Input:", input);
+        setMessages((prevMessages) => [
+            ...prevMessages,
+            {
+                role: 'user',
+                content: input
+            }
+        ]);
         const response = await fetch('/api/test', {
             method: 'POST',
             headers: {
@@ -49,16 +53,27 @@ export default function Assessment() {
             body: JSON.stringify({ input, messages }),
         });
         console.log("response", response);
-        const data = await response.json();
-        console.log("Response:", data);
-        messages.push(data.content);
+        const responseData = await response.json();
+        console.log("Response:", responseData);
+        if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
+            const lastMessage = responseData.apiResponse.messages[responseData.apiResponse.messages.length - 1];
+            if (lastMessage.content) {
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                        role: "assistant",
+                        content: lastMessage.content
+                    }
+                ]);
+            }
+        }
     }
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
     }, [messages]);
-    
+
     // console.log("completedQuestions:", completedQuestions);
     return (
         <div className="flex flex-col h-[calc(100vh-64px)] items-center mt-12 w-full gap-1 md:gap-2">
@@ -75,15 +90,14 @@ export default function Assessment() {
                                 </Card>
                             </div>}
                             {msg.role === "assistant" && <div className="p-2 rounded mt-2 max-w-[600px]">
-                                <div><Markdown>{msg.content}</Markdown></div>
+                                <div>{msg.content}</div>
 
                             </div>}
                         </div>
                     ))}
-                    {isLoading && <div className="p-2 rounded mt-2"><Loader /></div>}
                 </div>
             </ScrollArea>
-           <div className="flex items-center justify-center w-[90%] md:w-[75%] gap-4 p-2">
+            <div className="flex items-center justify-center w-[90%] md:w-[75%] gap-4 p-2">
                 <Input value={input}
                     disabled={isLoading || isFileUploaded}
                     onKeyDown={(e) => {
@@ -91,7 +105,7 @@ export default function Assessment() {
                             handleNext();
                         }
                     }} onChange={(e) => setInput(e.target.value)} placeholder="Type your message here." className="w-full md:w-[75%] lg:w-[50%]" />
-                    <Button disabled={isLoading} onClick={handleNext}>Send</Button>
+                <Button disabled={isLoading} onClick={handleNext}>Send</Button>
             </div>
         </div>
     )
