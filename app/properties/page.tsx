@@ -60,6 +60,14 @@ export default function Page() {
             if (responseData.apiResponse.properties) {
                 setProperties(responseData.apiResponse.properties);
                 // setMessages([]);
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                        role: "assistant",
+                        content: responseData.apiResponse.properties.length > 0 ? `${responseData.apiResponse.properties.length} properties that match your criteria` : "No properties found that match your criteria."
+                    }
+                ]);
+                setInput("");
                 return;
             }
             if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
@@ -135,7 +143,7 @@ export default function Page() {
         }
     }
     return (
-            <SidebarProvider>
+            <SidebarProvider defaultOpen={false}>
                 <AppSidebar />
                 <SidebarInset>
                     <div className="flex flex-1 flex-col md:flex-row gap-4 max-h-screen">
