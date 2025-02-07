@@ -25,7 +25,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
                 const mapInstance = new google.maps.Map(mapRef.current as HTMLElement, {
                     center: { lat: 39.8283, lng: -98.5795 },
                     zoom: 4,
-                    mapTypeId: google.maps.MapTypeId.HYBRID,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
                     fullscreenControl: false,
                     streetViewControl: false,
                     zoomControl: true,

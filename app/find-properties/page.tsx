@@ -6,7 +6,8 @@ import { useRef, useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import PropertyCard from "@/components/PropertyCard"
 import PropertyMap from "@/components/PropertyMap"
-
+import TestPropertyCard from "@/components/TestPropertyCard"
+import { SelectDemo } from "@/components/SelectGroup"
 export type assessmentType = {
     role: "user" | "assistant";
     content: string;
@@ -18,9 +19,10 @@ export default function FindProperties() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const handleNext = async () => {
         console.log("Input:", input);
-        if(input.trim() === "") {
+        if (input.trim() === "") {
             return;
         }
         setIsLoading(true);
@@ -46,6 +48,9 @@ export default function FindProperties() {
             if (responseData.apiResponse.properties) {
                 setProperties(responseData.apiResponse.properties);
                 // setMessages([]);
+                if (responseData.apiResponse.api_call_parameters && responseData.apiResponse.api_call_parameters.length > 0) {
+                    setApiCalParameters(responseData.apiResponse.api_call_parameters);
+                }
                 return;
             }
             if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
@@ -134,7 +139,7 @@ export default function FindProperties() {
                     <div className="flex flex-col h-full items-center mt-4 w-full gap-1 md:gap-2">
                         <h2 className="text-xl font-bold leading-none">Enquire your properties here</h2>
                         <ScrollArea ref={scrollRef} className="flex-1 w-full rounded-md border overflow-auto">
-                            <div className="p-4 flex flex-col items-center">
+                            <div className="p-4 flex flex-col items-center h-full">
                                 {messages.length === 0 &&
                                     <div className="flex flex-row items-center justify-center w-full gap-2">
                                         <Button onClick={() => handleBuyOrRent("I want to buy a property")} variant="outline" className="font-medium">I want to buy</Button>
@@ -156,6 +161,9 @@ export default function FindProperties() {
                                     </div>
                                 ))}
                             </div>
+                            {properties.length > 0 && apiCalParameters.length > 0 && <div className="w-[100%] p-2 flex justify-center items-center">
+                                <SelectDemo apiCalParameters={apiCalParameters} />
+                            </div>}
                         </ScrollArea>
                         <div className="flex items-center justify-center w-[90%] gap-4 p-2">
                             <Input value={input}
@@ -171,7 +179,8 @@ export default function FindProperties() {
             </div>
             {/* Right Column */}
             <div className="col-span-1 overflow-auto">
-                <PropertyCard properties={properties} />
+                {/* <PropertyCard properties={properties} /> */}
+                <TestPropertyCard properties={properties} />
             </div>
         </div>
     )
