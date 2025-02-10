@@ -162,7 +162,7 @@
 // "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
 
 import React, { lazy, Suspense, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardTitle, CardDescription, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SelectDemo } from "./SelectGroup";
 import Slider from "react-slick";
@@ -176,11 +176,31 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 // import React from "react";
-
+import { MapPin } from "lucide-react";
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
 
 const RentalListings = ({ properties }: { properties: any[] }) => {
+    console.log("properties find in property card", properties[0], properties.length);
+    if (properties.length === 0) {
+        return (
+            <div className="p-4">
+                <div className="flex flex-col gap-2 mb-4">
+                    <div className="flex justify-between">
+                        {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
+                        <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
+                        <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+                    </div>
+                    {/* <SelectDemo /> */}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <p className="text-gray-600 text-sm mb-2">No properties available</p>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className="p-4">
             <div className="flex flex-col gap-2 mb-4">
@@ -194,7 +214,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {properties.map((property, index) => {
                     const [currentSlide, setCurrentSlide] = useState(0);
-                    // const [showAllPhotos, setShowAllPhotos] = useState(false);
+                    const [showAllPhotos, setShowAllPhotos] = useState(false);
                     const settings = {
                         dots: false,
                         infinite: true,
@@ -236,31 +256,41 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                             <DialogTrigger asChild>
                                 <Card className="relative cursor-pointer">
                                     <div className="relative">
-                                        <Slider {...settings}>
-                                            {property.carouselPhotos.map((image: any, imgIndex: any) => (
-                                                <div key={imgIndex} className="relative">
-                                                    <img src={image.url} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
-                                                    <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
-                                                        <Suspense fallback={<div>Loading...</div>}>
-                                                            <Heart className="w-4 h-4 text-white" />
-                                                        </Suspense>
-                                                    </Button>
-                                                </div>
-                                            ))}
-                                        </Slider>
+                                        {property.carouselPhotos && property.carouselPhotos.length > 1 ?
+                                            <Slider {...settings}>
+                                                {property.carouselPhotos.map((image: any, imgIndex: any) => (
+                                                    <div key={imgIndex} className="relative">
+                                                        <img src={image.url} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
+                                                        <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                            <Suspense fallback={<div>Loading...</div>}>
+                                                                <Heart className="w-4 h-4 text-white" />
+                                                            </Suspense>
+                                                        </Button>
+                                                    </div>
+                                                ))}
+                                            </Slider>
+                                            :
+                                            <div>
+                                                <img src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
+                                                <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                    <Suspense fallback={<div>Loading...</div>}>
+                                                        <Heart className="w-4 h-4 text-white" />
+                                                    </Suspense>
+                                                </Button>
+                                            </div>}
                                         {property.specialOffer && (
                                             <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
                                                 Special Offer
                                             </span>
                                         )}
                                         {property.tour && (
-                                            <span className="absolute top-9 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
+                                            <span className="absolute top-16 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
                                                 3D Tour
                                             </span>
                                         )}
-                                        {property.availableUnits && (
-                                            <span className="absolute top-16 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                                                {property.availableUnits} available units
+                                        {property.availabilityCount && (
+                                            <span className="absolute top-9 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                                                {property.availabilityCount} available units
                                             </span>
                                         )}
                                     </div>
@@ -280,15 +310,34 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                     </CardContent> */}
                                     <CardContent>
                                         <div className="p-2">
-                                            <h2 className="text-xl font-bold">{property.price} {property.currency} | {property.bedrooms} bds | {property.bathrooms} ba</h2>
-                                            <p className="text-gray-600 text-sm mt-1">{property.propertyType} | {property.address} {property.country}</p>
+                                            <div className="flex flex-row justify-between items-center">
+                                                <h2 className="text-xl font-bold">
+                                                    {property?.units && property?.units.length > 0 
+                                                        ? `${property.units[0]?.price} ${property.currency || ''}` 
+                                                        : `${property.currency === "USD" ? "$" : property.currency} ${property.price}`}
+                                                </h2>
+                                                <h3 className="text-md text-gray-500 font-semibold">
+                                                    {property?.propertyType || "House"}
+                                                </h3>
+                                            </div>
+                                            <p className="text-gray-600 text-sm mt-1"> {property.address} {property.country}</p>
+
                                             <div className="w-full mt-4">
-                                                {/* {property.prices.map((price: any, index: number) => ( */}
-                                                <div className="p-2 w-full rounded-lg text-center flex flex-col items-center justify-center border">
-                                                    <p className="text-sm font-medium">{property.price} {property.currency}</p>
-                                                    <p className="text-sm text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
-                                                </div>
-                                                {/* ))} */}
+                                                {property.units?.length > 0 ? (
+                                                    <div className="grid grid-cols-3 gap-2 w-full">
+                                                        {property.units.map((unit: any, index: number) => (
+                                                            <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
+                                                                <p className="text-md font-medium">{unit?.price}</p>
+                                                                <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="p-2 w-full rounded-lg text-center flex flex-row items-center justify-between border">
+                                                        <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
+                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </CardContent>
@@ -299,45 +348,143 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                     <DialogTitle>{property.address}</DialogTitle>
                                 </DialogHeader>
                                 <ScrollArea className="h-full w-full overflow-auto">
-                                    <div className="flex flex-col sm:flex-row gap-4">
-                                        <div className="flex-1 flex flex-col">
-                                            <img src={property.carouselPhotos[0].url} alt={property.name} className="w-full h-full object-cover rounded-lg flex-grow" />
-                                        </div>
-                                        <div className="flex-1 grid grid-cols-2 gap-2">
-                                            {property.carouselPhotos.slice(1, 5).map((image: any, imgIndex: any) => (
-                                                <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
-                                            ))}
-                                        </div>
-
-                                    </div>
-                                    {/* <Button onClick={() => setShowAllPhotos(!showAllPhotos)}>{showAllPhotos ? "Hide" : "Show All"}</Button>
-                                    {showAllPhotos && <div className="flex-1 grid grid-cols-3 gap-2 mt-4">
-                                        {property.carouselPhotos.slice(5).map((image: any, imgIndex: any) => (
-                                            <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
-                                        ))}
-                                    </div>} */}
-                                    <div className="mt-4">
-                                        <h2 className="text-2xl font-bold">{property.propertyType}</h2>
-                                        <p className="text-gray-600 text-sm mt-1">{property.address}</p>
-                                        <div className="grid grid-cols-3 gap-1 mt-4">
-                                            <div className="p-2 rounded-lg text-center flex flex-col items-center justify-center border">
-                                                <p className="text-sm font-medium">{property.price} {property.currency}</p>
-                                                <p className="text-sm text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                    {property.carouselPhotos && property.carouselPhotos.length > 0 ? (
+                                        <div className="flex flex-col sm:flex-row gap-4">
+                                            <div className="flex-1 flex flex-col">
+                                                <img src={property.carouselPhotos[0].url} alt={property.name} className="w-full h-full object-cover rounded-lg flex-grow" />
+                                            </div>
+                                            <div className="flex-1 grid grid-cols-2 gap-2">
+                                                {(showAllPhotos ? property.carouselPhotos : property.carouselPhotos.slice(1, 5)).map((image: any, imgIndex: any) => (
+                                                    <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
+                                                ))}
                                             </div>
                                         </div>
-                                        <div className="mt-4">
-                                            <p className="text-sm text-gray-500">Living Area: {property.livingArea} sqft</p>
-                                            <p className="text-sm text-gray-500">Lot Area: {property.lotAreaValue} {property.lotAreaUnit}</p>
-                                            <p className="text-sm text-gray-500">Listing Status: {property.listingStatus}</p>
-                                            <p className="text-sm text-gray-500">Days on Zillow: {property.daysOnZillow}</p>
-                                            <p className="text-sm text-gray-500">Price Change: {property.priceChange}</p>
-                                            <p className="text-sm text-gray-500">Rent Zestimate: {property.rentZestimate}</p>
-                                            <p className="text-sm text-gray-500">Latitude: {property.latitude}</p>
-                                            <p className="text-sm text-gray-500">Longitude: {property.longitude}</p>
+                                    ) : (
+                                        <div className="flex flex-col sm:flex-row gap-4">
+                                            <img src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
                                         </div>
-                                        <div className="flex gap-4 mt-4">
-                                            <Button className="flex-1">Request a tour</Button>
-                                            <Button className="flex-1" variant="outline">Request to apply</Button>
+                                    )}
+                                    {property.carouselPhotos && property.carouselPhotos.length > 5 && <Button onClick={() => setShowAllPhotos(!showAllPhotos)} color="gray" className="absolute top-2 right-2">{showAllPhotos ? "Hide" : "Show All"}</Button>}
+                                    
+                                    <div className="mt-4">
+                                        <div className="flex flex-row justify-between items-center px-2">
+                                            <h2 className="text-2xl font-bold">{property?.propertyType || property?.buildingName || "House"}</h2>
+                                            <Button variant="outline" onClick={() => window.open(`https://www.zillow.com${property.detailUrl}`, "_blank")} className="text-md font-semibold mt-2">Full Details</Button>
+                                        </div>
+                                        <p className="text-gray-600 text-md font-semibold mt-2">{property.address}</p>
+
+                                        <div className="w-full mt-4">
+                                                {property.units?.length > 0 ? (
+                                                    <div className="grid grid-cols-3 gap-2 w-full">
+                                                        {property.units.map((unit: any, index: number) => (
+                                                            <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
+                                                                <p className="text-md font-medium">{unit?.price}</p>
+                                                                <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="p-2 w-[200px] rounded-lg text-center flex flex-row items-center justify-between border">
+                                                        <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
+                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        <div className="mt-4">
+                                            <h3 className="text-md font-semibold">Property Details</h3>
+                                            <div className="grid grid-cols-3 gap-1 w-full md:w-1/2">
+                                                {property.livingArea && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Living Area
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.livingArea} sqft
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.lotAreaValue && property.lotAreaUnit && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Lot Area
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.lotAreaValue} {property.lotAreaUnit}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.listingStatus && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Listing Status
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.listingStatus}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.daysOnZillow && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Days on Zillow
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.daysOnZillow}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.latitude && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Latitude
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.latitude}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.longitude && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Longitude
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.longitude}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            <div className="mt-4">
+                                                <MapContainer center={[property.latitude, property.longitude]} zoom={13} style={{ height: "400px", width: "100%" , borderRadius: "10px"}}>
+                                                    <TileLayer
+                                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                                    />
+                                                    <Marker position={[property.latitude, property.longitude]}>
+                                                        <Popup>
+                                                            {property.address}
+                                                        </Popup>
+                                                    </Marker>
+                                                </MapContainer>
+                                            </div>
+
+                                            <div className="flex gap-4 mt-4">
+                                                <Button className="flex-1">Request a tour</Button>
+                                                <Button className="flex-1" variant="outline">Request to apply</Button>
+                                            </div>
                                         </div>
                                     </div>
                                 </ScrollArea>

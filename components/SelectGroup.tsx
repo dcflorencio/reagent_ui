@@ -21,8 +21,8 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
     const [filters, setFilters] = React.useState({
         rentType: toolCallArgs.status_type || "For Rent",
         homeType: toolCallArgs.home_type || "Select",
-        minPrice: toolCallArgs.min_price || "Select",
-        maxPrice: toolCallArgs.max_price || "Select",
+        minPrice: toolCallArgs.min_price || toolCallArgs.rent_min_price || "Select",
+        maxPrice: toolCallArgs.max_price || toolCallArgs.rent_max_price || "Select",
         beds: toolCallArgs.beds_min || "Select",
         baths: toolCallArgs.baths_min || "Select",
         minSqft: toolCallArgs.sqft_min || "Select",
@@ -30,6 +30,13 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
     });
     const [query, setQuery] = React.useState("");
     const handleSelectChange = (key: string, value: string) => {
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [key]: value
+        }));
+    };
+
+    const handleInputChange = (key: string, value: string) => {
         setFilters(prevFilters => ({
             ...prevFilters,
             [key]: value
@@ -63,8 +70,20 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
     };
 
     React.useEffect(() => {
-        console.log(filters);
-        setQuery(`Please show me the properties that match the following criteria: Rent Type: ${filters.rentType}, Home Type: ${filters.homeType}, Price Range: ${filters.minPrice} to ${filters.maxPrice}, Beds: ${filters.beds}, Baths: ${filters.baths}, Square Footage: ${filters.minSqft} to ${filters.maxSqft}`);
+        setQuery(() => {
+            const criteria = [];
+            if (filters.rentType !== "Select") criteria.push(`Rent Type: ${filters.rentType}`);
+            if (filters.homeType !== "Select") criteria.push(`Home Type: ${filters.homeType}`);
+            if (filters.minPrice !== "Select" || filters.maxPrice !== "Select") {
+                criteria.push(`Price Range: ${filters.minPrice} to ${filters.maxPrice}`);
+            }
+            if (filters.beds !== "Select") criteria.push(`Beds: ${filters.beds}`);
+            if (filters.baths !== "Select") criteria.push(`Baths: ${filters.baths}`);
+            if (filters.minSqft !== "Select" || filters.maxSqft !== "Select") {
+                criteria.push(`Square Footage: ${filters.minSqft} to ${filters.maxSqft}`);
+            }
+            return `Please show me the properties that match the following criteria: ${criteria.join(', ')}`;
+        });
     }, [filters]);
     return (
         <div className="w-full flex gap-2">
@@ -129,6 +148,13 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                                                 <SelectItem value="$5000">$5000</SelectItem>
                                             </SelectContent>
                                         </Select>
+                                        <input
+                                            type="text"
+                                            placeholder="Enter min price"
+                                            value={filters.minPrice}
+                                            onChange={(e) => handleInputChange('minPrice', e.target.value)}
+                                            className="border rounded p-1"
+                                        />
                                     </div>
                                     <div className="flex flex-col space-y-1.5">
                                         <Label>Max Price</Label>
@@ -151,6 +177,13 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                                                 <SelectItem value="Select">Any Price</SelectItem>
                                             </SelectContent>
                                         </Select>
+                                        <input
+                                            type="text"
+                                            placeholder="Enter max price"
+                                            value={filters.maxPrice}
+                                            onChange={(e) => handleInputChange('maxPrice', e.target.value)}
+                                            className="border rounded p-1"
+                                        />
                                     </div>
                                 </div>
                             </form>

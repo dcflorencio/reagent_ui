@@ -9,6 +9,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
     const [marker, setMarker] = useState<google.maps.Marker | null>(null);
     const [circle, setCircle] = useState<google.maps.Circle | null>(null);
     const [selectedLocation, setSelectedLocation] = useState<google.maps.LatLng | null>(null);
+    const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
     const mapRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const initMap = async () => {
@@ -59,17 +60,52 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
         initMap();
     }, []);
-    
-    // New method to add markers and adjust bounds
+
+    // Updated method to add markers, adjust bounds, and add event listeners
     const updateMapWithProperties = () => {
         if (map && properties.length > 0) {
             const bounds = new google.maps.LatLngBounds();
             properties.forEach(property => {
                 const position = new google.maps.LatLng(property.latitude, property.longitude);
-                new google.maps.Marker({
+                const marker = new google.maps.Marker({
                     position,
                     map,
                 });
+
+                // Add click event to zoom into the property
+                marker.addListener('click', () => {
+                    map.setZoom(15);
+                    map.setCenter(marker.getPosition() as google.maps.LatLng);
+                });
+
+                // Add mouseover and mouseout events to show/hide info window
+                marker.addListener('click', () => {
+                    console.log('Mouseover event triggered');
+                    // Close the existing info window if it exists
+                    if (infoWindow) {
+                        infoWindow.close();
+                    }
+                    const newInfoWindow = new google.maps.InfoWindow({
+                        content: `
+                            <div style="width: 200px; height: 200px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; border-radius: 8px; overflow: hidden;">
+                                <img src="${property.imgSrc}" alt="${property.address}" style="width: 100%; object-fit: cover;" />
+                                <div style="padding: 2px; background-color: white;">
+                                    ${property.address}<br>
+                                    <a href="https://zillow.com${property.detailUrl}" style="margin-top: 10px; width: 100%; padding: 5px 5px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        `,
+                    });
+                    setInfoWindow(newInfoWindow);
+                    newInfoWindow.open(map, marker);
+
+                    // marker.addListener('mouseout', () => {
+                    //     newInfoWindow.close();
+                    // });
+                });
+
                 bounds.extend(position);
             });
             map.fitBounds(bounds);

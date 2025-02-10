@@ -13,6 +13,8 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import Markdown from 'react-markdown'
 import { SelectDemo } from "@/components/SelectGroup"
+import { MenubarDemo } from "@/components/Menubar"
+import { testProperties } from './json'
 export type assessmentType = {
     role: "user" | "assistant";
     content: string;
@@ -52,6 +54,7 @@ export default function Page() {
             const responseData = await response.json();
             console.log("Response:", responseData);
             if (responseData.apiResponse.properties) {
+                console.log("responseData.apiResponse.properties and length", responseData.apiResponse.properties.length, responseData.apiResponse.properties[0]);
                 setProperties(responseData.apiResponse.properties);
                 // setMessages([]);
                 setMessages((prevMessages) => [
@@ -140,11 +143,13 @@ export default function Page() {
         }
     }
     return (
+
         <SidebarProvider defaultOpen={false}>
             <AppSidebar />
             <SidebarInset>
-                <div className="flex flex-1 flex-col md:flex-row gap-4 max-h-screen">
-                    <div className={`flex flex-col gap-2 ${properties.length === 0 ? 'md:flex-row md:w-full' : 'md:w-1/2'}  p-4`}>
+                <MenubarDemo />
+                <div className="flex flex-1 flex-col md:flex-row gap-4 h-full max-h-[calc(100vh-60px)]">
+                    <div className={`flex flex-col gap-2 ${properties.length === 0 ? 'md:flex-row md:w-full' : 'md:w-1/2'}  px-4 pt-1`}>
                         <div className={`rounded-xl bg-muted/50 ${properties.length === 0 ? 'md:w-1/2 h-full' : 'h-[50%]'}`}>
                             <PropertyMap properties={properties} />
                         </div>
@@ -192,7 +197,7 @@ export default function Page() {
                         </div>
                         {/* </div> */}
                     </div>
-                    {properties.length > 0 && <div className="flex-1 rounded-xl bg-muted/50 md:w-1/2 h-screen" >
+                    {properties.length > 0 && <div className="flex-1 rounded-xl bg-muted/50 md:w-1/2 max-h-[calc(100vh-60px)] h-full" >
                         <ScrollArea className="h-full">
                             <PropertyCard properties={properties} />
                         </ScrollArea>
