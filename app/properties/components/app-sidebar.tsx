@@ -1,20 +1,6 @@
 "use client"
 
 import * as React from "react"
-import {
-    AudioWaveform,
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
-    GalleryVerticalEnd,
-    Map,
-    PieChart,
-    SaveIcon,
-    Settings2,
-    SquareTerminal,
-} from "lucide-react"
-
 import { NavMain } from "./nav-main"
 import { NavProjects } from "./nav-projects"
 import { NavUser } from "./nav-user"
@@ -27,6 +13,19 @@ import {
     SidebarRail,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
+
+// Dynamic imports for lucide-react icons
+const AudioWaveform = React.lazy(() => import("lucide-react").then(module => ({ default: module.AudioWaveform })));
+const BookOpen = React.lazy(() => import("lucide-react").then(module => ({ default: module.BookOpen })));
+const Bot = React.lazy(() => import("lucide-react").then(module => ({ default: module.Bot })));
+const Command = React.lazy(() => import("lucide-react").then(module => ({ default: module.Command })));
+const Frame = React.lazy(() => import("lucide-react").then(module => ({ default: module.Frame })));
+const GalleryVerticalEnd = React.lazy(() => import("lucide-react").then(module => ({ default: module.GalleryVerticalEnd })));
+const Map = React.lazy(() => import("lucide-react").then(module => ({ default: module.Map })));
+const PieChart = React.lazy(() => import("lucide-react").then(module => ({ default: module.PieChart })));
+const SaveIcon = React.lazy(() => import("lucide-react").then(module => ({ default: module.SaveIcon })));
+const Settings2 = React.lazy(() => import("lucide-react").then(module => ({ default: module.Settings2 })));
+const SquareTerminal = React.lazy(() => import("lucide-react").then(module => ({ default: module.SquareTerminal })));
 
 // This is sample data.
 const data = {

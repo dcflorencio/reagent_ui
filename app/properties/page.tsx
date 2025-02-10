@@ -11,19 +11,22 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import Markdown from 'react-markdown'
+import React, { lazy } from "react"
 import { SelectDemo } from "@/components/SelectGroup"
 import { MenubarDemo } from "@/components/Menubar"
-import { testProperties } from './json'
+// import { testProperties } from './json'
 export type assessmentType = {
     role: "user" | "assistant";
     content: string;
 }
+
+const Markdown = lazy(() => import('react-markdown'))
+
 export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>(testProperties);
+    const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
 
@@ -43,7 +46,7 @@ export default function Page() {
                 }
             ]);
             console.log("messages", messages);
-            const response = await fetch('/api/test', {
+            const response = await fetch('/api/get-properties', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

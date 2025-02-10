@@ -176,7 +176,6 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { MapPin } from "lucide-react";
 import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
 

@@ -91,7 +91,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
                                 <img src="${property?.imgSrc || property?.carouselPhotos[0]}" alt="${property?.address}" style="width: 100%; object-fit: cover;" />
                                 <div style="padding: 2px; background-color: white; display: flex; flex-direction: column; align-items: center;">
                                     ${property?.address}<br>
-                                    <a href="https://zillow.com${property?.detailUrl}" style="margin-top: 10px; width: 100%; padding: 5px 5px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="margin-top: 10px; width: 100%; padding: 5px 5px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
                                         View Details
                                     </a>
                                 </div>
