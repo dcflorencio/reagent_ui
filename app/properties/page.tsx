@@ -21,7 +21,6 @@ export type assessmentType = {
 }
 
 const Markdown = lazy(() => import('react-markdown'))
-
 export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
@@ -46,7 +45,7 @@ export default function Page() {
                 }
             ]);
             console.log("messages", messages);
-            const response = await fetch('/api/get-properties', {
+            const response = await fetch('/api/get_properties', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,7 +110,7 @@ export default function Page() {
                 }
             ]);
             console.log("messages", messages);
-            const response = await fetch('/api/test', {
+            const response = await fetch('/api/get_properties', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
