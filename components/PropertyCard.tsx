@@ -161,7 +161,7 @@
 // export default RentalListings;
 // "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
 
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardTitle, CardDescription, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SelectDemo } from "./SelectGroup";
@@ -176,10 +176,8 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-// import React from "react";
 import { MapPin } from "lucide-react";
+import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
 
 const RentalListings = ({ properties }: { properties: any[] }) => {
@@ -312,8 +310,8 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                         <div className="p-2">
                                             <div className="flex flex-row justify-between items-center">
                                                 <h2 className="text-xl font-bold">
-                                                    {property?.units && property?.units.length > 0 
-                                                        ? `${property.units[0]?.price} ${property.currency || ''}` 
+                                                    {property?.units && property?.units.length > 0
+                                                        ? `${property.units[0]?.price} ${property.currency || ''}`
                                                         : `${property.currency === "USD" ? "$" : property.currency} ${property.price}`}
                                                 </h2>
                                                 <h3 className="text-md text-gray-500 font-semibold">
@@ -354,18 +352,24 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                 <img src={property.carouselPhotos[0].url} alt={property.name} className="w-full h-full object-cover rounded-lg flex-grow" />
                                             </div>
                                             <div className="flex-1 grid grid-cols-2 gap-2">
-                                                {(showAllPhotos ? property.carouselPhotos : property.carouselPhotos.slice(1, 5)).map((image: any, imgIndex: any) => (
+                                                {property.carouselPhotos.slice(1, 5).map((image: any, imgIndex: any) => (
                                                     <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
                                                 ))}
                                             </div>
+
                                         </div>
                                     ) : (
                                         <div className="flex flex-col sm:flex-row gap-4">
                                             <img src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
                                         </div>
                                     )}
+                                    {property.carouselPhotos.length > 5 && showAllPhotos && <div className="w-full mt-4 grid grid-cols-3 gap-2">
+                                        {property.carouselPhotos.slice(5).map((image: any, imgIndex: any) => (
+                                            <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
+                                        ))}
+                                    </div>}
                                     {property.carouselPhotos && property.carouselPhotos.length > 5 && <Button onClick={() => setShowAllPhotos(!showAllPhotos)} color="gray" className="absolute top-2 right-2">{showAllPhotos ? "Hide" : "Show All"}</Button>}
-                                    
+
                                     <div className="mt-4">
                                         <div className="flex flex-row justify-between items-center px-2">
                                             <h2 className="text-2xl font-bold">{property?.propertyType || property?.buildingName || "House"}</h2>
@@ -374,22 +378,22 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                         <p className="text-gray-600 text-md font-semibold mt-2">{property.address}</p>
 
                                         <div className="w-full mt-4">
-                                                {property.units?.length > 0 ? (
-                                                    <div className="grid grid-cols-3 gap-2 w-full">
-                                                        {property.units.map((unit: any, index: number) => (
-                                                            <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
-                                                                <p className="text-md font-medium">{unit?.price}</p>
-                                                                <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                ) : (
-                                                    <div className="p-2 w-[200px] rounded-lg text-center flex flex-row items-center justify-between border">
-                                                        <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
-                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
-                                                    </div>
-                                                )}
-                                            </div>
+                                            {property.units?.length > 0 ? (
+                                                <div className="grid grid-cols-3 gap-2 w-full">
+                                                    {property.units.map((unit: any, index: number) => (
+                                                        <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
+                                                            <p className="text-md font-medium">{unit?.price}</p>
+                                                            <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <div className="p-2 w-[200px] rounded-lg text-center flex flex-row items-center justify-between border">
+                                                    <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
+                                                    <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                </div>
+                                            )}
+                                        </div>
                                         <div className="mt-4">
                                             <h3 className="text-md font-semibold">Property Details</h3>
                                             <div className="grid grid-cols-3 gap-1 w-full md:w-1/2">
@@ -468,17 +472,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             </div>
 
                                             <div className="mt-4">
-                                                <MapContainer center={[property.latitude, property.longitude]} zoom={13} style={{ height: "400px", width: "100%" , borderRadius: "10px"}}>
-                                                    <TileLayer
-                                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                                    />
-                                                    <Marker position={[property.latitude, property.longitude]}>
-                                                        <Popup>
-                                                            {property.address}
-                                                        </Popup>
-                                                    </Marker>
-                                                </MapContainer>
+                                                <GoogleMap property={property} />
                                             </div>
 
                                             <div className="flex gap-4 mt-4">
@@ -517,6 +511,33 @@ const SamplePrevArrow = (props: any) => {
             onClick={onClick}
         />
     );
+};
+
+const GoogleMap = ({ property }: { property: any }) => {
+    const mapRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const initMap = async () => {
+            try {
+                const google = await loadGoogleMaps();
+                const mapInstance = new google.maps.Map(mapRef.current as HTMLElement, {
+                    center: { lat: property.latitude, lng: property.longitude },
+                    zoom: 13,
+                });
+
+                new google.maps.Marker({
+                    position: { lat: property.latitude, lng: property.longitude },
+                    map: mapInstance,
+                });
+            } catch (error) {
+                console.error('Error initializing map:', error);
+            }
+        };
+
+        initMap();
+    }, [property]);
+
+    return <div ref={mapRef} className="w-full h-64 rounded-lg" />;
 };
 
 export default RentalListings;
