@@ -337,8 +337,8 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                     </div>
                                                 ) : (
                                                     <div className="p-2 w-full rounded-lg text-center flex flex-row items-center justify-between border">
-                                                        <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
-                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                        {/* <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p> */}
+                                                        <p className="text-md text-gray-500">{property.bedrooms} Bedrooms  |  {property.bathrooms} Bathrooms</p>
                                                     </div>
                                                 )}
                                             </div>

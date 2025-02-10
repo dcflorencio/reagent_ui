@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import React, { lazy } from "react"
 import { SelectDemo } from "@/components/SelectGroup"
 import { MenubarDemo } from "@/components/Menubar"
-// import { testProperties } from './json'
+import { testProperties } from './json'
 export type assessmentType = {
     role: "user" | "assistant";
     content: string;
@@ -25,7 +25,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>([]);
+    const [properties, setProperties] = useState<any[]>(testProperties);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
 
