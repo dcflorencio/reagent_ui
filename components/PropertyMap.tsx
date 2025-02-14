@@ -6,11 +6,22 @@ function PropertyMap({ properties }: { properties: any[] }) {
     const [map, setMap] = useState<google.maps.Map | null>(null);
     const [placesService, setPlacesService] = useState<google.maps.places.PlacesService | null>(null);
     const [currentBounds, setCurrentBounds] = useState<google.maps.LatLngBounds | null>(null);
-    const [marker, setMarker] = useState<google.maps.Marker | null>(null);
-    const [circle, setCircle] = useState<google.maps.Circle | null>(null);
-    const [selectedLocation, setSelectedLocation] = useState<google.maps.LatLng | null>(null);
+    // const [marker, setMarker] = useState<google.maps.Marker | null>(null);
+    // const [circle, setCircle] = useState<google.maps.Circle | null>(null);
+    // const [selectedLocation, setSelectedLocation] = useState<google.maps.LatLng | null>(null);
     const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
     const mapRef = useRef<HTMLDivElement>(null);
+
+    // Function to format the price
+    const formatPrice = (price: number) => {
+        if (price >= 1000000) {
+            return (price / 1000000).toFixed(1) + 'M';
+        } else if (price >= 1000) {
+            return (price / 1000).toFixed(1) + 'K';
+        }
+        return price.toString();
+    };
+
     useEffect(() => {
         const initMap = async () => {
             try {
@@ -67,9 +78,27 @@ function PropertyMap({ properties }: { properties: any[] }) {
             const bounds = new google.maps.LatLngBounds();
             properties.forEach(property => {
                 const position = new google.maps.LatLng(property.latitude, property.longitude);
+                const price = formatPrice(property?.price || 0);
+
+                // Create a custom SVG marker with a pin shape
+                const svgMarker = `
+                   <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded bubble -->
+                    <rect x="10" y="0" rx="20" ry="20" width="80" height="40" fill="#6A35D5"/>
+                    <!-- Pointer triangle (rotated 180 degrees) -->
+                    <polygon points="50,55 40,40 60,40" fill="#6A35D5"/>
+                    <!-- Text inside the bubble -->
+                    <text x="50" y="27" font-size="18" fill="white" font-family="Arial" font-weight="bold" text-anchor="middle">${price}</text>
+                    </svg>
+                `;
+
                 const marker = new google.maps.Marker({
                     position,
                     map,
+                    icon: {
+                        url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svgMarker),
+                        scaledSize: new google.maps.Size(50, 50),
+                    },
                 });
 
                 // Add click event to zoom into the property
@@ -80,30 +109,31 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
                 // Add mouseover and mouseout events to show/hide info window
                 marker.addListener('click', () => {
-                    console.log('Mouseover event triggered');
-                    // Close the existing info window if it exists
                     if (infoWindow) {
                         infoWindow.close();
                     }
                     const newInfoWindow = new google.maps.InfoWindow({
                         content: `
-                            <div style="width: 200px; height: 250px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; border-radius: 8px; overflow: hidden;">
-                                <img src="${property?.imgSrc || property?.carouselPhotos[0]}" alt="${property?.address}" style="width: 100%; object-fit: cover;" />
-                                <div style="padding: 2px; background-color: white; display: flex; flex-direction: column; align-items: center;">
-                                    ${property?.address}<br>
-                                    <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="margin-top: 10px; width: 100%; padding: 5px 5px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                                        View Details
-                                    </a>
+                            <div style="position: relative; width: 300px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; background-color: white;">
+                                <div style="padding: 10px">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div>
+                                        <h2 style="font-size: 1.125rem; font-weight: bold; margin-bottom:4px">$${price}</h2>
+                                        <p style="font-size: 0.875rem; color: #4b5563; margin-bottom:4px">
+                                            ${property?.bedrooms} bds | ${property?.bathrooms} ba
+                                        </p>
+                                    </div>
+                                    <div style="background-color: #6A35D5; text-align: center; color: white; border: none; height: 30px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
+                                        <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white;">View Details</a>
+                                    </div>
+                                </div>
+                                <p style="font-size: 0.875rem; color: #6b7280;">${property?.address || '5212 S Kildare Ave, Chicago, IL 60632'}</p>
                                 </div>
                             </div>
                         `,
                     });
                     setInfoWindow(newInfoWindow);
                     newInfoWindow.open(map, marker);
-
-                    // marker.addListener('mouseout', () => {
-                    //     newInfoWindow.close();
-                    // });
                 });
 
                 bounds.extend(position);

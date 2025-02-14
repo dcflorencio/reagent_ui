@@ -179,14 +179,13 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
-import { CardWithForm } from "@/app/properties/components/RequestATour";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
 
 const RentalListings = ({ properties }: { properties: any[] }) => {
-    console.log("properties find in property card", properties[0], properties.length);
+    console.log("properties find in property card", properties, properties.length);
     if (properties.length === 0) {
         return (
             <div className="p-4">
@@ -316,11 +315,11 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             <div className="flex flex-row justify-between items-center">
                                                 <h2 className="text-xl font-bold">
                                                     {property?.units && property?.units.length > 0
-                                                        ? `${property.units[0]?.price} ${property.currency || ''}`
-                                                        : `${property.currency === "USD" ? "$" : property.currency} ${property.price}`}
+                                                        ? `${property.units[0]?.price}`
+                                                        : `${new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}`}
                                                 </h2>
                                                 <h3 className="text-md text-gray-500 font-semibold">
-                                                    {property?.propertyType || "House"}
+                                                    {property?.propertyType || ""}
                                                 </h3>
                                             </div>
                                             <p className="text-gray-600 text-sm mt-1"> {property.address} {property.country}</p>
@@ -330,15 +329,19 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                     <div className="grid grid-cols-3 gap-2 w-full">
                                                         {property.units.map((unit: any, index: number) => (
                                                             <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
-                                                                <p className="text-md font-medium">{unit?.price}</p>
+                                                                <p className="text-md font-medium">
+                                                                    {unit?.price}
+                                                                </p>
                                                                 <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
                                                             </div>
                                                         ))}
                                                     </div>
                                                 ) : (
-                                                    <div className="p-2 w-full rounded-lg text-center flex flex-row items-center justify-between border">
-                                                        {/* <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p> */}
-                                                        <p className="text-md text-gray-500">{property.bedrooms} Bedrooms  |  {property.bathrooms} Bathrooms</p>
+                                                    <div className="p-2 rounded-lg text-center flex flex-row items-center justify-between border">
+                                                        {/* <p className="text-md font-medium">
+                                                            {new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}
+                                                        </p> */}
+                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
                                                     </div>
                                                 )}
                                             </div>
@@ -348,7 +351,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                             </DialogTrigger>
                             <DialogContent className="w-[90%] h-[90%] max-w-none max-h-none p-4">
                                 <DialogHeader>
-                                    <DialogTitle>{property.address}</DialogTitle>
+                                    <DialogTitle> {property?.buildingName || property.address}</DialogTitle>
                                 </DialogHeader>
                                 <ScrollArea className="h-full w-full overflow-auto">
                                     {property.carouselPhotos && property.carouselPhotos.length > 0 ? (
@@ -368,12 +371,12 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             <img src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
                                         </div>
                                     )}
-                                    {property.carouselPhotos.length > 5 && showAllPhotos && <div className="w-full mt-4 grid grid-cols-3 gap-2">
-                                        {property.carouselPhotos.slice(5).map((image: any, imgIndex: any) => (
+                                    {property?.carouselPhotos && property?.carouselPhotos?.length > 5 && showAllPhotos && <div className="w-full mt-4 grid grid-cols-3 gap-2">
+                                        {property?.carouselPhotos?.slice(5).map((image: any, imgIndex: any) => (
                                             <img key={imgIndex} src={image.url} alt={property.name} className="w-full h-full object-cover rounded-lg" />
                                         ))}
                                     </div>}
-                                    {property.carouselPhotos && property.carouselPhotos.length > 5 && <Button onClick={() => setShowAllPhotos(!showAllPhotos)} color="gray" className="absolute top-2 right-2">{showAllPhotos ? "Hide" : "Show All"}</Button>}
+                                    {property?.carouselPhotos && property?.carouselPhotos?.length > 5 && <Button onClick={() => setShowAllPhotos(!showAllPhotos)} color="gray" className="absolute top-2 right-2">{showAllPhotos ? "Hide" : "Show All"}</Button>}
 
                                     <div className="mt-4">
                                         <div className="flex flex-row justify-between items-center px-2">
@@ -387,23 +390,27 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                 <div className="grid grid-cols-3 gap-2 w-full">
                                                     {property.units.map((unit: any, index: number) => (
                                                         <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
-                                                            <p className="text-md font-medium">{unit?.price}</p>
+                                                            <p className="text-md font-bold">
+                                                                {unit?.price}
+                                                            </p>
                                                             <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
                                                         </div>
                                                     ))}
                                                 </div>
                                             ) : (
-                                                <div className="p-2 w-[200px] rounded-lg text-center flex flex-row items-center justify-between border">
-                                                    <p className="text-md font-medium">{property.currency === "USD" ? "$" : property.currency} {property.price}</p>
+                                                <div className="p-2 w-[220px] rounded-lg text-center flex flex-row items-center justify-between border">
+                                                    <p className="text-md font-bold">
+                                                        {new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}
+                                                    </p>
                                                     <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
                                                 </div>
                                             )}
                                         </div>
                                         <div className="mt-4">
                                             <h3 className="text-md font-semibold">Property Details</h3>
-                                            <div className="grid grid-cols-3 gap-1 w-full md:w-1/2">
+                                            <div className="grid grid-cols-4 gap-2 w-full  md:w-[75%]">
                                                 {property.livingArea && (
-                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                    <div className="flex items-center space-x-4  rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
                                                                 Living Area
@@ -414,8 +421,20 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                         </div>
                                                     </div>
                                                 )}
+                                               {property?.isBuilding && (
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Building Name
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property?.buildingName}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
                                                 {property.lotAreaValue && property.lotAreaUnit && (
-                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
                                                                 Lot Area
@@ -427,7 +446,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                     </div>
                                                 )}
                                                 {property.listingStatus && (
-                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
                                                                 Listing Status
@@ -439,7 +458,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                     </div>
                                                 )}
                                                 {property.daysOnZillow && (
-                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
                                                                 Days on Zillow
@@ -450,7 +469,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                         </div>
                                                     </div>
                                                 )}
-                                                {property.latitude && (
+                                                {/* {property.latitude && (
                                                     <div className="flex items-center space-x-4 rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
@@ -473,7 +492,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                )}
+                                                )} */}
                                             </div>
 
                                             <div className="mt-4">

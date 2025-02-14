@@ -69,6 +69,36 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
         }
     };
 
+    const getPriceOptions = () => {
+        if (filters.rentType === "ForRent") {
+            return [
+                { value: "Select", label: "$0" },
+                { value: "$50", label: "$50" },
+                { value: "$100", label: "$100" },
+                { value: "$200", label: "$200" },
+                { value: "$400", label: "$400" },
+                { value: "$600", label: "$600" },
+                { value: "$800", label: "$800" },
+                { value: "$1000", label: "$1000" },
+                { value: "$1200", label: "$1200" }
+            ];
+        } else if (filters.rentType === "ForSale") {
+            return [
+                { value: "Select", label: "Any Price" },
+                { value: "$5000", label: "$5000" },
+                { value: "$10000", label: "$10000" },
+                { value: "$20000", label: "$20000" },
+                { value: "$50000", label: "$50000" },
+                { value: "$100000", label: "$100000" },
+                { value: "$200000", label: "$200000" },
+                { value: "$300000", label: "$300000" },
+                { value: "$400000", label: "$400000" },
+                { value: "$500000", label: "$500000" }
+            ];
+        }
+        return [];
+    };
+
     React.useEffect(() => {
         setQuery(() => {
             const criteria = [];
@@ -131,23 +161,12 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                                                 <SelectValue placeholder={filters.minPrice} />
                                             </SelectTrigger>
                                             <SelectContent position="popper">
-                                                <SelectItem value="Select">$0</SelectItem>
-                                                <SelectItem value="$200">$200</SelectItem>
-                                                <SelectItem value="$400">$400</SelectItem>
-                                                <SelectItem value="$600">$600</SelectItem>
-                                                <SelectItem value="$800">$800</SelectItem>
-                                                <SelectItem value="$1000">$1000</SelectItem>
-                                                <SelectItem value="$1200">$1200</SelectItem>
-                                                <SelectItem value="$1500">$1500</SelectItem>
-                                                <SelectItem value="$2000">$2000</SelectItem>
-                                                <SelectItem value="$2500">$2500</SelectItem>
-                                                <SelectItem value="$3000">$3000</SelectItem>
-                                                <SelectItem value="$3500">$3500</SelectItem>
-                                                <SelectItem value="$4000">$4000</SelectItem>
-                                                <SelectItem value="$4500">$4500</SelectItem>
-                                                <SelectItem value="$5000">$5000</SelectItem>
+                                                {getPriceOptions().map(option => (
+                                                    <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                                ))}
                                             </SelectContent>
                                         </Select>
+                                        <span className="text-xs text-gray-500">Type in your min price</span>
                                         <input
                                             type="text"
                                             placeholder="Enter min price"
@@ -163,20 +182,12 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                                                 <SelectValue placeholder={filters.maxPrice} />
                                             </SelectTrigger>
                                             <SelectContent position="popper">
-                                                <SelectItem value="$400">$400</SelectItem>
-                                                <SelectItem value="$600">$600</SelectItem>
-                                                <SelectItem value="$800">$800</SelectItem>
-                                                <SelectItem value="$1000">$1000</SelectItem>
-                                                <SelectItem value="$1200">$1200</SelectItem>
-                                                <SelectItem value="$1500">$1500</SelectItem>
-                                                <SelectItem value="$2000">$2000</SelectItem>
-                                                <SelectItem value="$2500">$2500</SelectItem>
-                                                <SelectItem value="$3000">$3000</SelectItem>
-                                                <SelectItem value="$3500">$3500</SelectItem>
-                                                <SelectItem value="$4000">$4000</SelectItem>
-                                                <SelectItem value="Select">Any Price</SelectItem>
+                                                {getPriceOptions().map(option => (
+                                                    <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                                ))}
                                             </SelectContent>
                                         </Select>
+                                        <span className="text-xs text-gray-500">Type in your max price</span>
                                         <input
                                             type="text"
                                             placeholder="Enter max price"

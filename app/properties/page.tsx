@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import React, { lazy } from "react"
 import { SelectDemo } from "@/components/SelectGroup"
 import { MenubarDemo } from "@/components/Menubar"
-// import { testProperties } from './json'
+// import { testProperties } from './demoProperties'
 export type assessmentType = {
     role: "user" | "assistant";
     content: string;
@@ -30,7 +30,7 @@ export default function Page() {
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
 
     const handleNext = async (filteredQuery?: string) => {
-        console.log("Input:", input);
+        // console.log("Input:", input);
         if (input.trim() === "" && !filteredQuery) {
             return;
         }
@@ -44,7 +44,7 @@ export default function Page() {
                     content: query
                 }
             ]);
-            console.log("messages", messages);
+            // console.log("messages", messages);
             const response = await fetch('/api/get_properties', {
                 method: 'POST',
                 headers: {
@@ -52,11 +52,11 @@ export default function Page() {
                 },
                 body: JSON.stringify({ input: query, messages }),
             });
-            console.log("response", response);
+            // console.log("response", response);
             const responseData = await response.json();
             console.log("Response:", responseData);
             if (responseData.apiResponse.properties) {
-                console.log("responseData.apiResponse.properties and length", responseData.apiResponse.properties.length, responseData.apiResponse.properties[0]);
+                // console.log("responseData.apiResponse.properties and length", responseData.apiResponse.properties.length, responseData.apiResponse.properties[0]);
                 setProperties(responseData.apiResponse.properties);
                 // setMessages([]);
                 setMessages((prevMessages) => [
@@ -109,7 +109,7 @@ export default function Page() {
                     content: type
                 }
             ]);
-            console.log("messages", messages);
+            // console.log("messages", messages);
             const response = await fetch('/api/get_properties', {
                 method: 'POST',
                 headers: {
@@ -117,9 +117,9 @@ export default function Page() {
                 },
                 body: JSON.stringify({ input: type, messages }),
             });
-            console.log("response", response);
+            // console.log("response", response);
             const responseData = await response.json();
-            console.log("Response:", responseData);
+            // console.log("Response:", responseData);
             if (responseData.apiResponse.properties) {
                 setProperties(responseData.apiResponse.properties);
                 return;
