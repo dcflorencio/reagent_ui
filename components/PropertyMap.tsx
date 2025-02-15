@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-
 function PropertyMap({ properties }: { properties: any[] }) {
     const [map, setMap] = useState<google.maps.Map | null>(null);
     const [placesService, setPlacesService] = useState<google.maps.places.PlacesService | null>(null);
@@ -76,9 +75,12 @@ function PropertyMap({ properties }: { properties: any[] }) {
     const updateMapWithProperties = () => {
         if (map && properties.length > 0) {
             const bounds = new google.maps.LatLngBounds();
+            const infoWindow = new google.maps.InfoWindow();
             properties.forEach(property => {
                 const position = new google.maps.LatLng(property.latitude, property.longitude);
-                const price = formatPrice(property?.price || 0);
+                const price = formatPrice(property?.units && property?.units.length > 0
+                    ? property?.units[0]?.price
+                    : property.price || 0);
 
                 // Create a custom SVG marker with a pin shape
                 const svgMarker = `
@@ -116,6 +118,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
                         content: `
                             <div style="position: relative; width: 300px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; background-color: white;">
                                 <div style="padding: 10px">
+                                <img src="${property?.imgSrc}" alt="Property Image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
                                 <div style="display: flex; justify-content: space-between;">
                                     <div>
                                         <h2 style="font-size: 1.125rem; font-weight: bold; margin-bottom:4px">$${price}</h2>
@@ -132,8 +135,9 @@ function PropertyMap({ properties }: { properties: any[] }) {
                             </div>
                         `,
                     });
-                    setInfoWindow(newInfoWindow);
-                    newInfoWindow.open(map, marker);
+                    if (newInfoWindow) {
+                        newInfoWindow.open(map, marker);
+                    }
                 });
 
                 bounds.extend(position);
