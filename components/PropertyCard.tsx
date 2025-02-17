@@ -213,7 +213,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                 </div>
                 {/* <SelectDemo /> */}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {properties.map((property, index) => {
                     const [currentSlide, setCurrentSlide] = useState(0);
                     const [showAllPhotos, setShowAllPhotos] = useState(false);
@@ -310,9 +310,9 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             </div>
                                         </div>
                                     </CardContent> */}
-                                    <CardContent>
-                                        <div className="p-2">
-                                            <div className="flex flex-row justify-between items-center">
+                                    <CardContent className="p-2 md:p-4">
+                                        <div>
+                                            <div className="flex w-full gap-1 flex-col xl:flex-row lg:justify-between xl:items-center">
                                                 <h2 className="text-xl font-bold">
                                                     {property?.units && property?.units.length > 0
                                                         ? `${property.units[0]?.price}`

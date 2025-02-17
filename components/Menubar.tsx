@@ -24,8 +24,8 @@ export function MenubarDemo() {
                     <div className="flex-shrink-0">
                         <img src="/logo.JPG" alt="Logo" className="h-7 rounded-full w-7" />
                     </div>
-                    <div className="flex-grow flex flex-row justify-center gap-10">
-                    <MenubarMenu>
+                    {/* <div className="flex-grow flex flex-row justify-center gap-10"> */}
+                        {/* <MenubarMenu>
                         <MenubarTrigger>File</MenubarTrigger>
                         <MenubarContent>
                             <MenubarItem>
@@ -109,9 +109,9 @@ export function MenubarDemo() {
                             <MenubarSeparator />
                             <MenubarItem inset>Add Profile...</MenubarItem>
                         </MenubarContent>
-                    </MenubarMenu>
+                    </MenubarMenu> */}
 
-                </div>
+                    {/* </div> */}
                 </div>
                 {/* Login button on the right */}
                 <div className="flex-shrink-0">
