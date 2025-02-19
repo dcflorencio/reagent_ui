@@ -34,14 +34,14 @@ export async function POST(req: NextRequest): Promise<NextResponse<any>> {
         return NextResponse.json({ error: error.message }); // Handle errors
     }
 }
-async function makeAPICall(messages: any[]) {
+export async function makeAPICall(messages: any[]) {
     const apiResponse = await fetch(
         "https://reagent-ui-3d6ba29f3428595b8a7ab36565570117.us.langgraph.app/runs/wait",
         {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "x-api-key": "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",
+                "x-api-key": process.env.LANGGRAPH_API_KEY as string,
             },
             body: JSON.stringify({
                 assistant_id: "Real Estate",

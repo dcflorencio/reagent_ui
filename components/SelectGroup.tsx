@@ -141,7 +141,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
     }, [filters]);
     return (
         <div className="w-full flex flex-col gap-2">
-            <div className="w-full flex justify-evenly gap-1">
+            <div className="w-full grid grid-cols-2 md:grid-cols-5  gap-1">
                 <Select onValueChange={(value) => handleSelectChange('rentType', value)}>
                     <SelectTrigger className="w-full">
                         <SelectValue placeholder={filters.rentType} />
@@ -281,7 +281,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                         <SelectGroup>
                             <SelectLabel>More Filters</SelectLabel>
                             <CardContent>
-                                <div className="flex flex-col gap-2 w-[400px]">
+                                <div className="flex flex-col gap-2 w-full md:w-[400px]">
                                     <div className="flex flex-col space-y-1.5">
                                         <div className="flex flex-row justify-between w-full">
                                             <Label>Location</Label>

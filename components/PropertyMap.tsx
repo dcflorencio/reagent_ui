@@ -85,8 +85,11 @@ function PropertyMap({ properties }: { properties: any[] }) {
                 // Create a custom SVG marker with a pin shape
                 const svgMarker = `
                    <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded bubble -->
                     <rect x="10" y="0" rx="20" ry="20" width="80" height="40" fill="#6A35D5"/>
+                    <!-- Pointer triangle (rotated 180 degrees) -->
                     <polygon points="50,55 40,40 60,40" fill="#6A35D5"/>
+                    <!-- Text inside the bubble -->
                     <text x="50" y="27" font-size="18" fill="white" font-family="Arial" font-weight="bold" text-anchor="middle">${price}</text>
                     </svg>
                 `;
@@ -108,74 +111,50 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
                 // Add mouseover and mouseout events to show/hide info window
                 marker.addListener('click', (e: google.maps.PolyMouseEvent) => {
+                    // Reset styling of previously clicked polygon if any
+
+
                     const content = `
-                    <div class="p-4 bg-white rounded-lg shadow-sm" style="max-width: none; width: auto; max-height: 300px; overflow-y: auto;">              
-                      <div class="space-y-2">
-                        <div>
-                          <h4 class="text-sm font-semibold text-gray-600 mb-2">${property.name || 'Power Line'}</h4>
-                          <h2 class="text-sm font-semibold text-gray-600 mb-2">${property.operator || 'Power Line'}</h2>
-        
-                          <div class="grid grid-cols-3 gap-2 text-center">
-                            <div class="bg-indigo-50 p-2 rounded">
-                              <p class="text-xs text-gray-600">Frequency</p>
-                              <p class="text-lg font-bold text-indigo-600">${property.frequency || '-'}</p>
-                            </div>
-                            <div class="bg-indigo-100 p-2 rounded">
-                              <p class="text-xs text-gray-600">Voltages</p>
-                              <p class="text-lg font-bold text-indigo-700">${property.voltages || '-'}</p>
-                            </div>
-                            <div class="bg-indigo-50 p-2 rounded">
-                              <p class="text-xs text-gray-600">Max Voltage</p>
-                              <p class="text-lg font-bold text-indigo-600">${property.max_voltage || '-'}</p>
-                            </div>
-                          </div>
-                        </div>
-                 
-                        <div class="grid grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <p class="text-gray-600">Circuits</p>
-                            <p class="font-semibold">${property.circuits || '-'}</p>
-                          </div>
-                          <div>
-                            <p class="text-gray-600">Cables</p>
-                            <p class="font-semibold">${property.cables || '-'}</p>
-                          </div>
-                          <div>
-                            <p class="text-gray-600">Start Date</p>
-                            <p class="font-semibold">${property.start_date || '-'}</p>
-                          </div>
-                          <div>
-                            <p class="text-gray-600"> Substation Type</p>
-                            <p class="font-semibold">${property.substation_type || '-'}</p>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="max-w-sm bg-white rounded-lg shadow-sm">              
+                      <img src="${property?.imgSrc}" alt="Property Image" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 3px;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div>
+                                        <h2 style="font-size: 1.125rem; font-weight: bold; margin-bottom:2px">$${price}</h2>
+                                        <p style="font-size: 0.875rem; color: #4b5563; margin-bottom:2px">
+                                            ${property?.bedrooms} bds | ${property?.bathrooms} ba
+                                        </p>
+                                    </div>
+                                    <div style="background-color: #6A35D5; text-align: center; color: white; border: none; height: 25px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
+                                        <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white;">View Details</a>
+                                    </div>
+                                </div>
+                                <p style="font-size: 0.875rem; color: #6b7280;">${property?.address || '5212 S Kildare Ave, Chicago, IL 60632'}</p>
+                                </div>
                     </div>
                   `;
-
+            
                     infoWindow.setContent(content);
                     infoWindow.setPosition(e.latLng);
                     infoWindow.open(map);
-
                 });
-                bounds.extend(position);
-            });
-            map.fitBounds(bounds);
-        }
+                    bounds.extend(position);
+                });
+                map.fitBounds(bounds);
+            }
     };
 
-    // New useEffect to handle properties update
-    useEffect(() => {
-        updateMapWithProperties();
-    }, [map, properties]);
+        // New useEffect to handle properties update
+        useEffect(() => {
+            updateMapWithProperties();
+        }, [map, properties]);
 
-    return (
-        <div className="min-h-[200px] w-full h-full relative">
-            {/* Initialize the map centered on the USA */}
-            <h1 className="text-md font-normal mb-1 absolute top-2 left-1 z-10 bg-white p-1 rounded-md">Property Map</h1>
-            <div ref={mapRef} className="w-full border-t-2 rounded-xl border-green-500 h-full" />
-        </div>
-    );
-}
+        return (
+            <div className="min-h-[200px] w-full h-full relative">
+                {/* Initialize the map centered on the USA */}
+                <h1 className="text-sm font-semibold mb-1 absolute top-2 left-1 z-10 bg-white p-1 rounded-md">Property Map</h1>
+                <div ref={mapRef} className="w-full border-t-2 rounded-xl border-green-500 h-full" />
+            </div>
+        );
+    }
 
-export default PropertyMap;
+    export default PropertyMap;

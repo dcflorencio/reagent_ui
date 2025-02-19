@@ -8,34 +8,23 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ReactMarkdown from "react-markdown";
+import React from "react";
+import { SelectDemo } from "./SelectGroup";
 
 interface Message {
   role: "user" | "assistant" | "error";
   content: string;
 }
 
-export const FloatingChatBar = () => {
+export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handleNext, properties, apiCalParameters }: { messages: Message[], setMessages:any, handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [threadId, setThreadId] = useState<string | null>(null);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "welcome",
-      role: "assistant",
-      content: "Welcome to Property Finder! How can I assist you with finding properties today?",
-    },
-  ]);
-  const [properties, setProperties] = useState<any[]>([]);
-  const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
+
   const [isLoading, setIsLoading] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const brandColor = "#000000";
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
 
 
   useEffect(() => {
@@ -69,70 +58,13 @@ export const FloatingChatBar = () => {
       inputRef.current?.focus();
     }, 100);
   };
-
-  const sendMessage = async (message: string) => {
-    if (!message.trim()) return;
-
-    const userMessage: Message = {
-      
-      role: "user",
-      content: message.trim(),
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    setInputValue("");
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/get_properties", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: message.trim(), messages }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to get response");
-      }
-
-      const data = await response.json();
-
-      if (data.apiResponse.properties) {
-        setProperties(data.apiResponse.properties);
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: Date.now().toString(),
-            role: "assistant",
-            content: data.apiResponse.properties.length > 0 ? `${data.apiResponse.properties.length} properties found.` : "No properties found.",
-          },
-        ]);
-        if (data.apiResponse.api_call_parameters) {
-          setApiCalParameters(data.apiResponse.api_call_parameters);
-        }
-      } else {
-        const aiMessage: Message = {
-          
-          role: "assistant",
-          content: data.response,
-        };
-        setMessages((prev) => [...prev, aiMessage]);
-      }
-    } catch (error) {
-      console.error("Error in sendMessage:", error);
-      const errorMessage: Message = {
-        id: Date.now().toString(),
-        role: "error",
-        content: "Sorry, I experienced an error. Please try again later.",
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    await sendMessage(inputValue);
+    setIsLoading(true);
+    console.log(inputValue);
+    await handleNext(inputValue);
+    setIsLoading(false);
+    setInputValue("");
   };
 
   const MessageContent = ({ message }: { message: Message }) => (
@@ -140,41 +72,13 @@ export const FloatingChatBar = () => {
       <div className="prose prose-sm">
         <ReactMarkdown>{message.content}</ReactMarkdown>
       </div>
-      {message.citations && message.citations.length > 0 && (
-        <div className="mt-3 pt-3 border-t border-border/50">
-          <p className="text-xs font-medium text-muted-foreground mb-2">Sources:</p>
-          <div className="space-y-2">
-            {message.citations.map((citation, index) => (
-              <div key={index} className="text-xs">
-                <p className="flex items-center gap-2">
-                  <span className="font-medium">[{index + 1}]</span>
-                  <a
-                    href={citation.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline flex items-center gap-1"
-                  >
-                    {citation.fileName || "Source Document"}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                </p>
-                {citation.fileCitation && (
-                  <blockquote className="mt-1.5 pl-3 border-l-2 border-muted-foreground/30 text-muted-foreground">
-                    {citation.fileCitation}
-                  </blockquote>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 
   const MessageList = () => (
     <div className="space-y-4 mb-4 pt-2">
-      {messages.map((message) => (
-        <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+      {messages.map((message, index) => (
+        <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
           <div
             className={cn(
               "max-w-[80%] rounded-xl px-4 py-3",
@@ -187,6 +91,19 @@ export const FloatingChatBar = () => {
           </div>
         </div>
       ))}
+      {messages.length === 0 && (
+        <div className="flex justify-start">
+          <div className={cn(
+            "rounded-xl px-4 py-3",
+            `bg-[${brandColor}]/10`
+          )}>
+            <p className="text-sm font-medium text-muted-foreground mb-4 px-2">
+              Enquire about properties here!
+            </p>
+          </div>
+        </div>
+      )}
+      
       {isLoading && (
         <div className="flex justify-start">
           <div className={cn(
@@ -277,9 +194,10 @@ export const FloatingChatBar = () => {
                 <span className="font-semibold text-xl tracking-tight" style={{ color: brandColor }}>
                   Property Finder
                 </span>
-                {/* <span className="text-sm text-muted-foreground font-medium"></span> */}
               </div>
+              
             </div>
+            
             <div className="flex items-center gap-3">
               
               {!isExpanded ? (
@@ -298,6 +216,7 @@ export const FloatingChatBar = () => {
                 </Button>
               )}
             </div>
+           
           </div>
 
           {/* Chat Content */}
@@ -316,23 +235,40 @@ export const FloatingChatBar = () => {
                 </ScrollArea>
 
                 {/* Predefined Queries */}
-                {messages.length === 1 && (
+                {messages.length === 0 && (
                   <div
-                    className="p-6 border-t shrink-0"
+                    className="p-6 border-t shrink-0 flex flex-col gap-2"
                     style={{
                       backgroundColor: `${brandColor}05`,
                       borderColor: `${brandColor}15`,
                     }}
                   >
-                    <p className="text-sm font-medium text-muted-foreground mb-4 px-2">
-                      How can I help you today?
-                    </p>
-                    
+                    <Button
+                      variant="outline"
+                      color="secondary"
+                      className="w-full"
+                      onClick={() => handleBuyOrRent("I want to buy a property")}
+                    >
+                      Buy a property
+                    </Button>
+                    <Button
+                      variant="outline"
+                      color="secondary"
+                      className="w-full"
+                      
+                      onClick={() => handleBuyOrRent("I want to rent a property")}
+                    >
+                      Rent a property
+                    </Button>
                   </div>
                 )}
+                 {properties.length > 0 && apiCalParameters.length > 0 && <div className="max-w-[100%] p-2 flex justify-center items-center mb-10">
+                        <SelectDemo apiCalParameters={apiCalParameters} handleNext={handleNext} />
+                    </div>}
               </motion.div>
             )}
           </AnimatePresence>
+          {properties.length > 0 && <span className="text-sm text-muted-foreground text-green-500 bg-gray-100 font-medium w-full text-center py-2"> {properties.length} properties found to match your query</span>}
 
           {/* Input Area */}
           <form
@@ -350,6 +286,7 @@ export const FloatingChatBar = () => {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
+                disabled={isLoading || messages.length === 0}
                 placeholder={isExpanded ? "Type your message..." : `Ask Property Finder AI anything...`}
                 className={cn(
                   "flex-1 py-6 pr-14 text-base rounded-xl",
@@ -364,7 +301,7 @@ export const FloatingChatBar = () => {
               />
               <Button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || messages.length === 0}
                 className={cn(
                   "absolute right-2.5 h-10 w-10 rounded-lg",
                   "text-primary-foreground",

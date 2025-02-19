@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import React, { lazy } from "react"
 import { SelectDemo } from "@/components/SelectGroup"
 import { MenubarDemo } from "@/components/Menubar"
-import { testProperties } from './demoProperties'
+// import { testProperties } from './demoProperties'
 import { FloatingChatBar } from "@/components/FloatingChatbar"
 export type assessmentType = {
     role: "user" | "assistant";
@@ -26,7 +26,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>(testProperties);
+    const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -180,13 +180,11 @@ export default function Page() {
                     {isSmallScreen && (
                         <FloatingChatBar
                             messages={messages}
+                            setMessages={setMessages}
                             handleBuyOrRent={handleBuyOrRent}
                             handleNext={handleNext}
                             properties={properties}
                             apiCalParameters={apiCalParameters}
-                            input={input}
-                            isLoading={isLoading}
-                            setInput={setInput}
                         />
                     )}
                 </div>
