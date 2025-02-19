@@ -204,7 +204,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
         );
     }
     return (
-        <div className="p-4">
+        <div className="p-4 ">
             <div className="flex flex-col gap-2 mb-4">
                 <div className="flex justify-between">
                     {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
@@ -312,13 +312,13 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                     </CardContent> */}
                                     <CardContent className="p-2 md:p-4">
                                         <div>
-                                            <div className="flex w-full gap-1 flex-col xl:flex-row lg:justify-between xl:items-center">
+                                            <div className="flex w-full gap-2 flex-col xl:flex-row xl:justify-between xl:items-center">
                                                 <h2 className="text-xl font-bold">
                                                     {property?.units && property?.units.length > 0
                                                         ? `${property.units[0]?.price}`
                                                         : `${new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}`}
                                                 </h2>
-                                                <h3 className="text-md text-gray-500 font-semibold">
+                                                <h3 className="text-sm text-gray-500 font-normal">
                                                     {property?.propertyType || ""}
                                                 </h3>
                                             </div>

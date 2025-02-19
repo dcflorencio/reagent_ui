@@ -262,7 +262,7 @@ export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handle
                     </Button>
                   </div>
                 )}
-                 {properties.length > 0 && apiCalParameters.length > 0 && <div className="max-w-[100%] p-2 flex justify-center items-center mb-10">
+                 {properties.length > 0 && apiCalParameters.length > 0 && <div className="max-w-[100%] p-2 flex justify-center items-center mb-2">
                         <SelectDemo apiCalParameters={apiCalParameters} handleNext={handleNext} />
                     </div>}
               </motion.div>

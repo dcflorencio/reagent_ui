@@ -5,3 +5,12 @@
     max-height: none !important;
     overflow: visible !important;
 }
+
+@media (max-width: 768px) {
+    .chat-section {
+        display: none;
+    }
+    .map-and-card {
+        flex-direction: row;
+    }
+}

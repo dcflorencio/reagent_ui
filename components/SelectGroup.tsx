@@ -177,7 +177,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                         <SelectGroup>
                             <SelectLabel>Price</SelectLabel>
                             <CardContent>
-                                <form className="w-[400px]">
+                                <form className="w-[200px]">
                                     <div className="grid w-full items-center gap-4">
                                         <div className="flex flex-col space-y-1.5">
                                             <Label>Min Price</Label>
@@ -281,7 +281,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                         <SelectGroup>
                             <SelectLabel>More Filters</SelectLabel>
                             <CardContent>
-                                <div className="flex flex-col gap-2 w-full md:w-[400px]">
+                                <div className="flex flex-col gap-2 w-[300px] md:w-[400px]">
                                     <div className="flex flex-col space-y-1.5">
                                         <div className="flex flex-row justify-between w-full">
                                             <Label>Location</Label>

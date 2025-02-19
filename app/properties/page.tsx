@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import React, { lazy } from "react"
 import { SelectDemo } from "@/components/SelectGroup"
 import { MenubarDemo } from "@/components/Menubar"
-// import { testProperties } from './demoProperties'
+import { testProperties } from './demoProperties'
 import { FloatingChatBar } from "@/components/FloatingChatbar"
 export type assessmentType = {
     role: "user" | "assistant";
@@ -26,7 +26,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>([]);
+    const [properties, setProperties] = useState<any[]>(testProperties);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -192,7 +192,7 @@ export default function Page() {
         </SidebarProvider>
     )
 }
-const ChatBar = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters, input, isLoading, setInput }: { messages: assessmentType[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[], input: string, isLoading: boolean, setInput: (input: string) => void }) => {
+export const ChatBar = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters, input, isLoading, setInput }: { messages: assessmentType[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[], input: string, isLoading: boolean, setInput: (input: string) => void }) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (scrollRef.current) {
