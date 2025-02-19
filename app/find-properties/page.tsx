@@ -73,12 +73,24 @@ export default function FindProperties() {
         }
     }
 
+    // useEffect(() => {
+    //     if (scrollRef.current) {
+    //         scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    //     }
+    // }, [messages]);
     useEffect(() => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        const response = async () => {
+            const response = await fetch('/api/get-email-data', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input: "I want to buy a property" }),
+            });
+            console.log("response got", response);
         }
-    }, [messages]);
-
+        response();
+    }, []);
     const handleBuyOrRent = async (type: string) => {
         console.log("type", type);
         setIsLoading(true);
@@ -161,9 +173,9 @@ export default function FindProperties() {
                                     </div>
                                 ))}
                             </div>
-                            {properties.length > 0 && apiCalParameters.length > 0 && <div className="w-[100%] p-2 flex justify-center items-center">
+                            {/* {properties.length > 0 && apiCalParameters.length > 0 && <div className="w-[100%] p-2 flex justify-center items-center">
                                 <SelectDemo apiCalParameters={apiCalParameters} />
-                            </div>}
+                            </div>} */}
                         </ScrollArea>
                         <div className="flex items-center justify-center w-[90%] gap-4 p-2">
                             <Input value={input}
