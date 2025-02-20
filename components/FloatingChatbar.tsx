@@ -2,14 +2,15 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Bot, X, ChevronUp, Send, Loader2, ExternalLink } from "lucide-react";
+import { Bot, X, ChevronUp, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ReactMarkdown from "react-markdown";
-import React from "react";
 import { SelectDemo } from "./SelectGroup";
+import dynamic from "next/dynamic";
+
+const ReactMarkdown = dynamic(() => import("react-markdown"), { ssr: false });
 
 interface Message {
   role: "user" | "assistant" | "error";
@@ -19,7 +20,7 @@ interface Message {
 export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handleNext, properties, apiCalParameters }: { messages: Message[], setMessages:any, handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState("");
-
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -74,7 +75,15 @@ export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handle
       </div>
     </div>
   );
-
+  
+  const scrollToBottom = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   const MessageList = () => (
     <div className="space-y-4 mb-4 pt-2">
       {messages.map((message, index) => (
@@ -230,7 +239,7 @@ export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handle
                 className="flex-1 min-h-0 flex flex-col"
               >
                 {/* Messages Area */}
-                <ScrollArea className="flex-1 px-8">
+                <ScrollArea className="flex-1 px-8" ref={scrollRef}>
                   <MessageList />
                 </ScrollArea>
 
