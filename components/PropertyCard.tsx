@@ -1,0 +1,652 @@
+// import React, { lazy, Suspense } from "react";
+// import { Card, CardContent } from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
+
+// const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })));
+
+// const listings = [
+//     {
+//         id: 1,
+//         specialOffer: true,
+//         tour: false,
+//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
+//         price: "$987+",
+//         beds: "1 bd",
+//         name: "Williamsburg Mishawaka",
+//         address: "302 Village Dr, Mishawaka, IN",
+//         prices: ["$987+", "$1,184+", "$1,710+"],
+//         bedTypes: ["1 bd", "2 bd", "3 bd"]
+//     },
+//     {
+//         id: 2,
+//         specialOffer: false,
+//         tour: true,
+//         availableUnits: 11,
+//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
+//         price: "$1,439+",
+//         beds: "1 bd",
+//         name: "Hartshire Lakes Apartments",
+//         address: "3170 Hartshire Dr, Indianapolis, IN",
+//         prices: ["$1,439+", "$1,743+", "$1,591+"],
+//         bedTypes: ["1 bd", "2 bd", "3 bd"]
+//     },
+//     {
+//         id: 3,
+//         specialOffer: true,
+//         tour: false,
+//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
+//         price: "$1,525+",
+//         beds: "1 bd",
+//         name: "The Grove",
+//         address: "5813 Lilliana Ln, Whitestown, IN",
+//         prices: ["$1,525+"],
+//         bedTypes: ["1 bd"]
+//     },
+//     {
+//         id: 4,
+//         specialOffer: true,
+//         tour: true,
+//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
+//         price: "$1,190+",
+//         beds: "1 bd",
+//         name: "TGM Shadeland Station",
+//         address: "7135 Thatcher Dr, Indianapolis, IN",
+//         prices: ["$1,190+", "$1,375+", "$1,610+"],
+//         bedTypes: ["1 bd", "2 bd", "3 bd"]
+//     }
+// ];
+
+// const RentalListings = ({ properties }: { properties: any[] }) => {
+//     return (
+//         <div className="p-4">
+//             <div className="flex justify-between">
+//                 <div>
+//                     <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1>
+//                     <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
+//                 </div>
+//                 <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+//             </div>
+//             {properties.length === 0 && <div className="flex justify-center items-center">
+//                 <h1 className="text-2xl font-bold mb-2">No properties Available</h1>
+//             </div>}
+//             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+//                 {listings.map((listing, index) => (
+//                     <Card key={index} className="relative">
+//                         <div className="relative">
+//                             <img src={listing.image} alt={listing.name} className="w-full h-48 object-cover rounded-t-lg" />
+//                             {listing.specialOffer && (
+//                                 <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     Special Offer
+//                                 </span>
+//                             )}
+//                             {listing.tour && (
+//                                 <span className="absolute top-9 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     3D Tour
+//                                 </span>
+//                             )}
+//                             {listing.availableUnits && (
+//                                 <span className="absolute top-16 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     {listing.availableUnits} available units
+//                                 </span>
+//                             )}
+//                             <Button className="absolute top-2 right-2 p-1 bg-white rounded-full w-6 h-6 shadow">
+//                                 <Suspense fallback={<div>Loading...</div>}>
+//                                     <Heart className="w-4 h-4 text-gray-600" />
+//                                 </Suspense>
+//                             </Button>
+//                         </div>
+//                         <CardContent>
+//                             <div className="p-2">
+//                                 <h2 className="text-xl font-bold">{listing.price} {listing.beds}</h2>
+//                                 <p className="text-gray-600 text-sm mt-1">{listing.address}</p>
+//                                 <div className="grid grid-cols-3 gap-1 mt-4">
+//                                     {listing.prices.map((price, index) => (
+//                                         <div key={index} className="p-2 rounded-lg text-center flex flex-col items-center justify-center border">
+//                                             <p className="text-sm font-medium">{price}</p>
+//                                             <p className="text-sm text-gray-500">{listing.bedTypes[index]}</p>
+//                                         </div>
+//                                     ))}
+//                                 </div>
+//                             </div>
+//                         </CardContent>
+//                     </Card>
+//                 ))}
+
+//                 {properties.length > 0 && properties.map((property, index) => (
+//                     <Card key={index} className="relative">
+//                         <div className="relative">
+//                             <img src={property.imgSrc} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
+//                             {property.specialOffer && (
+//                                 <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     Special Offer
+//                                 </span>
+//                             )}
+//                             {property.tour && (
+//                                 <span className="absolute top-9 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     3D Tour
+//                                 </span>
+//                             )}
+//                             {property.availableUnits && (
+//                                 <span className="absolute top-16 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+//                                     {property.availableUnits} available units
+//                                 </span>
+//                             )}
+//                             <Button className="absolute top-2 right-2 p-1 bg-white rounded-full w-6 h-6 shadow">
+//                                 <Suspense fallback={<div>Loading...</div>}>
+//                                     <Heart className="w-4 h-4 text-gray-600" />
+//                                 </Suspense>
+//                             </Button>
+//                         </div>
+//                         <CardContent>
+//                             <div className="p-2">
+//                                 <h2 className="text-xl font-bold">{property.price} {property.currency} | {property.bedrooms} bds | {property.bathrooms} ba</h2>
+//                                 <p className="text-gray-600 text-sm mt-1">{property.propertyType} | {property.address} {property.country}</p>
+//                                 <div className="w-full mt-4">
+//                                     {/* {property.prices.map((price: any, index: number) => ( */}
+//                                     <div className="p-2 w-full rounded-lg text-center flex flex-col items-center justify-center border">
+//                                         <p className="text-sm font-medium">{property.price} {property.currency}</p>
+//                                         <p className="text-sm text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+//                                     </div>
+//                                     {/* ))} */}
+//                                 </div>
+//                             </div>
+//                         </CardContent>
+//                     </Card>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default RentalListings;
+// "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
+
+import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
+import { Label } from "@radix-ui/react-label";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import Image from 'next/image';
+const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
+
+const RentalListings = ({ properties }: { properties: any[] }) => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [showAllPhotos, setShowAllPhotos] = useState(false);
+
+    console.log("properties find in property card", properties, properties.length);
+    if (properties.length === 0) {
+        return (
+            <div className="p-4">
+                <div className="flex flex-col gap-2 mb-4">
+                    <div className="flex justify-between">
+                        {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
+                        <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
+                        <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+                    </div>
+                    {/* <SelectDemo /> */}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <p className="text-gray-600 text-sm mb-2">No properties available</p>
+                </div>
+            </div>
+        );
+    }
+    return (
+        <div className="p-4 ">
+            <div className="flex flex-col gap-2 mb-4">
+                <div className="flex justify-between">
+                    {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
+                    <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
+                    <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+                </div>
+                {/* <SelectDemo /> */}
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {properties.map((property, index) => {
+                    const settings = {
+                        dots: false,
+                        infinite: true,
+                        speed: 500,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
+                        appendDots: (dots: React.ReactNode) => (
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '10px',
+                                    width: '100%',
+                                    display: 'flex',
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                <ul style={{ margin: '0px' }}> {dots} </ul>
+                            </div>
+                        ),
+                        customPaging: (i: number) => (
+                            <div
+                                style={{
+                                    width: '10px',
+                                    height: '10px',
+                                    borderRadius: '50%',
+                                    background: i === currentSlide ? 'white' : 'black',
+                                    display: 'inline-block',
+                                    margin: '0 5px'
+                                }}
+                            />
+                        ),
+                        nextArrow: <SampleNextArrow />,
+                        prevArrow: <SamplePrevArrow />
+                    };
+
+                    return (
+                        <Dialog key={index}>
+                            <DialogTrigger asChild>
+                                <Card className="relative cursor-pointer p-0">
+                                    <div className="relative">
+                                        {property.carouselPhotos && property.carouselPhotos.length > 1 ?
+                                            <Slider {...settings}>
+                                                {property.carouselPhotos.map((image: { url: string }, imgIndex: number) => (
+                                                    <div key={imgIndex} className="relative">
+                                                        <Image src={image.url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-48 object-cover rounded-t-lg" />
+                                                        <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                            <Suspense fallback={<div>Loading...</div>}>
+                                                                <Heart className="w-4 h-4 text-white" />
+                                                            </Suspense>
+                                                        </Button>
+                                                    </div>
+                                                ))}
+                                            </Slider>
+                                            :
+                                            <div>
+                                                <Image
+                                                    src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"}
+                                                    alt="Image"
+                                                    layout="responsive"
+                                                    width={300}
+                                                    height={200}
+                                                    className="w-full h-48 object-cover rounded-t-lg"
+                                                />
+                                                <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                    <Suspense fallback={<div>Loading...</div>}>
+                                                        <Heart className="w-4 h-4 text-white" />
+                                                    </Suspense>
+                                                </Button>
+                                            </div>}
+                                        {property.specialOffer && (
+                                            <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                                                Special Offer
+                                            </span>
+                                        )}
+                                        {property.tour && (
+                                            <span className="absolute top-16 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
+                                                3D Tour
+                                            </span>
+                                        )}
+                                        {property.availabilityCount && (
+                                            <span className="absolute top-9 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                                                {property.availabilityCount} available units
+                                            </span>
+                                        )}
+                                    </div>
+                                    {/* <CardContent>
+                                        <div className="p-2">
+                                            <h2 className="text-xl font-bold">{listing.price} {listing.beds}</h2>
+                                            <p className="text-gray-600 text-sm mt-1">{listing.address}</p>
+                                            <div className="grid grid-cols-3 gap-1 mt-4">
+                                                {listing.prices.map((price, index) => (
+                                                    <div key={index} className="p-2 rounded-lg text-center flex flex-col items-center justify-center border">
+                                                        <p className="text-sm font-medium">{price}</p>
+                                                        <p className="text-sm text-gray-500">{listing.bedTypes[index]}</p>
+                                                    </div>
+                                                ))} 
+                                            </div>
+                                        </div>
+                                    </CardContent> */}
+                                    <CardContent className="p-2 md:p-4">
+                                        <div>
+                                            <div className="flex w-full gap-2 flex-col xl:flex-row xl:justify-between xl:items-center">
+                                                <h2 className="text-xl font-bold">
+                                                    {property?.units && property?.units.length > 0
+                                                        ? `${property.units[0]?.price}`
+                                                        : `${new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}`}
+                                                </h2>
+                                                <h3 className="text-sm text-gray-500 font-normal">
+                                                    {property?.propertyType || ""}
+                                                </h3>
+                                            </div>
+                                            <p className="text-gray-600 text-sm mt-1"> {property.address} {property.country}</p>
+
+                                            <div className="w-full mt-4">
+                                                {property.units?.length > 0 ? (
+                                                    <div className="grid grid-cols-3 gap-2 w-full">
+                                                        {property.units.map((unit: { price: string, beds: number }, index: number) => (
+                                                            <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
+                                                                <p className="text-md font-medium">
+                                                                    {unit?.price ?? 0}
+                                                                </p>
+                                                                <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="p-2 rounded-lg text-center flex flex-row items-center justify-between border">
+                                                        {/* <p className="text-md font-medium">
+                                                            {new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}
+                                                        </p> */}
+                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </DialogTrigger>
+                            <DialogContent className="w-[90%] h-[90%] max-w-none max-h-none p-4">
+                                <DialogHeader>
+                                    <DialogTitle> {property?.buildingName || property.address}</DialogTitle>
+                                </DialogHeader>
+                                <ScrollArea className="h-full w-full overflow-auto">
+                                    {property.carouselPhotos && property.carouselPhotos.length > 0 ? (
+                                        <div className="flex flex-col sm:flex-row gap-4">
+                                            <div className="flex-1 flex flex-col">
+                                                <Image src={property.carouselPhotos[0].url} alt="Image" className="w-full h-full object-cover rounded-lg flex-grow" />
+                                            </div>
+                                            <div className="flex-1 grid grid-cols-2 gap-2">
+                                                {property.carouselPhotos.slice(1, 5).map((image: { url: string }, imgIndex: number) => (
+                                                    <Image key={imgIndex} src={image.url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-full object-cover rounded-lg" />
+                                                ))}
+                                            </div>
+
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-col sm:flex-row gap-4">
+                                            <Image
+                                                src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"}
+                                                alt="Image"
+                                                layout="responsive"
+                                                width={500}
+                                                height={300}
+                                                className="w-full h-48 object-cover rounded-t-lg"
+                                            />
+                                        </div>
+                                    )}
+                                    {property?.carouselPhotos && property?.carouselPhotos?.length > 5 && showAllPhotos && <div className="w-full mt-4 grid grid-cols-3 gap-2">
+                                        {property?.carouselPhotos?.slice(5).map((image: { url: string }, imgIndex: number) => (
+                                            <Image key={imgIndex} src={image.url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-full object-cover rounded-lg" />
+                                        ))}
+                                    </div>}
+                                    {property?.carouselPhotos && property?.carouselPhotos?.length > 5 && <Button onClick={() => setShowAllPhotos(!showAllPhotos)} color="gray" className="absolute top-2 right-2">{showAllPhotos ? "Hide" : "Show All"}</Button>}
+
+                                    <div className="mt-4">
+                                        <div className="flex flex-row justify-between items-center px-2">
+                                            <h2 className="text-2xl font-bold">{property?.propertyType || property?.buildingName || "House"}</h2>
+                                            <Button variant="outline" onClick={() => window.open(`https://www.zillow.com${property.detailUrl}`, "_blank")} className="text-md font-semibold mt-2">Full Details</Button>
+                                        </div>
+                                        <p className="text-gray-600 text-md font-semibold mt-2">{property.address}</p>
+
+                                        <div className="w-full mt-4">
+                                            {property.units?.length > 0 ? (
+                                                <div className="grid grid-cols-3 gap-2 w-full">
+                                                    {property.units.map((unit: { price: string, beds: number }, index: number) => (
+                                                        <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
+                                                            <p className="text-md font-bold">
+                                                                {unit?.price}
+                                                            </p>
+                                                            <p className="text-md text-gray-500">{unit?.beds ?? 0} bds</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <div className="p-2 w-[220px] rounded-lg text-center flex flex-row items-center justify-between border">
+                                                    <p className="text-md font-bold">
+                                                        {new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}
+                                                    </p>
+                                                    <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="mt-4">
+                                            <h3 className="text-md font-semibold">Property Details</h3>
+                                            <div className="grid grid-cols-4 gap-2 w-full  md:w-[75%]">
+                                                {property.livingArea && (
+                                                    <div className="flex items-center space-x-4  rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Living Area
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.livingArea} sqft
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                               {property?.isBuilding && (
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Building Name
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property?.buildingName}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.lotAreaValue && property.lotAreaUnit && (
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Lot Area
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.lotAreaValue} {property.lotAreaUnit}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.listingStatus && (
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Listing Status
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.listingStatus}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.daysOnZillow && (
+                                                    <div className="flex items-center space-x-4 w-full rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Days on Zillow
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.daysOnZillow}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {/* {property.latitude && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Latitude
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.latitude}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {property.longitude && (
+                                                    <div className="flex items-center space-x-4 rounded-md border p-2">
+                                                        <div className="flex-1 space-y-1">
+                                                            <p className="text-sm font-medium leading-none">
+                                                                Longitude
+                                                            </p>
+                                                            <p className="text-sm text-muted-foreground">
+                                                                {property.longitude}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )} */}
+                                            </div>
+
+                                            <div className="mt-4">
+                                                <GoogleMap property={property} />
+                                            </div>
+
+                                            <div className="flex gap-4 mt-4">
+                                                <Dialog>
+                                                    <DialogTrigger asChild>
+                                                        <Button>Request a Tour</Button>
+                                                    </DialogTrigger>
+                                                    <DialogContent className="sm:max-w-[425px]">
+                                                        <DialogHeader>
+                                                            <DialogTitle>Request a Tour</DialogTitle>
+                                                            <DialogDescription>
+                                                                Make changes to your profile here. Click save when you&apos;re done.
+                                                            </DialogDescription>
+                                                        </DialogHeader>
+                                                        <form>
+                                                            <div className="grid w-full items-center gap-4">
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="name">First Name</Label>
+                                                                    <Input id="name" placeholder="First Name" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="lastname">Last Name</Label>
+                                                                    <Input id="lastname" placeholder="Last Name" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="email">Email</Label>
+                                                                    <Input id="email" placeholder="Email" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="message">Message</Label>
+                                                                    <Textarea id="message" placeholder="Message" />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        <DialogFooter>
+                                                            <Button type="submit">Request a Tour</Button>
+                                                        </DialogFooter>
+                                                    </DialogContent>
+                                                </Dialog>
+                                                <Dialog>
+                                                    <DialogTrigger asChild>
+                                                        <Button variant="secondary" className="flex-1">Request to apply</Button>
+                                                    </DialogTrigger>
+                                                    <DialogContent className="sm:max-w-[425px]">
+                                                        <DialogHeader>
+                                                            <DialogTitle>Request to apply</DialogTitle>
+                                                            <DialogDescription>
+                                                                Make changes to your profile here. Click save when you&apos;re done.
+                                                            </DialogDescription>
+                                                        </DialogHeader>
+                                                        <form>
+                                                            <div className="grid w-full items-center gap-4">
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="name">First Name</Label>
+                                                                    <Input id="name" placeholder="First Name" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="lastname">Last Name</Label>
+                                                                    <Input id="lastname" placeholder="Last Name" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="email">Email</Label>
+                                                                    <Input id="email" placeholder="Email" />
+                                                                </div>
+                                                                <div className="flex flex-col space-y-1.5">
+                                                                    <Label htmlFor="message">Message</Label>
+                                                                    <Textarea id="message" placeholder="Message" />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        <DialogFooter>
+                                                            <Button type="submit">Request to apply</Button>
+                                                        </DialogFooter>
+                                                    </DialogContent>
+                                                </Dialog>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ScrollArea>
+                            </DialogContent>
+                        </Dialog>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
+const SampleNextArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block", background: "transparent", right: "10px", zIndex: 1 }}
+            onClick={onClick}
+        />
+    );
+};
+
+const SamplePrevArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block", background: "transparent", left: "10px", zIndex: 1 }}
+            onClick={onClick}
+        />
+    );
+};
+
+const GoogleMap = ({ property }: { property: any }) => {
+    const mapRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const initMap = async () => {
+            try {
+                const google = await loadGoogleMaps();
+                const mapInstance = new google.maps.Map(mapRef.current as HTMLElement, {
+                    center: { lat: property.latitude, lng: property.longitude },
+                    zoom: 13,
+                });
+
+                new google.maps.Marker({
+                    position: { lat: property.latitude, lng: property.longitude },
+                    map: mapInstance,
+                });
+            } catch (error) {
+                console.error('Error initializing map:', error);
+            }
+        };
+
+        initMap();
+    }, [property]);
+
+    return <div ref={mapRef} className="w-full h-64 rounded-lg" />;
+};
+
+export default RentalListings;
