@@ -365,7 +365,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                     {property.carouselPhotos && property.carouselPhotos.length > 0 ? (
                                         <div className="flex flex-col sm:flex-row gap-4">
                                             <div className="flex-1 flex flex-col">
-                                                <Image src={property.carouselPhotos[0].url} alt="Image" className="w-full h-full object-cover rounded-lg flex-grow" />
+                                                <Image src={property.carouselPhotos[0].url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-full object-cover rounded-lg flex-grow" />
                                             </div>
                                             <div className="flex-1 grid grid-cols-2 gap-2">
                                                 {property.carouselPhotos.slice(1, 5).map((image: { url: string }, imgIndex: number) => (
@@ -380,8 +380,8 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                 src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"}
                                                 alt="Image"
                                                 layout="responsive"
-                                                width={500}
-                                                height={300}
+                                                width={300}
+                                                height={200}
                                                 className="w-full h-48 object-cover rounded-t-lg"
                                             />
                                         </div>

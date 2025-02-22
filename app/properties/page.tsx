@@ -30,7 +30,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>([]);
+    const [properties, setProperties] = useState<any[]>(testProperties);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const hasProperties = properties.length > 0;
