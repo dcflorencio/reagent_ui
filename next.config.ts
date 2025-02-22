@@ -1,9 +1,16 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+module.exports = {
   images: {
-    domains: ['photos.zillowstatic.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'photos.zillowstatic.com',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
+      {
+        hostname: 'maps.googleapis.com',
+      },
+    ],
   },
-};
-
-export default nextConfig;
+}
