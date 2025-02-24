@@ -87,6 +87,10 @@ export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handle
   };
   useEffect(() => {
     scrollToBottom();
+    // Automatically focus on the input field when messages change
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   }, [messages]);
   const MessageList = () => (
     <div className="space-y-4 mb-4 pt-2">

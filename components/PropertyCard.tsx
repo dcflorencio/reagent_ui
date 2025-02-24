@@ -1,164 +1,4 @@
-// import React, { lazy, Suspense } from "react";
-// import { Card, CardContent } from "@/components/ui/card";
-// import { Button } from "@/components/ui/button";
 
-// const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })));
-
-// const listings = [
-//     {
-//         id: 1,
-//         specialOffer: true,
-//         tour: false,
-//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
-//         price: "$987+",
-//         beds: "1 bd",
-//         name: "Williamsburg Mishawaka",
-//         address: "302 Village Dr, Mishawaka, IN",
-//         prices: ["$987+", "$1,184+", "$1,710+"],
-//         bedTypes: ["1 bd", "2 bd", "3 bd"]
-//     },
-//     {
-//         id: 2,
-//         specialOffer: false,
-//         tour: true,
-//         availableUnits: 11,
-//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
-//         price: "$1,439+",
-//         beds: "1 bd",
-//         name: "Hartshire Lakes Apartments",
-//         address: "3170 Hartshire Dr, Indianapolis, IN",
-//         prices: ["$1,439+", "$1,743+", "$1,591+"],
-//         bedTypes: ["1 bd", "2 bd", "3 bd"]
-//     },
-//     {
-//         id: 3,
-//         specialOffer: true,
-//         tour: false,
-//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
-//         price: "$1,525+",
-//         beds: "1 bd",
-//         name: "The Grove",
-//         address: "5813 Lilliana Ln, Whitestown, IN",
-//         prices: ["$1,525+"],
-//         bedTypes: ["1 bd"]
-//     },
-//     {
-//         id: 4,
-//         specialOffer: true,
-//         tour: true,
-//         image: "https://photos.zillowstatic.com/fp/94b0f271bb2ebf2fe93a0646d1cb0756-p_e.webp",
-//         price: "$1,190+",
-//         beds: "1 bd",
-//         name: "TGM Shadeland Station",
-//         address: "7135 Thatcher Dr, Indianapolis, IN",
-//         prices: ["$1,190+", "$1,375+", "$1,610+"],
-//         bedTypes: ["1 bd", "2 bd", "3 bd"]
-//     }
-// ];
-
-// const RentalListings = ({ properties }: { properties: any[] }) => {
-//     return (
-//         <div className="p-4">
-//             <div className="flex justify-between">
-//                 <div>
-//                     <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1>
-//                     <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
-//                 </div>
-//                 <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
-//             </div>
-//             {properties.length === 0 && <div className="flex justify-center items-center">
-//                 <h1 className="text-2xl font-bold mb-2">No properties Available</h1>
-//             </div>}
-//             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//                 {listings.map((listing, index) => (
-//                     <Card key={index} className="relative">
-//                         <div className="relative">
-//                             <img src={listing.image} alt={listing.name} className="w-full h-48 object-cover rounded-t-lg" />
-//                             {listing.specialOffer && (
-//                                 <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     Special Offer
-//                                 </span>
-//                             )}
-//                             {listing.tour && (
-//                                 <span className="absolute top-9 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     3D Tour
-//                                 </span>
-//                             )}
-//                             {listing.availableUnits && (
-//                                 <span className="absolute top-16 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     {listing.availableUnits} available units
-//                                 </span>
-//                             )}
-//                             <Button className="absolute top-2 right-2 p-1 bg-white rounded-full w-6 h-6 shadow">
-//                                 <Suspense fallback={<div>Loading...</div>}>
-//                                     <Heart className="w-4 h-4 text-gray-600" />
-//                                 </Suspense>
-//                             </Button>
-//                         </div>
-//                         <CardContent>
-//                             <div className="p-2">
-//                                 <h2 className="text-xl font-bold">{listing.price} {listing.beds}</h2>
-//                                 <p className="text-gray-600 text-sm mt-1">{listing.address}</p>
-//                                 <div className="grid grid-cols-3 gap-1 mt-4">
-//                                     {listing.prices.map((price, index) => (
-//                                         <div key={index} className="p-2 rounded-lg text-center flex flex-col items-center justify-center border">
-//                                             <p className="text-sm font-medium">{price}</p>
-//                                             <p className="text-sm text-gray-500">{listing.bedTypes[index]}</p>
-//                                         </div>
-//                                     ))}
-//                                 </div>
-//                             </div>
-//                         </CardContent>
-//                     </Card>
-//                 ))}
-
-//                 {properties.length > 0 && properties.map((property, index) => (
-//                     <Card key={index} className="relative">
-//                         <div className="relative">
-//                             <img src={property.imgSrc} alt={property.name} className="w-full h-48 object-cover rounded-t-lg" />
-//                             {property.specialOffer && (
-//                                 <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     Special Offer
-//                                 </span>
-//                             )}
-//                             {property.tour && (
-//                                 <span className="absolute top-9 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     3D Tour
-//                                 </span>
-//                             )}
-//                             {property.availableUnits && (
-//                                 <span className="absolute top-16 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-//                                     {property.availableUnits} available units
-//                                 </span>
-//                             )}
-//                             <Button className="absolute top-2 right-2 p-1 bg-white rounded-full w-6 h-6 shadow">
-//                                 <Suspense fallback={<div>Loading...</div>}>
-//                                     <Heart className="w-4 h-4 text-gray-600" />
-//                                 </Suspense>
-//                             </Button>
-//                         </div>
-//                         <CardContent>
-//                             <div className="p-2">
-//                                 <h2 className="text-xl font-bold">{property.price} {property.currency} | {property.bedrooms} bds | {property.bathrooms} ba</h2>
-//                                 <p className="text-gray-600 text-sm mt-1">{property.propertyType} | {property.address} {property.country}</p>
-//                                 <div className="w-full mt-4">
-//                                     {/* {property.prices.map((price: any, index: number) => ( */}
-//                                     <div className="p-2 w-full rounded-lg text-center flex flex-col items-center justify-center border">
-//                                         <p className="text-sm font-medium">{property.price} {property.currency}</p>
-//                                         <p className="text-sm text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
-//                                     </div>
-//                                     {/* ))} */}
-//                                 </div>
-//                             </div>
-//                         </CardContent>
-//                     </Card>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default RentalListings;
 // "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
 
 import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
@@ -183,7 +23,9 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import Image from 'next/image';
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
-
+import { Bed, Bath } from "lucide-react";
+import RequestATour from "./RequestATour";
+import RequestToApplytsx from "./RequestToApply";
 const RentalListings = ({ properties }: { properties: any[] }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showAllPhotos, setShowAllPhotos] = useState(false);
@@ -216,7 +58,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                 </div>
                 {/* <SelectDemo /> */}
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
                 {properties.map((property, index) => {
                     const settings = {
                         dots: false,
@@ -257,7 +99,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                     return (
                         <Dialog key={index}>
                             <DialogTrigger asChild>
-                                <Card className="relative cursor-pointer p-0">
+                                <Card className="relative cursor-pointer p-0 gap-2">
                                     <div className="relative">
                                         {property.carouselPhotos && property.carouselPhotos.length > 1 ?
                                             <Slider {...settings}>
@@ -304,20 +146,6 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             </span>
                                         )}
                                     </div>
-                                    {/* <CardContent>
-                                        <div className="p-2">
-                                            <h2 className="text-xl font-bold">{listing.price} {listing.beds}</h2>
-                                            <p className="text-gray-600 text-sm mt-1">{listing.address}</p>
-                                            <div className="grid grid-cols-3 gap-1 mt-4">
-                                                {listing.prices.map((price, index) => (
-                                                    <div key={index} className="p-2 rounded-lg text-center flex flex-col items-center justify-center border">
-                                                        <p className="text-sm font-medium">{price}</p>
-                                                        <p className="text-sm text-gray-500">{listing.bedTypes[index]}</p>
-                                                    </div>
-                                                ))} 
-                                            </div>
-                                        </div>
-                                    </CardContent> */}
                                     <CardContent className="p-2 md:p-4">
                                         <div>
                                             <div className="flex w-full gap-2 flex-col xl:flex-row xl:justify-between xl:items-center">
@@ -332,9 +160,10 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             </div>
                                             <p className="text-gray-600 text-sm mt-1"> {property.address} {property.country}</p>
 
-                                            <div className="w-full mt-4">
+                                            <div className="w-full mt-2">
+
                                                 {property.units?.length > 0 ? (
-                                                    <div className="grid grid-cols-3 gap-2 w-full">
+                                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 w-full">
                                                         {property.units.map((unit: { price: string, beds: number }, index: number) => (
                                                             <div key={index} className="p-2 w-[100px] rounded-lg text-center flex flex-col items-center justify-center border">
                                                                 <p className="text-md font-medium">
@@ -345,13 +174,21 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                         ))}
                                                     </div>
                                                 ) : (
-                                                    <div className="p-2 rounded-lg text-center flex flex-row items-center justify-between border">
-                                                        {/* <p className="text-md font-medium">
-                                                            {new Intl.NumberFormat('en-US', { style: 'currency', currency: property.currency || 'USD' }).format(property.price)}
-                                                        </p> */}
-                                                        <p className="text-md text-gray-500">{property.bedrooms} bds | {property.bathrooms} ba</p>
+                                                    <div className="flex flex-col w-full items-start gap-2 w-full">
+                                                        <div className="text-md font-medium flex flex-row justify-evenly lg:justify-start items-center gap-6 w-full md:w-[75%]">
+                                                            <div className="flex flex-row justify-between items-center gap-2">
+                                                                <Bed className="w-4 h-4" /> {property.bedrooms} Beds
+                                                            </div>
+                                                            <div className="flex flex-row justify-between items-center gap-2">
+                                                                <Bath className="w-4 h-4" /> {property.bathrooms} Baths
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full">
+                                                            <RequestATour />
+                                                        </div>
                                                     </div>
                                                 )}
+
                                             </div>
                                         </div>
                                     </CardContent>
@@ -423,7 +260,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                         </div>
                                         <div className="mt-4">
                                             <h3 className="text-md font-semibold">Property Details</h3>
-                                            <div className="grid grid-cols-4 gap-2 w-full  md:w-[75%]">
+                                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
                                                 {property.livingArea && (
                                                     <div className="flex items-center space-x-4  rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
@@ -436,7 +273,7 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                         </div>
                                                     </div>
                                                 )}
-                                               {property?.isBuilding && (
+                                                {property?.isBuilding && (
                                                     <div className="flex items-center space-x-4 w-full rounded-md border p-2">
                                                         <div className="flex-1 space-y-1">
                                                             <p className="text-sm font-medium leading-none">
@@ -515,78 +352,8 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                             </div>
 
                                             <div className="flex gap-4 mt-4">
-                                                <Dialog>
-                                                    <DialogTrigger asChild>
-                                                        <Button>Request a Tour</Button>
-                                                    </DialogTrigger>
-                                                    <DialogContent className="sm:max-w-[425px]">
-                                                        <DialogHeader>
-                                                            <DialogTitle>Request a Tour</DialogTitle>
-                                                            <DialogDescription>
-                                                                Make changes to your profile here. Click save when you&apos;re done.
-                                                            </DialogDescription>
-                                                        </DialogHeader>
-                                                        <form>
-                                                            <div className="grid w-full items-center gap-4">
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="name">First Name</Label>
-                                                                    <Input id="name" placeholder="First Name" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="lastname">Last Name</Label>
-                                                                    <Input id="lastname" placeholder="Last Name" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="email">Email</Label>
-                                                                    <Input id="email" placeholder="Email" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="message">Message</Label>
-                                                                    <Textarea id="message" placeholder="Message" />
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                        <DialogFooter>
-                                                            <Button type="submit">Request a Tour</Button>
-                                                        </DialogFooter>
-                                                    </DialogContent>
-                                                </Dialog>
-                                                <Dialog>
-                                                    <DialogTrigger asChild>
-                                                        <Button variant="secondary" className="flex-1">Request to apply</Button>
-                                                    </DialogTrigger>
-                                                    <DialogContent className="sm:max-w-[425px]">
-                                                        <DialogHeader>
-                                                            <DialogTitle>Request to apply</DialogTitle>
-                                                            <DialogDescription>
-                                                                Make changes to your profile here. Click save when you&apos;re done.
-                                                            </DialogDescription>
-                                                        </DialogHeader>
-                                                        <form>
-                                                            <div className="grid w-full items-center gap-4">
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="name">First Name</Label>
-                                                                    <Input id="name" placeholder="First Name" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="lastname">Last Name</Label>
-                                                                    <Input id="lastname" placeholder="Last Name" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="email">Email</Label>
-                                                                    <Input id="email" placeholder="Email" />
-                                                                </div>
-                                                                <div className="flex flex-col space-y-1.5">
-                                                                    <Label htmlFor="message">Message</Label>
-                                                                    <Textarea id="message" placeholder="Message" />
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                        <DialogFooter>
-                                                            <Button type="submit">Request to apply</Button>
-                                                        </DialogFooter>
-                                                    </DialogContent>
-                                                </Dialog>
+                                                <RequestATour />
+                                                <RequestToApplytsx />
                                             </div>
                                         </div>
                                     </div>

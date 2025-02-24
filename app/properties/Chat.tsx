@@ -14,11 +14,18 @@ export type assessmentType = {
 }
 const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters, input, isLoading, setInput }: { messages: assessmentType[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[], input: string, isLoading: boolean, setInput: (input: string) => void }) => {
     const scrollRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
+
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
+        // Automatically focus on the input field when messages change
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
     }, [messages]);
+
     return (
         <div className="flex flex-col h-full items-center w-full gap-1 md:gap-2 p-2 border-t-2 border-green-500 rounded-xl">
             {/* <h2 className="text-xl font-bold leading-none">Enquire your properties here</h2> */}
@@ -63,7 +70,7 @@ const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParamet
                 </div>}
             </ScrollArea>
             <div className="flex items-center justify-center w-[90%] gap-4 p-2 z-10 bg-white rounded-2xl">
-                <Input value={input}
+                <Input ref={inputRef} value={input}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             handleNext();

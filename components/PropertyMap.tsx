@@ -10,6 +10,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
     // const [selectedLocation, setSelectedLocation] = useState<google.maps.LatLng | null>(null);
     // const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
     const mapRef = useRef<HTMLDivElement>(null);
+    const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
 
     // Function to format the price
     const formatPrice = (price: number) => {
@@ -74,8 +75,11 @@ function PropertyMap({ properties }: { properties: any[] }) {
     // Updated method to add markers, adjust bounds, and add event listeners
     const updateMapWithProperties = () => {
         if (map && properties.length > 0) {
+            clearMap();
             const bounds = new google.maps.LatLngBounds();
             const infoWindow = new google.maps.InfoWindow();
+            const newMarkers: google.maps.Marker[] = [];
+
             properties.forEach(property => {
                 const position = new google.maps.LatLng(property.latitude, property.longitude);
                 const price = formatPrice(property?.units && property?.units.length > 0
@@ -113,48 +117,61 @@ function PropertyMap({ properties }: { properties: any[] }) {
                 marker.addListener('click', (e: google.maps.PolyMouseEvent) => {
                     // Reset styling of previously clicked polygon if any
 
-
                     const content = `
                     <div class="max-w-sm bg-white rounded-lg shadow-sm">              
                       <img src="${property?.imgSrc}" alt="Property Image" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 3px;">
-                                <div style="display: flex; justify-content: space-between;">
-                                    <div>
+                                <div style="display: flex; justify-content: space-between; padding: 2px 2px">
                                         <h2 style="font-size: 1.125rem; font-weight: bold; margin-bottom:2px">$${price}</h2>
                                         <p style="font-size: 0.875rem; color: #4b5563; margin-bottom:2px">
                                             ${property?.bedrooms} bds | ${property?.bathrooms} ba
                                         </p>
-                                    </div>
-                                    <div style="background-color: #6A35D5; text-align: center; color: white; border: none; height: 25px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
-                                        <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white;">View Details</a>
-                                    </div>
+                                    
                                 </div>
-                                <p style="font-size: 0.875rem; color: #6b7280;">${property?.address || '5212 S Kildare Ave, Chicago, IL 60632'}</p>
+                                <div style="background-color: #6A35D5; text-align: center; color: white; border: none; height: 28px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
+                                        <a href="https://zillow.com${property?.detailUrl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white;">View Full Details</a>
+                                    </div>
                                 </div>
                     </div>
                   `;
-            
+
                     infoWindow.setContent(content);
+                    infoWindow.setHeaderContent(property.address.length > 35 ? property.address.substring(0, 25) + "..." : property.address);
                     infoWindow.setPosition(e.latLng);
                     infoWindow.open(map);
                 });
-                    bounds.extend(position);
-                });
-                map.fitBounds(bounds);
-            }
+                newMarkers.push(marker);
+                bounds.extend(position);
+            });
+            setMarkers(newMarkers);
+            map.fitBounds(bounds);
+        }
     };
 
-        // New useEffect to handle properties update
-        useEffect(() => {
+    const clearMap = () => {
+        if (map) {
+            markers.forEach(marker => marker.setMap(null));
+            setMarkers([]);
+            map.setCenter({ lat: 39.8283, lng: -98.5795 });
+            map.setZoom(4);
+        }
+    };
+
+    // New useEffect to handle properties update
+    useEffect(() => {
+        if (properties.length === 0) {
+            clearMap();
+        } else {
             updateMapWithProperties();
-        }, [map, properties]);
+        }
+    }, [map, properties]);
 
-        return (
-            <div className="min-h-[200px] w-full h-full relative">
-                {/* Initialize the map centered on the USA */}
-                <h1 className="text-sm font-semibold mb-1 absolute top-2 left-1 z-10 bg-white p-1 rounded-md">Property Map</h1>
-                <div ref={mapRef} className="w-full border-t-2 rounded-xl border-green-500 h-full" />
-            </div>
-        );
-    }
+    return (
+        <div className="min-h-[200px] w-full h-full relative">
+            {/* Initialize the map centered on the USA */}
+            <h1 className="text-sm font-semibold mb-1 absolute top-2 left-1 z-10 bg-white p-1 rounded-md">Property Map</h1>
+            <div ref={mapRef} className="w-full border-t-2 rounded-xl border-green-500 h-full" />
+        </div>
+    );
+}
 
-    export default PropertyMap;
+export default PropertyMap;

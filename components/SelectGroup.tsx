@@ -125,15 +125,23 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
             const criteria = [];
             if (filters.rentType !== "Select") criteria.push(`Rent Type: ${filters.rentType}`);
             if (filters.homeType !== "Select") criteria.push(`Home Type: ${filters.homeType}`);
-            if (filters.minPrice !== "Select" || filters.maxPrice !== "Select") {
+            if (filters.minPrice !== "Select" && filters.maxPrice === "Select") {
+                criteria.push(`Price: ${filters.minPrice}+`);
+            } else if (filters.minPrice === "Select" && filters.maxPrice !== "Select") {
+                criteria.push(`Price: Up to ${filters.maxPrice}`);
+            } else if (filters.minPrice !== "Select" && filters.maxPrice !== "Select") {
                 criteria.push(`Price Range: ${filters.minPrice} to ${filters.maxPrice}`);
             }
             if (filters.beds !== "Select") criteria.push(`Beds: ${filters.beds}`);
             if (filters.baths !== "Select") criteria.push(`Baths: ${filters.baths}`);
-            if (filters.minSqft !== "Select" || filters.maxSqft !== "Select") {
+            if (filters.minSqft !== "No Min" && filters.maxSqft === "No Max") {
+                criteria.push(`Square Footage: ${filters.minSqft}+`);
+            } else if (filters.minSqft === "No Min" && filters.maxSqft !== "No Max") {
+                criteria.push(`Square Footage: Up to ${filters.maxSqft}`);
+            } else if (filters.minSqft !== "No Min" && filters.maxSqft !== "No Max") {
                 criteria.push(`Square Footage: ${filters.minSqft} to ${filters.maxSqft}`);
             }
-            if (filters.location !== "") criteria.push(`location: ${filters.location}`);
+            if (filters.location !== "") criteria.push(`Location: ${filters.location}`);
 
             return `Please show me the properties that match the following criteria: ${criteria.join(', ')}`;
         });
@@ -227,52 +235,6 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
                         </SelectGroup>
                     </SelectContent>
                 </Select>
-                {/* <Select onValueChange={(beds) => handleSelectChange('beds', beds)}>
-                    <SelectTrigger className="w-[130px]">
-                        <SelectValue placeholder={getBedsBathsDisplay()} />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectGroup>
-                            <SelectLabel>Beds and Baths</SelectLabel>
-                            <CardContent>
-                                <form className="w-[300px]">
-                                    <div className="grid w-full items-center gap-4">
-                                        <div className="flex flex-col space-y-1.5">
-                                            <Label>Beds</Label>
-                                            <Select onValueChange={(beds) => handleSelectChange('beds', beds)}>
-                                                <SelectTrigger id="min">
-                                                    <SelectValue placeholder={filters.beds} />
-                                                </SelectTrigger>
-                                                <SelectContent position="popper">
-                                                    <SelectItem value="1">1</SelectItem>
-                                                    <SelectItem value="2">2</SelectItem>
-                                                    <SelectItem value="3">3</SelectItem>
-                                                    <SelectItem value="4">4</SelectItem>
-                                                    <SelectItem value="4+">4+</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-                                        <div className="flex flex-col space-y-1.5">
-                                            <Label>Baths</Label>
-                                            <Select onValueChange={(value) => handleSelectChange('baths', value)}>
-                                                <SelectTrigger id="max">
-                                                    <SelectValue placeholder={filters.baths} />
-                                                </SelectTrigger>
-                                                <SelectContent position="popper">
-                                                    <SelectItem value="1">1</SelectItem>
-                                                    <SelectItem value="2">2</SelectItem>
-                                                    <SelectItem value="3">3</SelectItem>
-                                                    <SelectItem value="4">4</SelectItem>
-                                                    <SelectItem value="4+">4+</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                        </div>
-                                    </div>
-                                </form>
-                            </CardContent>
-                        </SelectGroup>
-                    </SelectContent>
-                </Select> */}
                 <Select>
                     <SelectTrigger className="w-full">
                         <SelectValue placeholder="More Filters" />
