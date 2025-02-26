@@ -17,7 +17,7 @@ interface Message {
   content: string;
 }
 
-export const FloatingChatBar = ({ messages, setMessages, handleBuyOrRent, handleNext, properties, apiCalParameters }: { messages: Message[], setMessages:any, handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[] }) => {
+export const FloatingChatBar = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters }: { messages: Message[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);

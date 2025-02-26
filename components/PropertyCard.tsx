@@ -10,17 +10,15 @@ import "slick-carousel/slick/slick-theme.css";
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
-import { Label } from "@radix-ui/react-label";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+// import { Label } from "@radix-ui/react-label";
+// import { Input } from "./ui/input";
+// import { Textarea } from "./ui/textarea";
 import Image from 'next/image';
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
 import { Bed, Bath } from "lucide-react";

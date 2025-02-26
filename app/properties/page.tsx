@@ -212,7 +212,6 @@ export default function Page() {
                 </ResizablePanelGroup>
                 {isMobile && <FloatingChatBar
                     messages={messages}
-                    setMessages={setMessages}
                     handleBuyOrRent={handleBuyOrRent}
                     handleNext={handleNext}
                     properties={properties}

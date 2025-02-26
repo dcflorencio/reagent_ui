@@ -29,7 +29,7 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "@/components/ui/sidebar"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 
 export function NavUser({
     user,
