@@ -13,8 +13,8 @@ export async function POST(req: NextRequest): Promise<NextResponse<any>> {
             role: 'user',
             content: input
         })
-        console.log("messages", JSON.stringify(messages));
-        console.log("input", input);
+        // console.log("messages", JSON.stringify(messages));
+        // console.log("input", input);
         // const apiResponse = await fetch('https://reagent-ui-3d6ba29f3428595b8a7ab36565570117.us.langgraph.app/runs/wait', {
         //     method: 'POST',
         //     headers: {
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<any>> {
         //     })
         // })
         const apiResponse = await makeAPICall(messages);
-        console.log("apiResponse", JSON.stringify(apiResponse));
+        // console.log("apiResponse", JSON.stringify(apiResponse));
         return NextResponse.json({ apiResponse });
     } catch (error: any) {
         console.log("error", error)

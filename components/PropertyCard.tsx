@@ -1,4 +1,3 @@
-
 // "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
 
 import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
@@ -24,19 +23,34 @@ const Heart = lazy(() => import("lucide-react").then(module => ({ default: modul
 import { Bed, Bath } from "lucide-react";
 import RequestATour from "./RequestATour";
 import RequestToApplytsx from "./RequestToApply";
+import { FilterComponent } from "./FilterComponent";
 const RentalListings = ({ properties }: { properties: any[] }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showAllPhotos, setShowAllPhotos] = useState(false);
+    const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
+
+    // Function to filter properties based on the selected filter
+    const filteredProperties = React.useMemo(() => {
+        if (!selectedFilter) {
+            return properties; // No filter applied, return all properties
+        }
+        if (selectedFilter === "Price High to Low") {
+            return [...properties].sort((a, b) => b.price - a.price);
+        } else if (selectedFilter === "Price Low to High") {
+            return [...properties].sort((a, b) => a.price - b.price);
+        }
+        return properties;
+    }, [properties, selectedFilter]);
 
     console.log("properties find in property card", properties, properties.length);
-    if (properties.length === 0) {
+    if (filteredProperties.length === 0) {
         return (
             <div className="p-4">
                 <div className="flex flex-col gap-2 mb-4">
                     <div className="flex justify-between">
                         {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
-                        <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
-                        <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+                        <p className="text-gray-600 text-sm mb-2">{filteredProperties.length} properties available</p>
+                        {/* <Button variant="outline" className="font-medium">Sort: Homes for You</Button> */}
                     </div>
                     {/* <SelectDemo /> */}
                 </div>
@@ -51,13 +65,14 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
             <div className="flex flex-col gap-2 mb-4">
                 <div className="flex justify-between">
                     {/* <h1 className="text-2xl font-bold mb-1">Indiana Rental Listings</h1> */}
-                    <p className="text-gray-600 text-sm mb-2">{properties.length} properties available</p>
-                    <Button variant="outline" className="font-medium">Sort: Homes for You</Button>
+                    <p className="text-gray-600 text-sm mb-2">{filteredProperties.length} properties available</p>
+                    {/* <Button variant="outline" className="font-medium">Sort: Homes for You</Button> */}
+                    <FilterComponent selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
                 </div>
                 {/* <SelectDemo /> */}
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
-                {properties.map((property, index) => {
+                {filteredProperties.map((property, index) => {
                     const settings = {
                         dots: false,
                         infinite: true,
