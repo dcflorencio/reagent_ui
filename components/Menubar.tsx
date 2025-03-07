@@ -2,8 +2,37 @@ import {
     Menubar
 } from "@/components/ui/menubar"
 import { Button } from "./ui/button"
-
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { createClient } from "@/app/utils/supabase/client"
+import { ProfileDropdown } from "./ProfileDropdown"
+import { User } from "@supabase/supabase-js"
 const MenubarDemo = () => {
+    const router = useRouter();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState<User | null>(null);
+    const supabase = createClient();
+    const handleLogin = async () => {
+        router.push('/login')
+    };
+    useEffect(() => {
+        const checkUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            setIsLoggedIn(!!user);
+            setUser(user);
+        };
+        checkUser();
+    }, [supabase]);
+    const handleLogout = async () => {
+        try {
+            const { error } = await supabase.auth.signOut();
+            if (error) throw error;
+            setIsLoggedIn(false);
+        } catch (error) {
+            console.error("Logout error:", error);
+        }
+    };
+
     return (
         <div className="">
             {/* Logo on the left */}
@@ -14,7 +43,7 @@ const MenubarDemo = () => {
                         <h1 className="text-xl font-medium">Reagent UI</h1>
                     </div>
                     {/* <div className="flex-grow flex flex-row justify-center gap-10"> */}
-                        {/* <MenubarMenu>
+                    {/* <MenubarMenu>
                         <MenubarTrigger>File</MenubarTrigger>
                         <MenubarContent>
                             <MenubarItem>
@@ -102,9 +131,14 @@ const MenubarDemo = () => {
 
                     {/* </div> */}
                 </div>
-                {/* Login button on the right */}
+                {/* Login/Logout button on the right */}
                 <div className="flex-shrink-0">
-                    <Button className="px-4 rounded h-7">Login</Button>
+                    {/* <Button className="px-4 rounded h-7" onClick={isLoggedIn ? handleLogout : handleLogin}>
+                        {isLoggedIn ? 'Logout' : 'Login'}
+                    </Button> */}
+                    {isLoggedIn && user ? <ProfileDropdown handleLogout={handleLogout} user={user} /> : <Button className="px-4 rounded h-7" onClick={handleLogin}>
+                        Login
+                    </Button>}
                 </div>
             </Menubar>
         </div>

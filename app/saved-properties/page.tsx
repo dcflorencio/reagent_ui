@@ -9,8 +9,7 @@ import { SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "../properties/components/app-sidebar"
 import MenubarDemo from "@/components/Menubar"
 import PropertyMap from "@/components/PropertyMap"
-import { testProperties } from "../properties/demoProperties"
-import ChatBar from "./Chat"
+import ChatBar from "../properties/Chat"
 import PropertyCard from "@/components/PropertyCard"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import FloatingChatBar from "@/components/FloatingChatbar"
@@ -30,7 +29,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>(testProperties);
+    const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const hasProperties = properties.length > 0;
@@ -103,6 +102,17 @@ export default function Page() {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
     }, [messages]);
+
+    useEffect(() => {
+        const fetchSavedProperties = async () => {
+            const response = await fetch('/api/get_saved_properties');
+            const data = await response.json();
+            console.log("saved properties data:", data);
+            const properties = data.map((property: any) => property.property);
+            setProperties(properties);
+        };
+        fetchSavedProperties();
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -222,3 +232,5 @@ export default function Page() {
         </SidebarProvider>
     )
 }
+
+

@@ -20,7 +20,7 @@ import { loadGoogleMaps } from "@/app/utils/googleMapsLoader";
 // import { Textarea } from "./ui/textarea";
 import Image from 'next/image';
 const Heart = lazy(() => import("lucide-react").then(module => ({ default: module.Heart })))
-import { Bed, Bath } from "lucide-react";
+import { Bed, Bath, BookmarkIcon } from "lucide-react";
 import RequestATour from "./RequestATour";
 import RequestToApplytsx from "./RequestToApply";
 import { FilterComponent } from "./FilterComponent";
@@ -119,9 +119,9 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                 {property.carouselPhotos.map((image: { url: string }, imgIndex: number) => (
                                                     <div key={imgIndex} className="relative">
                                                         <Image src={image.url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-48 object-cover rounded-t-lg" />
-                                                        <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                        <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow hover:bg-red-500">
                                                             <Suspense fallback={<div>Loading...</div>}>
-                                                                <Heart className="w-4 h-4 text-white" />
+                                                                <Heart className="w-4 h-4 hover:text-red-500 text-white" />
                                                             </Suspense>
                                                         </Button>
                                                     </div>
@@ -137,9 +137,15 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                                     height={200}
                                                     className="w-full h-48 object-cover rounded-t-lg"
                                                 />
-                                                <Button className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow">
+                                                <Button
+                                                    className="absolute top-2 right-2 p-1 bg-black rounded-full w-6 h-6 shadow hover:bg-red-500"
+                                                    onClick={(event) => {
+                                                        event.stopPropagation();
+                                                        handleSaveProperty(property);
+                                                    }}
+                                                >
                                                     <Suspense fallback={<div>Loading...</div>}>
-                                                        <Heart className="w-4 h-4 text-white" />
+                                                        <Heart className="w-4 h-4 text-red-500 hover:text-white" />
                                                     </Suspense>
                                                 </Button>
                                             </div>}
@@ -246,7 +252,10 @@ const RentalListings = ({ properties }: { properties: any[] }) => {
                                     <div className="mt-4">
                                         <div className="flex flex-row justify-between items-center px-2">
                                             <h2 className="text-2xl font-bold">{property?.propertyType || property?.buildingName || "House"}</h2>
-                                            <Button variant="outline" onClick={() => window.open(`https://www.zillow.com${property.detailUrl}`, "_blank")} className="text-md font-semibold mt-2">Full Details</Button>
+                                            <div className="flex flex-row justify-between items-center gap-2">
+                                                <Button variant="outline" onClick={() => window.open(`https://www.zillow.com${property.detailUrl}`, "_blank")} className="text-md font-semibold mt-2 cursor-pointer">Full Details</Button>
+                                                <Button variant="outline" onClick={() => handleSaveProperty(property)} className="text-md font-semibold mt-2 cursor-pointer"><BookmarkIcon/></Button>
+                                            </div>
                                         </div>
                                         <p className="text-gray-600 text-md font-semibold mt-2">{property.address}</p>
 
@@ -430,3 +439,15 @@ const GoogleMap = ({ property }: { property: any }) => {
 };
 
 export default RentalListings;
+
+const handleSaveProperty = async (property: any) => {
+    const response = await fetch('/api/save_property', {
+        method: 'POST',
+        body: JSON.stringify({ property }),
+    });
+    if (response.ok) {
+        console.log("Property saved");
+    } else {
+        console.error("Failed to save property");
+    }
+};
