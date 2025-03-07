@@ -60,7 +60,7 @@ const data = {
             items: [
                 {
                     title: "View all",
-                    url: "#",
+                    url: "/saved-properties",
                 },
                 {
                     title: "Delete all",

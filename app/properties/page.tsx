@@ -9,9 +9,10 @@ import { SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "../properties/components/app-sidebar"
 import MenubarDemo from "@/components/Menubar"
 import PropertyMap from "@/components/PropertyMap"
-import { testProperties } from "../properties/demoProperties"
+// import { testProperties } from "../properties/demoProperties"
 import ChatBar from "./Chat"
-import PropertyCard from "@/components/PropertyCard"
+// import PropertyCard from "@/components/PropertyCard"
+import PropertyCard from "@/app/properties/components/PropertyCardWithSavedFeature"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import FloatingChatBar from "@/components/FloatingChatbar"
 import { useState, useEffect, useRef } from "react"
@@ -30,7 +31,7 @@ export default function Page() {
     const [messages, setMessages] = useState<assessmentType[]>([]);
     const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [properties, setProperties] = useState<any[]>(testProperties);
+    const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const hasProperties = properties.length > 0;

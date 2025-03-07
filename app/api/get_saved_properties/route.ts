@@ -21,7 +21,7 @@ export const GET = async (req: NextRequest) => {
         // Fetch saved properties for the user
         const { data, error } = await supabase
             .from('saved_properties')
-            .select('property')
+            .select('property, property_id')
             .eq('user_id', user_id);
 
         // Handle errors
@@ -29,7 +29,7 @@ export const GET = async (req: NextRequest) => {
             console.error('Error fetching saved properties:', error);
             return NextResponse.json({ error: error.message }, { status: 500 });
         }
-        
+
         // Return the data
         return NextResponse.json(data, { status: 200 });
     } catch (error) {

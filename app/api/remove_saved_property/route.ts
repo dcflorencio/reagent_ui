@@ -12,30 +12,32 @@ const supabase = createClient(
 // Named export for the POST method
 export const POST = async (req: NextRequest) => {
     try {
-        const { property } = await req.json();
-        if (!property) {
-            return NextResponse.json({ error: 'Property is required' }, { status: 400 });
+        const { property_id } = await req.json();
+        if (!property_id) {
+            return NextResponse.json({ error: 'Property ID is required' }, { status: 400 });
         }
-        const property_id = `${property.latitude}${property.longitude}`;
         const userData = await getUser();
         console.log("userData", userData);
         if (!userData) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
         const user_id = userData?.id;
+        if (!user_id) {
+            return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
+        }
         // Fetch parcel details
         const { data, error } = await supabase
             .from('saved_properties')
-            .insert([
-                { property: property, user_id: user_id, property_id: property_id }
-            ]);
+            .delete()
+            .eq('property_id', property_id)
+            .eq('user_id', user_id);
 
         // Handle errors
         if (error) {
             console.error('Error fetching parcel data:', error);
             return NextResponse.json({ error: error.message }, { status: 500 });
         }
-        console.log("Property saved");
+        console.log("Property removed");
         console.log("data", JSON.stringify(data));
         // Return the data
         return NextResponse.json(data, { status: 200 });

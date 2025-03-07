@@ -1,3 +1,5 @@
+"use client"
+import React, { useState } from "react";
 import {
     Dialog,
     DialogContent,
@@ -13,9 +15,21 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "@radix-ui/react-label";
 
 const RequestATour = () => {
-    return <Dialog>
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+    const handleButtonClick = (event: React.MouseEvent) => {
+        event.stopPropagation();
+        setIsDialogOpen(true);
+    };
+
+    const handleDialogClose = (event: React.MouseEvent) => {
+        event.stopPropagation();
+        setIsDialogOpen(false);
+    };
+
+    return <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
-            <Button className="w-full" onClick={(event) => event.stopPropagation()}>Request a Tour</Button>
+            <Button className="w-full" onClick={handleButtonClick}>Request a Tour</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
@@ -45,7 +59,7 @@ const RequestATour = () => {
                 </div>
             </form>
             <DialogFooter>
-                <Button type="submit">Request a Tour</Button>
+                <Button type="submit" onClick={handleDialogClose}>Request a Tour</Button>
             </DialogFooter>
         </DialogContent>
     </Dialog>;
