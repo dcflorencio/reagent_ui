@@ -28,6 +28,7 @@ const MenubarDemo = () => {
             const { error } = await supabase.auth.signOut();
             if (error) throw error;
             setIsLoggedIn(false);
+            router.push('/login');
         } catch (error) {
             console.error("Logout error:", error);
         }

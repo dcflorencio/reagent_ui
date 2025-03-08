@@ -38,6 +38,16 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   if (
+    user &&
+    request.nextUrl.pathname.startsWith('/login')
+  ) {
+    // user is logged in and trying to access the login page, redirect to /properties
+    const url = request.nextUrl.clone()
+    url.pathname = '/properties'
+    return NextResponse.redirect(url)
+  }
+
+  if (
     !user &&
     !request.nextUrl.pathname.startsWith('/login') &&
     !request.nextUrl.pathname.startsWith('/auth')

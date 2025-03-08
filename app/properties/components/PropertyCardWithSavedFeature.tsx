@@ -14,7 +14,7 @@ import { FilterComponent } from "@/components/FilterComponent";
 import DialogHeaderCard from "@/app/properties/components/property-card-components/DialogHeaderCard";
 import DialogContentCard from "@/app/properties/components/property-card-components/DialogContentCard";
 
-const RentalListings = ({ properties, isReload = false }: { properties: any[], isReload?: boolean }) => {
+const RentalListings = ({ properties, reloadMethod  }: { properties: any[], reloadMethod?: any }) => {
     const [showAllPhotos, setShowAllPhotos] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
     const [savedProperties, setSavedProperties] = useState<{ property_id: string }[]>([]);
@@ -82,8 +82,8 @@ const RentalListings = ({ properties, isReload = false }: { properties: any[], i
             });
             if (response.ok) {
                 console.log("Property deleted");
-                if (isReload) {
-                    window.location.reload();
+                if (reloadMethod) {
+                    reloadMethod();
                 } else {
                     // Refresh the saved properties list
                     fetchSavedProperties().then(data => {

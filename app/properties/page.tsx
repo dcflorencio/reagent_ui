@@ -77,6 +77,7 @@ export default function Page() {
                     setApiCalParameters(responseData.apiResponse.api_call_parameters);
                 }
                 setInput("");
+                await handleSaveChat(messages);
                 return;
             }
             if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
@@ -222,4 +223,21 @@ export default function Page() {
             </SidebarInset>
         </SidebarProvider>
     )
+}
+
+const handleSaveChat = async (messages: assessmentType[]) => {
+    console.log("messages", messages);
+    try {
+        const response = await fetch('/api/save_chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ messages }),
+        });
+        const responseData = await response.json();
+        console.log("responseData", responseData);
+    } catch (error) {
+        console.error("Error saving chat:", error);
+    }
 }

@@ -20,7 +20,7 @@ import {
 import { useEffect } from "react"
 import { useState } from "react"
 
-export function NavMain({
+export function NavChatHistory({
   items,
 }: {
   items: {
@@ -34,20 +34,20 @@ export function NavMain({
     }[]
   }[]
 }) {
-  // const [savedChats, setSavedChats] = useState<any[]>([]);
-  // useEffect(() => {
-  //   const fetchSavedChats = async () => {
-  //     try {
-  //       const response = await fetch('/api/get_saved_chat');
-  //       const data = await response.json();
-  //       console.log("data", data);
-  //       setSavedChats(data);
-  //     } catch (error) {
-  //       console.error("Error fetching saved chats:", error);
-  //     }
-  //   };
-  //   fetchSavedChats();
-  // }, []);
+  const [savedChats, setSavedChats] = useState<any[]>([]);
+  useEffect(() => {
+    const fetchSavedChats = async () => {
+      try {
+        const response = await fetch('/api/get_saved_chat');
+        const data = await response.json();
+        console.log("data", data);
+        setSavedChats(data);
+      } catch (error) {
+        console.error("Error fetching saved chats:", error);
+      }
+    };
+    fetchSavedChats();
+  }, []);
 
   return (
     <SidebarGroup>
@@ -70,7 +70,7 @@ export function NavMain({
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
+                  {/* {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
                         <a href={subItem.url}>
@@ -78,8 +78,19 @@ export function NavMain({
                         </a>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
+                  ))} */}
+                  {savedChats.map((chat, index) => (
+                    <SidebarMenuSubItem key={chat.created_at}>
+                      <SidebarMenuSubButton asChild>
+                        <a href={`/properties/chat/${chat.id}`}>
+                          <div className="flex flex-col">
+                            <span className="text-sm font-medium">{chat.messages[0].content.slice(0, 10)}...</span>
+                            <span className="text-xs text-gray-500">{chat.created_at}</span>
+                          </div>
+                        </a>  
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
                   ))}
-
                 </SidebarMenuSub>
               </CollapsibleContent>
             </SidebarMenuItem>

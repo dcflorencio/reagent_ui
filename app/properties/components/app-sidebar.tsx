@@ -13,6 +13,8 @@ import {
     SidebarRail,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { NavProjects } from "./nav-projects"
+import { NavChatHistory } from "./nav-chat-hiistory"
 
 // Dynamic imports for lucide-react icons
 const AudioWaveform = React.lazy(() => import("lucide-react").then(module => ({ default: module.AudioWaveform })));
@@ -51,7 +53,23 @@ const data = {
             plan: "Free",
         },
     ],
-    navMain: [
+    savedChats: [
+
+        {
+            title: "Saved Searches",
+            url: "#",
+            icon: SaveIcon,
+            isActive: true,
+            items: [
+                {
+                    title: "View all",
+                    url: "/saved-searches",
+                },
+
+            ],
+        }
+    ],
+    savedProperties: [
         {
             title: "Saved Properties",
             url: "#",
@@ -62,29 +80,26 @@ const data = {
                     title: "View all",
                     url: "/saved-properties",
                 },
-                {
-                    title: "Delete all",
-                    url: "#",
-                },
+
             ],
-        }
+        },
     ],
     projects: [
         {
-            name: "Design Engineering",
-            url: "#",
+            name: "Search Properties",
+            url: "/properties",
             icon: Frame,
         },
-        {
-            name: "Sales & Marketing",
-            url: "#",
-            icon: PieChart,
-        },
-        {
-            name: "Travel",
-            url: "#",
-            icon: Map,
-        },
+        // {
+        //     name: "Sales & Marketing",
+        //     url: "#",
+        //     icon: PieChart,
+        // },
+        // {
+        //     name: "Travel",
+        //     url: "#",
+        //     icon: Map,
+        // },
     ],
 }
 
@@ -92,11 +107,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
         <Sidebar collapsible="icon" {...props}>
             <SidebarHeader>
-                <SidebarTrigger/>
+                <SidebarTrigger />
             </SidebarHeader>
             <SidebarContent>
-                <NavMain items={data.navMain} />
-                {/* <NavProjects projects={data.projects} /> */}
+                <NavChatHistory items={data.savedChats} />
+                <NavMain items={data.savedProperties} />
+                <NavProjects projects={data.projects} />
             </SidebarContent>
             <SidebarFooter>
                 <NavUser user={data.user} />

@@ -18,6 +18,7 @@ import React from "react"
 import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { PropertyCardSkeleton } from "@/components/PropertyCardSkeleton"
 // import { assessmentType } from "../properties/page"
 type assessmentType = {
     role: "user" | "assistant";
@@ -35,6 +36,7 @@ export default function Page() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const [hasSavedProperties, setHasSavedProperties] = useState<boolean>(false);
+    const [isFetchingSavedProperties, setIsFetchingSavedProperties] = useState<boolean>(false);
     const hasProperties = properties.length > 0;
 
     const handleNext = async (filteredQuery?: string) => {
@@ -107,25 +109,8 @@ export default function Page() {
     }, [messages]);
 
     useEffect(() => {
-        const fetchSavedProperties = async () => {
-            try {
-                const response = await fetch('/api/get_saved_properties');
-                const data = await response.json();
-                console.log("saved properties data:", data);
-                const properties = data.map((property: any) => property.property);
-                setProperties(properties);
-                if (properties.length > 0) {
-                    setHasSavedProperties(true);
-                } else {
-                    setHasSavedProperties(false);
-                }
-            } catch (error) {
-                console.error("Error fetching saved properties:", error);
-            } finally {
-                setLoadingPage(false);
-            }
-        };
         fetchSavedProperties();
+        
     }, []);
 
     useEffect(() => {
@@ -139,6 +124,26 @@ export default function Page() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const fetchSavedProperties = async () => {
+        setIsFetchingSavedProperties(true);
+        try {
+            const response = await fetch('/api/get_saved_properties');
+            const data = await response.json();
+            console.log("saved properties data:", data);
+            const properties = data.map((property: any) => property.property);
+            setProperties(properties);
+            if (properties.length > 0) {
+                setHasSavedProperties(true);
+            } else {
+                setHasSavedProperties(false);
+            }
+        } catch (error) {
+            console.error("Error fetching saved properties:", error);
+        } finally {
+            setLoadingPage(false);
+            setIsFetchingSavedProperties(false);
+        }
+    };
     // const handleBuyOrRent = async (type: string) => {
     //     console.log("type", type);
     //     setIsLoading(true);
@@ -235,7 +240,16 @@ export default function Page() {
                             <ResizableHandle />
                             <ResizablePanel defaultSize={50}>
                                 <ScrollArea className="h-full rounded-xl border-t-2 border-green-500">
-                                    <PropertyCard properties={properties} isReload={true} />
+                                    {isFetchingSavedProperties ? (
+                                        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+                                            <PropertyCardSkeleton />
+                                            <PropertyCardSkeleton />
+                                            <PropertyCardSkeleton />
+                                            <PropertyCardSkeleton />
+                                        </div>
+                                    ) : (
+                                        <PropertyCard properties={properties} reloadMethod={fetchSavedProperties} />
+                                    )}
                                 </ScrollArea>
                             </ResizablePanel>
                         </>
