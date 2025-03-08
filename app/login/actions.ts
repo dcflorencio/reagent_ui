@@ -7,7 +7,7 @@ import { createClient } from '../utils/supabase/server'
 const AuthProvider = async (provider:any) => {
     const supabase = await createClient()
 
-    const redirectUrl = `${process.env.SITE_URL}/auth/callback`
+    const redirectUrl = `http://116.202.210.102:3004/auth/callback`
 
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
