@@ -4,7 +4,7 @@ import {
     ResizablePanel,
     ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { SidebarProvider } from "@/components/ui/sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "../properties/components/app-sidebar"
 import MenubarDemo from "@/components/Menubar"
@@ -35,7 +35,7 @@ export default function Page() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const hasProperties = properties.length > 0;
-
+    const [savedChatId, setSavedChatId] = useState<string>("");
     const handleNext = async (filteredQuery?: string) => {
         // console.log("Input:", input);
         if (input.trim() === "" && !filteredQuery) {
@@ -77,7 +77,6 @@ export default function Page() {
                     setApiCalParameters(responseData.apiResponse.api_call_parameters);
                 }
                 setInput("");
-                await handleSaveChat(messages);
                 return;
             }
             if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
@@ -165,15 +164,35 @@ export default function Page() {
         }
     }
 
+    useEffect(() => {
+        if (savedChatId) {
+            handleSaveIntoExistingChat(savedChatId, messages, properties);
+        } else {
+            handleSaveChat(messages, setSavedChatId);
+        }
+    }, [messages, properties]);
+
     if (loadingPage) {
         return <div className="flex justify-center items-center h-screen"><Loader2 className="w-10 h-10 animate-spin" /></div>;
     }
 
+    const handleSavedChatClick = async (id: string) => {
+        setLoadingPage(true);
+        setSavedChatId(id);
+        console.log("savedChatId", savedChatId);
+        await handleLoadSavedChat(id, setMessages, setProperties);
+        setLoadingPage(false);
+    }
     return (
         <SidebarProvider defaultOpen={false} className="h-screen w-full">
-            <AppSidebar />
+            <AppSidebar handleSavedChatClick={handleSavedChatClick} />
             <SidebarInset>
-                <MenubarDemo />
+                <div className="flex flex-row justify-center items-center">
+                    <SidebarTrigger className="ml-3" />
+                    <div className="flex-grow">
+                        <MenubarDemo />
+                    </div>
+                </div>
                 <ResizablePanelGroup
                     direction={isMobile ? "vertical" : "horizontal"}
                     className="rounded-lg border h-full"
@@ -225,8 +244,12 @@ export default function Page() {
     )
 }
 
-const handleSaveChat = async (messages: assessmentType[]) => {
+const handleSaveChat = async (messages: assessmentType[], setSavedChatId: (id: string) => void) => {
     console.log("messages", messages);
+    if (messages.length === 0) {
+        console.log("No messages provided");
+        return;
+    }
     try {
         const response = await fetch('/api/save_chat', {
             method: 'POST',
@@ -236,8 +259,51 @@ const handleSaveChat = async (messages: assessmentType[]) => {
             body: JSON.stringify({ messages }),
         });
         const responseData = await response.json();
-        console.log("responseData", responseData);
+        console.log("responseData from save chat", responseData);
+        setSavedChatId(responseData[0].id);
     } catch (error) {
         console.error("Error saving chat:", error);
+    }
+}
+
+const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmentType[]) => void, setProperties: (properties: any[]) => void) => {
+    try {
+        if (!id) {
+            console.error("No ID provided");
+            return;
+        }
+        const response = await fetch(`/api/get_saved_chat_by_id?id=${id}`);
+        const responseData = await response.json();
+        console.log("responseData", responseData);
+        if (responseData.length > 0) {
+            const historyMessages = responseData[0].messages || [];
+            const historyProperties = responseData[0].properties || [];
+            setMessages(historyMessages);
+            setProperties(historyProperties);
+        }
+    } catch (error) {
+        console.error("Error loading saved chat:", error);
+    }
+}
+
+const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[], properties: any[]) => {
+    console.log("messages", messages);
+    console.log("properties", properties);
+    if (messages.length === 0 && properties.length === 0) {
+        console.log("No messages or properties provided");
+        return;
+    }
+    try {
+        const response = await fetch(`/api/save_into_existing_chat?id=${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ messages, properties }),
+        });
+        const responseData = await response.json();
+        console.log("responseData", responseData);
+    } catch (error) {
+        console.error("Error saving into existing chat:", error);
     }
 }

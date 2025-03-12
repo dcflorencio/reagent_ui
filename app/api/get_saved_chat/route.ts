@@ -21,7 +21,7 @@ export const GET = async (req: NextRequest) => {
         // Fetch saved properties for the user
         const { data, error } = await supabase
             .from('chat_history')
-            .select('messages, created_at')
+            .select('messages, created_at, id')
             .eq('user_id', user_id);
 
         // Handle errors

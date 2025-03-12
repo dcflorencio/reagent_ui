@@ -4,7 +4,7 @@ import {
     ResizablePanel,
     ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { SidebarProvider } from "@/components/ui/sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "../properties/components/app-sidebar"
 import MenubarDemo from "@/components/Menubar"
@@ -39,69 +39,6 @@ export default function Page() {
     const [isFetchingSavedProperties, setIsFetchingSavedProperties] = useState<boolean>(false);
     const hasProperties = properties.length > 0;
 
-    const handleNext = async (filteredQuery?: string) => {
-        // console.log("Input:", input);
-        if (input.trim() === "" && !filteredQuery) {
-            return;
-        }
-        const query = filteredQuery || input;
-        setIsLoading(true);
-        try {
-            setMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                    role: 'user',
-                    content: query
-                }
-            ]);
-            // console.log("messages", messages);
-            const response = await fetch('/api/get_properties', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ input: query, messages }),
-            });
-            // console.log("response", response);
-            const responseData = await response.json();
-            console.log("Response:", responseData);
-            if (responseData.apiResponse.properties) {
-                // console.log("responseData.apiResponse.properties and length", responseData.apiResponse.properties.length, responseData.apiResponse.properties[0]);
-                setProperties(responseData.apiResponse.properties);
-                // setMessages([]);
-                setMessages((prevMessages) => [
-                    ...prevMessages,
-                    {
-                        role: "assistant",
-                        content: responseData.apiResponse.properties.length > 0 ? `${responseData.apiResponse.properties.length} are the properties that match your criteria:` : "No properties found that match your criteria."
-                    }
-                ]);
-                if (responseData.apiResponse.api_call_parameters && responseData.apiResponse.api_call_parameters.length > 0) {
-                    setApiCalParameters(responseData.apiResponse.api_call_parameters);
-                }
-                setInput("");
-                return;
-            }
-            if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
-                const lastMessage = responseData.apiResponse.messages[responseData.apiResponse.messages.length - 1];
-                if (lastMessage.content) {
-                    setMessages((prevMessages) => [
-                        ...prevMessages,
-                        {
-                            role: "assistant",
-                            content: lastMessage.content
-                        }
-                    ]);
-                }
-            }
-            setInput("");
-        } catch (error) {
-            console.error("Error:", error);
-        } finally {
-            setIsLoading(false);
-        }
-    }
-
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -110,7 +47,7 @@ export default function Page() {
 
     useEffect(() => {
         fetchSavedProperties();
-        
+
     }, []);
 
     useEffect(() => {
@@ -207,7 +144,12 @@ export default function Page() {
         <SidebarProvider defaultOpen={false} className="h-screen w-full">
             <AppSidebar />
             <SidebarInset>
-                <MenubarDemo />
+                <div className="flex flex-row justify-center items-center">
+                    <SidebarTrigger className="ml-3" />
+                    <div className="flex-grow">
+                        <MenubarDemo />
+                    </div>
+                </div>
                 <ResizablePanelGroup
                     direction={isMobile ? "vertical" : "horizontal"}
                     className="rounded-lg border h-full"

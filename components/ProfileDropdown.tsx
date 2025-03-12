@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { AvatarFallback, Avatar, AvatarImage } from "./ui/avatar"
 import { User } from "@supabase/supabase-js"
+import { Bell } from "lucide-react";
 import { Sparkles } from "lucide-react";
 import { BadgeCheck } from "lucide-react";
 import { CreditCard } from "lucide-react";
@@ -83,18 +84,18 @@ export function ProfileDropdown({ handleLogout, user }: { handleLogout: () => vo
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
+                    {/* <DropdownMenuItem>
                         <BadgeCheck />
                         Saved Properties
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <CreditCard />
                         Saved Searches
-                    </DropdownMenuItem>
-                    {/* <DropdownMenuItem>
+                    </DropdownMenuItem> */}
+                    <DropdownMenuItem>
                         <Bell />
                         Notifications
-                    </DropdownMenuItem> */}
+                    </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleLogout}>

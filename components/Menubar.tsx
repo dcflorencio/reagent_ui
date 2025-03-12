@@ -37,7 +37,7 @@ const MenubarDemo = () => {
     return (
         <div className="">
             {/* Logo on the left */}
-            <Menubar className="flex justify-center px-4 rounded-none">
+            <Menubar className="flex justify-center px-4 rounded-none border-none">
                 <div className="flex items-center justify-between w-full">
                     <div className="flex-shrink-0">
                         {/* <img src="/logo.JPG" alt="Logo" className="h-7 rounded-full w-7" /> */}

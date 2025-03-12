@@ -12,9 +12,15 @@ const supabase = createClient(
 // Named export for the POST method
 export const POST = async (req: NextRequest) => {
     try {
-        const { messages } = await req.json();
-        if (!messages || messages.length === 0) {
-            return NextResponse.json({ error: 'Messages are required' }, { status: 400 });
+        const { messages, properties } = await req.json();
+        const { searchParams } = new URL(req.url);
+        const id = searchParams.get('id');
+        console.log("id", id);
+        if (!id) {
+            return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+        }
+        if (!messages && !properties) {
+            return NextResponse.json({ error: 'Messages and properties are required' }, { status: 400 });
         }
         const userData = await getUser();
         console.log("userData", userData);
@@ -23,11 +29,17 @@ export const POST = async (req: NextRequest) => {
         }
         const user_id = userData?.id;
         // Fetch parcel details
+        const updateData: any = {};
+        if (messages !== null) {
+            updateData.messages = messages;
+        }
+        if (properties !== null) {
+            updateData.properties = properties;
+        }
         const { data, error } = await supabase
             .from('chat_history')
-            .insert([
-                { messages: messages, user_id: user_id }
-            ])
+            .update(updateData)
+            .eq('id', id)
             .select();
         // Handle errors
         if (error) {
