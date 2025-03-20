@@ -127,7 +127,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Bookmark, GalleryVerticalEnd, Search } from "lucide-react"
-
+import { createClient } from "@/app/utils/supabase/client"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
@@ -154,9 +154,16 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
     const pathname = usePathname()
     const [loading, setLoading] = useState(true);
     const [savedChats, setSavedChats] = useState<any[]>([]);
+    const [user, setUser] = useState<any>(null);
+    const supabase = createClient();
     useEffect(() => {
         const fetchSavedChats = async () => {
             try {
+                const { data: { user } } = await supabase.auth.getUser()
+                if (!user) {
+                    return;
+                }
+                setUser(user);
                 const response = await fetch('/api/get_saved_chat');
                 const data = await response.json();
                 console.log("data", data);
@@ -227,7 +234,7 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {loading && <div>Loading...</div>}
-                            {!loading && savedChats.map((item, index) => (
+                            {!loading && user && savedChats.map((item, index) => (
                                 <SidebarMenuItem key={index}>
                                     <SidebarMenuButton asChild isActive={pathname === item.url}>
 
@@ -244,6 +251,7 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
+                            {!loading && !user && <SidebarMenuItem >Please login to view your saved chats</SidebarMenuItem>}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>

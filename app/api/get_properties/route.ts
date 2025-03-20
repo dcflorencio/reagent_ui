@@ -1,9 +1,15 @@
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+// import { getUser } from '@/hooks/getUser';
 export async function POST(req: NextRequest): Promise<NextResponse<any>> {
     if (req.method !== 'POST') {
         return NextResponse.json({ success: false, status: 405, data: { error: 'Method not allowed' } });
     }
+    // const userData = await getUser();
+    // if (!userData) {
+    //     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    // }
+    // const user_id = userData?.id;
     try {
         const { input, messages } = await req.json(); // Get query from request body
         if (!process.env.LANGGRAPH_API_KEY) {
@@ -35,6 +41,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<any>> {
     }
 }
 export async function makeAPICall(messages: any[]) {
+    // const config = { "configurable": { "thread_id": "1", "user_id": user_id } }
     const apiResponse = await fetch(
         "https://reagent-ui-3d6ba29f3428595b8a7ab36565570117.us.langgraph.app/runs/wait",
         {

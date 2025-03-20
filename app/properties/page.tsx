@@ -23,7 +23,7 @@ type assessmentType = {
     role: "user" | "assistant";
     content: string;
 }
-
+import { createClient } from "@/app/utils/supabase/client"
 export default function Page() {
     // const [properties, setProperties] = useState(testProperties);
     const [loadingPage, setLoadingPage] = useState<boolean>(true);
@@ -36,6 +36,15 @@ export default function Page() {
     const [apiCalParameters, setApiCalParameters] = useState<any[]>([]);
     const hasProperties = properties.length > 0;
     const [savedChatId, setSavedChatId] = useState<string>("");
+    const supabase = createClient();
+    const [user, setUser] = useState<any>(null);
+    useEffect(() => {
+        const checkUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            setUser(user);
+        }
+        checkUser();
+    }, [supabase]);
     const handleNext = async (filteredQuery?: string) => {
         // console.log("Input:", input);
         if (input.trim() === "" && !filteredQuery) {
@@ -165,18 +174,24 @@ export default function Page() {
     }
 
     useEffect(() => {
+        if (!user) {
+            return;
+        }
         if (savedChatId) {
             handleSaveIntoExistingChat(savedChatId, messages, properties);
         } else {
             handleSaveChat(messages, setSavedChatId);
         }
-    }, [messages, properties]);
+    }, [messages, properties, user]);
 
     if (loadingPage) {
         return <div className="flex justify-center items-center h-screen"><Loader2 className="w-10 h-10 animate-spin" /></div>;
     }
 
     const handleSavedChatClick = async (id: string) => {
+        if (!user) {
+            return;
+        }
         setLoadingPage(true);
         setSavedChatId(id);
         console.log("savedChatId", savedChatId);

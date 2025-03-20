@@ -13,12 +13,21 @@ import {
 import { FilterComponent } from "@/components/FilterComponent";
 import DialogHeaderCard from "@/app/properties/components/property-card-components/DialogHeaderCard";
 import DialogContentCard from "@/app/properties/components/property-card-components/DialogContentCard";
-
+import { createClient } from "@/app/utils/supabase/client"
 const RentalListings = ({ properties, reloadMethod  }: { properties: any[], reloadMethod?: any }) => {
     const [showAllPhotos, setShowAllPhotos] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
     const [savedProperties, setSavedProperties] = useState<{ property_id: string }[]>([]);
     const [isSavingOrDeleting, setIsSavingOrDeleting] = useState(false);
+    const supabase = createClient();
+    const [user, setUser] = useState<any>(null);
+    useEffect(() => {
+        const checkUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            setUser(user);
+        }
+        checkUser();
+    }, [supabase]);
     // Function to filter properties based on the selected filter
     const filteredProperties = React.useMemo(() => {
         if (!selectedFilter) {
@@ -33,6 +42,9 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
     }, [properties, selectedFilter]);
 
     useEffect(() => {
+        if (!user) {
+            return;
+        }
         fetchSavedProperties().then(data => {
             setSavedProperties(data);
         });
@@ -43,6 +55,9 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
     const handleSaveProperty = async (event: React.MouseEvent<HTMLButtonElement>, property: any) => {
         event.stopPropagation();
         try {
+            if (!user) {
+                return;
+            }
             setIsSavingOrDeleting(true);
             const response = await fetch('/api/save_property', {
                 method: 'POST',
@@ -67,6 +82,9 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
     const handleDeleteProperty = async (event: React.MouseEvent<HTMLButtonElement>, property: any) => {
         event.stopPropagation();
         try {
+            if (!user) {
+                return;
+            }
             setIsSavingOrDeleting(true);
             const property_id = `${property.latitude}${property.longitude}`;
             if (!property_id) {
