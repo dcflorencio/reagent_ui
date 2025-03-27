@@ -3,7 +3,7 @@
 
 ![Workflow](https://github.com/dcflorencio/reagent_ui/blob/main/static/graph.JPG)
 
-![UI](https://github.com/dcflorencio/langgraph-reagent/blob/main/static/UI_2.JPG)
+![UI](https://github.com/dcflorencio/reagent_ui/blob/main/static/UI_2.JPG)
 
 
 Langgraph-Reagent is a state-of-the-art real estate search assistant that leverages the power of LangGraph and large language models (LLMs) to provide an interactive, chat-based experience for users. The application integrates real-time data from the Zillow API, making it easy for users to explore properties that match their specific requirements.
