@@ -1,128 +1,3 @@
-// "use client"
-
-// import * as React from "react"
-// import { NavMain } from "./nav-main"
-// // import { NavProjects } from "./nav-projects"
-// import { NavUser } from "./nav-user"
-// // import { TeamSwitcher } from "./team-switcher"
-// import {
-//     Sidebar,
-//     SidebarContent,
-//     SidebarFooter,
-//     SidebarHeader,
-//     SidebarRail,
-//     SidebarTrigger,
-// } from "@/components/ui/sidebar"
-// import { NavProjects } from "./nav-projects"
-// import { NavChatHistory } from "./nav-chat-hiistory"
-
-// // Dynamic imports for lucide-react icons
-// const AudioWaveform = React.lazy(() => import("lucide-react").then(module => ({ default: module.AudioWaveform })));
-// // const BookOpen = React.lazy(() => import("lucide-react").then(module => ({ default: module.BookOpen })));
-// // const Bot = React.lazy(() => import("lucide-react").then(module => ({ default: module.Bot })));
-// const Command = React.lazy(() => import("lucide-react").then(module => ({ default: module.Command })));
-// const Frame = React.lazy(() => import("lucide-react").then(module => ({ default: module.Frame })));
-// const GalleryVerticalEnd = React.lazy(() => import("lucide-react").then(module => ({ default: module.GalleryVerticalEnd })));
-// const Map = React.lazy(() => import("lucide-react").then(module => ({ default: module.Map })));
-// const PieChart = React.lazy(() => import("lucide-react").then(module => ({ default: module.PieChart })));
-// const SaveIcon = React.lazy(() => import("lucide-react").then(module => ({ default: module.SaveIcon })));
-// // const Settings2 = React.lazy(() => import("lucide-react").then(module => ({ default: module.Settings2 })));
-// // const SquareTerminal = React.lazy(() => import("lucide-react").then(module => ({ default: module.SquareTerminal })));
-
-// // This is sample data.
-// const data = {
-//     user: {
-//         name: "shadcn",
-//         email: "m@example.com",
-//         avatar: "/avatars/shadcn.jpg",
-//     },
-//     teams: [
-//         {
-//             name: "Acme Inc",
-//             logo: GalleryVerticalEnd,
-//             plan: "Enterprise",
-//         },
-//         {
-//             name: "Acme Corp.",
-//             logo: AudioWaveform,
-//             plan: "Startup",
-//         },
-//         {
-//             name: "Evil Corp.",
-//             logo: Command,
-//             plan: "Free",
-//         },
-//     ],
-//     savedChats: [
-
-//         {
-//             title: "Saved Searches",
-//             url: "#",
-//             icon: SaveIcon,
-//             isActive: true,
-//             items: [
-//                 {
-//                     title: "View all",
-//                     url: "/saved-searches",
-//                 },
-
-//             ],
-//         }
-//     ],
-//     savedProperties: [
-//         {
-//             title: "Saved Properties",
-//             url: "#",
-//             icon: SaveIcon,
-//             isActive: true,
-//             items: [
-//                 {
-//                     title: "View all",
-//                     url: "/saved-properties",
-//                 },
-
-//             ],
-//         },
-//     ],
-//     projects: [
-//         {
-//             name: "Search Properties",
-//             url: "/properties",
-//             icon: Frame,
-//         },
-//         // {
-//         //     name: "Sales & Marketing",
-//         //     url: "#",
-//         //     icon: PieChart,
-//         // },
-//         // {
-//         //     name: "Travel",
-//         //     url: "#",
-//         //     icon: Map,
-//         // },
-//     ],
-// }
-
-// export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-//     return (
-//         <Sidebar collapsible="icon" {...props}>
-//             <SidebarHeader>
-//                 <SidebarTrigger />
-//             </SidebarHeader>
-//             <SidebarContent>
-//                 <NavChatHistory items={data.savedChats} />
-//                 <NavMain items={data.savedProperties} />
-//                 <NavProjects projects={data.projects} />
-//             </SidebarContent>
-//             <SidebarFooter>
-//                 <NavUser user={data.user} />
-//             </SidebarFooter>
-//             <SidebarRail />
-//         </Sidebar>
-//     )
-// }
-
-
 "use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -143,14 +18,8 @@ import {
 } from "@/components/ui/sidebar"
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-// const navItems = [
-//     { title: "Introduction", url: "/" },
-//     { title: "Getting Started", url: "/getting-started" },
-//     { title: "Components", url: "/components" },
-//     { title: "API Reference", url: "/api-reference" },
-// ]
 
-export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (id: string) => void }) {
+export function AppSidebar({ handleSavedChatClick, handleNewChatClick }: { handleSavedChatClick?: (id: string) => void, handleNewChatClick?: () => void }) {
     const pathname = usePathname()
     const [loading, setLoading] = useState(true);
     const [savedChats, setSavedChats] = useState<any[]>([]);
@@ -194,7 +63,7 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
-                <form>
+                {/* <form>
                     <SidebarGroup className="py-0">
                         <SidebarGroupContent className="relative">
                             <Label htmlFor="search" className="sr-only">
@@ -204,7 +73,7 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                             <Search className="pointer-events-none absolute left-2 top-1/2 size-4 -translate-y-1/2 select-none opacity-50" />
                         </SidebarGroupContent>
                     </SidebarGroup>
-                </form>
+                </form> */}
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
@@ -212,6 +81,18 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                         <SidebarMenu>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
+                                    <Button variant="outline" className="w-full text-left cursor-pointer hover:bg-gray-200" onClick={() => handleNewChatClick && handleNewChatClick()}>
+                                        Create New Chat
+                                    </Button>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton 
+                                    asChild 
+                                    isActive={pathname === "/saved-properties"} 
+                                    className={pathname === "/saved-properties" ? "bg-highlight text-highlight-foreground" : ""}
+                                    disabled={pathname === "/saved-properties"}
+                                >
                                     <Link href="/saved-properties">
                                         <Bookmark className="mr-2 h-4 w-4" />
                                         View all Saved Properties
@@ -219,7 +100,12 @@ export function AppSidebar({ handleSavedChatClick }: { handleSavedChatClick?: (i
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
+                                <SidebarMenuButton 
+                                    asChild 
+                                    isActive={pathname === "/properties"} 
+                                    className={pathname === "/properties" ? "bg-highlight text-highlight-foreground" : ""}
+                                    disabled={pathname === "/properties"}
+                                >
                                     <Link href="/properties">
                                         <Search className="mr-2 h-4 w-4" />
                                         Search Properties

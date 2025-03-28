@@ -17,7 +17,7 @@ export const POST = async (req: NextRequest) => {
             return NextResponse.json({ error: 'Messages are required' }, { status: 400 });
         }
         const userData = await getUser();
-        console.log("userData", userData);
+        // console.log("userData", userData);
         if (!userData) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
@@ -35,7 +35,7 @@ export const POST = async (req: NextRequest) => {
             return NextResponse.json({ error: error.message }, { status: 500 });
         }
         console.log("Chat saved");
-        console.log("data", JSON.stringify(data));
+        // console.log("data", JSON.stringify(data));
         // Return the data
         return NextResponse.json(data, { status: 200 });
     } catch (error) {

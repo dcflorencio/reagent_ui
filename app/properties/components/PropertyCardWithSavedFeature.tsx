@@ -18,7 +18,7 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
     const [showAllPhotos, setShowAllPhotos] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
     const [savedProperties, setSavedProperties] = useState<{ property_id: string }[]>([]);
-    const [isSavingOrDeleting, setIsSavingOrDeleting] = useState(false);
+    const [isSavingOrDeleting, setIsSavingOrDeleting] = useState(true);
     const supabase = createClient();
     const [user, setUser] = useState<any>(null);
     useEffect(() => {
@@ -45,11 +45,11 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
         if (!user) {
             return;
         }
-        fetchSavedProperties().then(data => {
+        fetchSavedProperties(setIsSavingOrDeleting).then(data => {
             setSavedProperties(data);
         });
-    }, []);
-    console.log("properties find in property card", properties, properties.length);
+    }, [user]);
+    // console.log("properties find in property card", properties, properties.length);
 
     // Method to save property
     const handleSaveProperty = async (event: React.MouseEvent<HTMLButtonElement>, property: any) => {
@@ -65,7 +65,7 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
             });
             if (response.ok) {
                 console.log("Property saved");
-                fetchSavedProperties().then(data => {
+                fetchSavedProperties(setIsSavingOrDeleting).then(data => {
                     setSavedProperties(data);
                 });
             } else {
@@ -104,7 +104,7 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
                     reloadMethod();
                 } else {
                     // Refresh the saved properties list
-                    fetchSavedProperties().then(data => {
+                    fetchSavedProperties(setIsSavingOrDeleting).then(data => {
                         setSavedProperties(data);
                     });
                 }
@@ -183,8 +183,9 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
 
 export default RentalListings;
 
-const fetchSavedProperties = async () => {
+const fetchSavedProperties = async (setIsSavingOrDeleting: (isSavingOrDeleting: boolean) => void) => {
     try {
+        setIsSavingOrDeleting(true);
         const response = await fetch('/api/get_saved_properties_id');
         const data = await response.json();
         console.log("Saved properties ids list:", data);
@@ -197,6 +198,8 @@ const fetchSavedProperties = async () => {
     } catch (error) {
         console.error("Failed to fetch saved properties:", error);
         return [];
+    } finally {
+        setIsSavingOrDeleting(false);
     }
 };
 

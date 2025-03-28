@@ -18,7 +18,7 @@ export const GET = async (req: NextRequest) => {
             return NextResponse.json({ error: 'ID is required' }, { status: 400 });
         }
         const userData = await getUser();
-        console.log("userData", userData);
+        // console.log("userData", userData);
         if (!userData) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
@@ -26,7 +26,7 @@ export const GET = async (req: NextRequest) => {
         // Fetch saved properties for the user
         const { data, error } = await supabase
             .from('chat_history')
-            .select('messages, created_at, properties')
+            .select('messages, created_at, properties, api_cal_parameters')
             .eq('id', id);
 
         // Handle errors

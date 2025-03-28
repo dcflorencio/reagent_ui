@@ -12,7 +12,7 @@ const supabase = createClient(
 // Named export for the POST method
 export const POST = async (req: NextRequest) => {
     try {
-        const { messages, properties } = await req.json();
+        const { messages, properties, apiCalParameters } = await req.json();
         const { searchParams } = new URL(req.url);
         const id = searchParams.get('id');
         console.log("id", id);
@@ -23,11 +23,11 @@ export const POST = async (req: NextRequest) => {
             return NextResponse.json({ error: 'Messages and properties are required' }, { status: 400 });
         }
         const userData = await getUser();
-        console.log("userData", userData);
+        // console.log("userData", userData);
         if (!userData) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
-        const user_id = userData?.id;
+        // const user_id = userData?.id;
         // Fetch parcel details
         const updateData: any = {};
         if (messages !== null) {
@@ -35,6 +35,9 @@ export const POST = async (req: NextRequest) => {
         }
         if (properties !== null) {
             updateData.properties = properties;
+        }
+        if (apiCalParameters !== null) {
+            updateData.api_cal_parameters = apiCalParameters;
         }
         const { data, error } = await supabase
             .from('chat_history')
@@ -47,7 +50,7 @@ export const POST = async (req: NextRequest) => {
             return NextResponse.json({ error: error.message }, { status: 500 });
         }
         console.log("Chat saved");
-        console.log("data", JSON.stringify(data));
+        // console.log("data", JSON.stringify(data));
         // Return the data
         return NextResponse.json(data, { status: 200 });
     } catch (error) {

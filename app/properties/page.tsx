@@ -178,7 +178,7 @@ export default function Page() {
             return;
         }
         if (savedChatId) {
-            handleSaveIntoExistingChat(savedChatId, messages, properties);
+            handleSaveIntoExistingChat(savedChatId, messages, properties, apiCalParameters);
         } else {
             handleSaveChat(messages, setSavedChatId);
         }
@@ -195,12 +195,18 @@ export default function Page() {
         setLoadingPage(true);
         setSavedChatId(id);
         console.log("savedChatId", savedChatId);
-        await handleLoadSavedChat(id, setMessages, setProperties);
+        await handleLoadSavedChat(id, setMessages, setProperties, setApiCalParameters);
         setLoadingPage(false);
+    }
+    const handleNewChatClick = async () => {
+        setSavedChatId("");
+        setMessages([]);
+        setProperties([]);
+        setApiCalParameters([]);
     }
     return (
         <SidebarProvider defaultOpen={false} className="h-screen w-full">
-            <AppSidebar handleSavedChatClick={handleSavedChatClick} />
+            <AppSidebar handleSavedChatClick={handleSavedChatClick} handleNewChatClick={handleNewChatClick} />
             <SidebarInset>
                 <div className="flex flex-row justify-center items-center">
                     <SidebarTrigger className="ml-3" />
@@ -281,7 +287,7 @@ const handleSaveChat = async (messages: assessmentType[], setSavedChatId: (id: s
     }
 }
 
-const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmentType[]) => void, setProperties: (properties: any[]) => void) => {
+const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmentType[]) => void, setProperties: (properties: any[]) => void, setApiCalParameters: (apiCalParameters: any[]) => void) => {
     try {
         if (!id) {
             console.error("No ID provided");
@@ -295,13 +301,16 @@ const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmen
             const historyProperties = responseData[0].properties || [];
             setMessages(historyMessages);
             setProperties(historyProperties);
+            if (responseData[0].api_cal_parameters) {
+                setApiCalParameters(responseData[0].api_cal_parameters);
+            }
         }
     } catch (error) {
         console.error("Error loading saved chat:", error);
     }
 }
 
-const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[], properties: any[]) => {
+const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[], properties: any[], apiCalParameters: any[]) => {
     console.log("messages", messages);
     console.log("properties", properties);
     if (messages.length === 0 && properties.length === 0) {
@@ -314,7 +323,7 @@ const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[]
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ messages, properties }),
+            body: JSON.stringify({ messages, properties, apiCalParameters }),
         });
         const responseData = await response.json();
         console.log("responseData", responseData);

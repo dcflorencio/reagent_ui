@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useEffect, lazy } from "react"
+import { useRef, useEffect, lazy, useCallback, useState } from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,7 +15,19 @@ export type assessmentType = {
 const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters, input, isLoading, setInput }: { messages: assessmentType[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[], input: string, isLoading: boolean, setInput: (input: string) => void }) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const [debouncedInput, setDebouncedInput] = useState(input);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = e.target.value;
+        setDebouncedInput(newValue);
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+            setInput(newValue);
+        }, 300);
+    }, [setInput]);
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -70,12 +82,12 @@ const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParamet
                 </div>}
             </ScrollArea>
             <div className="flex items-center justify-center w-[90%] gap-4 p-2 z-10 bg-white rounded-2xl">
-                <Input ref={inputRef} value={input}
+                <Input ref={inputRef} value={debouncedInput}
                     onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             handleNext();
                         }
-                    }} onChange={(e) => setInput(e.target.value)} disabled={messages.length === 0 || isLoading} placeholder="Type your message here." className="w-full" />
+                    }} onChange={handleInputChange} disabled={messages.length === 0 || isLoading} placeholder="Type your message here." className="w-full" />
                 <Button disabled={messages.length === 0 || isLoading} onClick={() => handleNext()}>Send</Button>
             </div>
         </div>
