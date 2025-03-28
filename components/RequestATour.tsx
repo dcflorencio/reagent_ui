@@ -22,9 +22,42 @@ const RequestATour = () => {
         setIsDialogOpen(true);
     };
 
-    const handleDialogClose = (event: React.MouseEvent) => {
+    const handleSubmit = async (event: React.MouseEvent) => {
         event.stopPropagation();
-        setIsDialogOpen(false);
+        event.preventDefault();
+
+        const formElement = event.currentTarget.closest('form');
+        if (!formElement) {
+            console.error('Form element not found');
+            return;
+        }
+
+        const formData = new FormData(formElement);
+        const data = {
+            first_name: formData.get('first_name'),
+            last_name: formData.get('last_name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+            reason: 'forTour'
+        };
+
+        try {
+            const response = await fetch('/api/save_query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to save query');
+            }
+
+            setIsDialogOpen(false);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -35,32 +68,32 @@ const RequestATour = () => {
             <DialogHeader>
                 <DialogTitle>Request a Tour</DialogTitle>
                 <DialogDescription>
-                    Make changes to your profile here. Click save when you&apos;re done.
+                Provide your information and we will contact you.
                 </DialogDescription>
             </DialogHeader>
             <form>
                 <div className="grid w-full items-center gap-4">
                     <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="name">First Name</Label>
-                        <Input id="name" placeholder="First Name" />
+                        <Input id="name" name="first_name" placeholder="First Name" />
                     </div>
                     <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="lastname">Last Name</Label>
-                        <Input id="lastname" placeholder="Last Name" />
+                        <Input id="lastname" name="last_name" placeholder="Last Name" />
                     </div>
                     <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" placeholder="Email" />
+                        <Input id="email" name="email" placeholder="Email" />
                     </div>
                     <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" placeholder="Message" />
+                        <Textarea id="message" name="message" placeholder="Message" />
                     </div>
                 </div>
+                <DialogFooter>
+                    <Button type="submit" onClick={handleSubmit}>Request a Tour</Button>
+                </DialogFooter>
             </form>
-            <DialogFooter>
-                <Button type="submit" onClick={handleDialogClose}>Request a Tour</Button>
-            </DialogFooter>
         </DialogContent>
     </Dialog>;
 };
