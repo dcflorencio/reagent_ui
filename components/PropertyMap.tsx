@@ -57,12 +57,10 @@ function PropertyMap({ properties }: { properties: any[] }) {
                 // setPlacesService(placesServiceInstance);
                 console.log('Places service initialized');
 
-                // mapInstance.addListener('bounds_changed', () => {
-                //     const bounds = mapInstance.getBounds();
-                //     if (bounds) {
-                //         setCurrentBounds(bounds);
-                //     }
-                // });
+                // Call updateMapWithProperties after map is initialized
+                if (properties.length > 0) {
+                    updateMapWithProperties();
+                }
 
             } catch (error) {
                 console.error('Error initializing map:', error);
@@ -158,10 +156,12 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
     // New useEffect to handle properties update
     useEffect(() => {
-        if (properties.length === 0) {
-            clearMap();
-        } else {
-            updateMapWithProperties();
+        if (map) {
+            if (properties.length === 0) {
+                clearMap();
+            } else {
+                updateMapWithProperties();
+            }
         }
     }, [map, properties]);
 
