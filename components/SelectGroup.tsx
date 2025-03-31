@@ -12,8 +12,9 @@ import { Button } from "./ui/button"
 import { CardContent } from "./ui/card"
 import { Label } from "@radix-ui/react-dropdown-menu"
 
-export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters: any[], handleNext: (filteredQuery?: string) => void }) {
-    console.log("apiCalParameters", JSON.stringify(apiCalParameters));
+export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters: any[], handleNext: (input: string, filteredQuery?: string) => void }) {
+    // console.log("apiCalParameters", JSON.stringify(apiCalParameters));
+    console.log("select group log 1")
     const toolCallArgs = (apiCalParameters && apiCalParameters.length > 0 &&
         apiCalParameters[apiCalParameters.length - 1].tool_calls &&
         apiCalParameters[apiCalParameters.length - 1].tool_calls.length > 0)
@@ -120,7 +121,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
     };
 
     React.useEffect(() => {
-        console.log("filters", filters);
+        // console.log("filters", filters);
         setQuery(() => {
             const criteria = [];
             if (filters.rentType !== "Select") criteria.push(`Rent Type: ${filters.rentType}`);
@@ -145,7 +146,7 @@ export function SelectDemo({ apiCalParameters, handleNext }: { apiCalParameters:
 
             return `Please show me the properties that match the following criteria: ${criteria.join(', ')}`;
         });
-        console.log("query", query);
+        // console.log("query", query);
     }, [filters]);
     return (
         <div className="w-full flex flex-col gap-2 select-group">

@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 // import { getUser } from '@/hooks/getUser';
-export async function POST(req: NextRequest): Promise<NextResponse<any>> {
+export async function POST(req: NextRequest): Promise<NextResponse<{ apiResponse?: any; error?: string }>> {
     if (req.method !== 'POST') {
-        return NextResponse.json({ success: false, status: 405, data: { error: 'Method not allowed' } });
+        return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
     }
     // const userData = await getUser();
     // if (!userData) {
@@ -35,12 +35,12 @@ export async function POST(req: NextRequest): Promise<NextResponse<any>> {
         const apiResponse = await makeAPICall(messages);
         // console.log("apiResponse", JSON.stringify(apiResponse));
         return NextResponse.json({ apiResponse });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.log("error", error)
-        return NextResponse.json({ error: error.message }); // Handle errors
+        return NextResponse.json({ error: (error as Error).message }); // Handle errors
     }
 }
-export async function makeAPICall(messages: any[]) {
+async function makeAPICall(messages: { role: string; content: string }[]) {
     // const config = { "configurable": { "thread_id": "1", "user_id": user_id } }
     const apiResponse = await fetch(
         "https://reagent-ui-3d6ba29f3428595b8a7ab36565570117.us.langgraph.app/runs/wait",

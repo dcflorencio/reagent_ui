@@ -25,6 +25,7 @@ export function AppSidebar({ handleSavedChatClick, handleNewChatClick }: { handl
     const [savedChats, setSavedChats] = useState<any[]>([]);
     const [user, setUser] = useState<any>(null);
     const supabase = createClient();
+    console.log("app sidebar log 1")
     useEffect(() => {
         const fetchSavedChats = async () => {
             try {

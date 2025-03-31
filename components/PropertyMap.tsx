@@ -142,6 +142,8 @@ function PropertyMap({ properties }: { properties: any[] }) {
             });
             setMarkers(newMarkers);
             map.fitBounds(bounds);
+        } else {
+            clearMap();
         }
     };
 
@@ -157,11 +159,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
     // New useEffect to handle properties update
     useEffect(() => {
         if (map) {
-            if (properties.length === 0) {
-                clearMap();
-            } else {
-                updateMapWithProperties();
-            }
+            updateMapWithProperties();
         }
     }, [map, properties]);
 

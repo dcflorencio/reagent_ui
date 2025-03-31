@@ -8,6 +8,7 @@ import { createClient } from "@/app/utils/supabase/client"
 import { ProfileDropdown } from "./ProfileDropdown"
 import { User } from "@supabase/supabase-js"
 const MenubarDemo = () => {
+    console.log("menubar log 1")
     const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState<User | null>(null);

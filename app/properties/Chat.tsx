@@ -1,9 +1,9 @@
 'use client'
-import { useRef, useEffect, lazy, useCallback, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-const ReactMarkdown = lazy(() => import('react-markdown'))
+import ReactMarkdown from "react-markdown"
 import { Input } from "@/components/ui/input"
 import { SelectDemo } from "@/components/SelectGroup"
 import { cn } from "@/lib/utils"
@@ -12,31 +12,53 @@ export type assessmentType = {
     role: "user" | "assistant";
     content: string;
 }
-const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParameters, input, isLoading, setInput }: { messages: assessmentType[], handleBuyOrRent: (type: string) => Promise<void>, handleNext: (filteredQuery?: string) => Promise<void>, properties: any[], apiCalParameters: any[], input: string, isLoading: boolean, setInput: (input: string) => void }) => {
+type ChatProps = {
+    messages: assessmentType[],
+    handleBuyOrRent: (type: string) => Promise<void>,
+    handleNext: (input: string, filteredQuery?: string) => Promise<void>,
+    isProperties: boolean,
+    apiCalParameters: any[],
+    isLoading: boolean
+}
+const Chat = (
+    {
+        messages,
+        handleBuyOrRent,
+        handleNext,
+        isProperties,
+        apiCalParameters,
+        isLoading
+    }: ChatProps) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
-    const [debouncedInput, setDebouncedInput] = useState(input);
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const [input, setInput] = useState<string>("");
 
-    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        setDebouncedInput(newValue);
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-        timeoutRef.current = setTimeout(() => {
-            setInput(newValue);
-        }, 300);
-    }, [setInput]);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInput(e.target.value);
+    };
+
     useEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
-        // Automatically focus on the input field when messages change
         if (inputRef.current) {
             inputRef.current.focus();
         }
     }, [messages]);
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            handleNext(input);
+            setInput("");
+        }
+    };
+
+    const handleSendClick = () => {
+        handleNext(input);
+        setInput("");
+    };
 
     return (
         <div className="flex flex-col h-full items-center w-full gap-1 md:gap-2 p-2 border-t-2 border-green-500 rounded-xl">
@@ -44,23 +66,23 @@ const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParamet
             <ScrollArea ref={scrollRef} className="flex-1 w-full h-full rounded-md overflow-y-auto">
                 <div className="p-4 flex flex-col items-center">
                     {messages.length === 0 && (
-                        <div className="flex justify-start w-full mb-2" >
-                            <div className={cn(
-                                "rounded-xl px-4 py-2",
-                                `bg-[#000000]/10`
-                            )}>
-                                <p className="text-sm font-medium text-muted-foreground mb-2 px-2">
-                                   What purpose do you want to use this property for?
-                                </p>
+                        <>
+                            <div className="flex justify-start w-full mb-2" >
+                                <div className={cn(
+                                    "rounded-xl px-4 py-2",
+                                    `bg-[#000000]/10`
+                                )}>
+                                    <p className="text-sm font-medium text-muted-foreground mb-2 px-2">
+                                        What purpose do you want to use this property for?
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="flex flex-row items-center justify-end w-full gap-2">
+                                <Button onClick={() => handleBuyOrRent("I want to buy a property")} variant="outline" className="font-medium">I want to buy</Button>
+                                <Button onClick={() => handleBuyOrRent("I want to rent a property")} variant="outline" className="font-medium">I want to rent</Button>
+                            </div>
+                        </>
                     )}
-                    {messages.length === 0 &&
-                        <div className="flex flex-row items-center justify-end w-full gap-2">
-                            <Button onClick={() => handleBuyOrRent("I want to buy a property")} variant="outline" className="font-medium">I want to buy</Button>
-                            <Button onClick={() => handleBuyOrRent("I want to rent a property")} variant="outline" className="font-medium">I want to rent</Button>
-                        </div>
-                    }
                     {messages.map((msg, index) => (
                         <div className="mb-2 w-full max-w-[900px]" key={index}>
                             {msg.role === "user" && <div className="flex flex-col items-end w-full md:pr-2 lg:pr-6">
@@ -77,18 +99,16 @@ const Chat = ({ messages, handleBuyOrRent, handleNext, properties, apiCalParamet
                     ))}
 
                 </div>
-                {properties.length > 0 && apiCalParameters.length > 0 && <div className="max-w-[100%] p-2 flex justify-center items-center mb-2">
+                {isProperties && apiCalParameters.length > 0 && <div className="max-w-[100%] p-2 flex justify-center items-center mb-2">
                     <SelectDemo apiCalParameters={apiCalParameters} handleNext={handleNext} />
                 </div>}
             </ScrollArea>
             <div className="flex items-center justify-center w-[90%] gap-4 p-2 z-10 bg-white rounded-2xl">
-                <Input ref={inputRef} value={debouncedInput}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            handleNext();
-                        }
-                    }} onChange={handleInputChange} disabled={messages.length === 0 || isLoading} placeholder="Type your message here." className="w-full" />
-                <Button disabled={messages.length === 0 || isLoading} onClick={() => handleNext()}>Send</Button>
+                <Input value={input}
+                    ref={inputRef}
+                    onKeyDown={(e) => handleKeyDown(e)}
+                    onChange={handleInputChange} disabled={messages.length === 0 || isLoading} placeholder="Type your message here." className="w-full" />
+                <Button disabled={messages.length === 0 || isLoading} onClick={handleSendClick}>Send</Button>
             </div>
         </div>
     )

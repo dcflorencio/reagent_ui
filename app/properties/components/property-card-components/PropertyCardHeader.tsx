@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import Slider from "react-slick";
+import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 
 type PropertyCardHeaderProps = {
     property: any;
@@ -12,64 +12,73 @@ type PropertyCardHeaderProps = {
     handleDeleteProperty: (event: React.MouseEvent<HTMLButtonElement>, property: any) => void;
     isSavingOrDeleting: boolean;
 }
-const PropertyCardHeader = ({ property,
+
+const CustomSlider = ({ images, handleSaveProperty, handleDeleteProperty, isSavingOrDeleting, isSaved, property }: { images: { url: string }[], handleSaveProperty: (event: React.MouseEvent<HTMLButtonElement>, property: any) => void, handleDeleteProperty: (event: React.MouseEvent<HTMLButtonElement>, property: any) => void, isSavingOrDeleting: boolean, isSaved: boolean, property: any }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextSlide = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const prevSlide = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    return (
+        <div className="relative">
+            <div className="overflow-hidden">
+                <div
+                    className="flex transition-transform duration-500"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                    {images.map((image, index) => (
+                        <div key={index} className="min-w-full">
+                            <Image
+                                src={image.url}
+                                alt={`Slide ${index}`}
+                                layout="responsive"
+                                width={500}
+                                height={300}
+                                className="w-full h-48 object-cover rounded-t-lg"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <Button 
+                disabled={isSavingOrDeleting} 
+                variant="outline" 
+                className="p-3 absolute top-2 right-2 bg-white/80 hover:bg-white z-10" 
+                onClick={isSaved ? (event) => handleDeleteProperty(event, property) : (event) => handleSaveProperty(event, property)}
+            >
+                <Heart className={`w-16 h-16 ${isSaved ? "fill-red-500 text-red-500" : ""}`} />
+                {/* <span className="sr-only">Add to Favorites</span> */}
+            </Button>
+            <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 rounded-full p-2">
+                <FaArrowCircleLeft size={20} />
+            </button>
+            <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 rounded-full p-2">
+                <FaArrowCircleRight size={20} />
+            </button>
+        </div>
+    );
+};
+
+const PropertyCardHeader = ({
+    property,
     isSaved,
     handleSaveProperty,
     handleDeleteProperty,
     isSavingOrDeleting
 }: PropertyCardHeaderProps) => {
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
-        appendDots: (dots: React.ReactNode) => (
-            <div
-                style={{
-                    position: 'absolute',
-                    bottom: '10px',
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'center'
-                }}
-            >
-                <ul style={{ margin: '0px' }}> {dots} </ul>
-            </div>
-        ),
-        customPaging: (i: number) => (
-            <div
-                style={{
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '50%',
-                    background: i === currentSlide ? 'white' : 'black',
-                    display: 'inline-block',
-                    margin: '0 5px'
-                }}
-            />
-        ),
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
-    };
     return (
         <div className="relative">
-            {property.carouselPhotos && property.carouselPhotos.length > 1 ?
-                <Slider {...settings}>
-                    {property.carouselPhotos.map((image: { url: string }, imgIndex: number) => (
-                        <div key={imgIndex} className="relative">
-                            <Image src={image.url} alt="Image" layout="responsive" width={500} height={300} className="w-full h-48 object-cover rounded-t-lg" />
-                            <Button disabled={isSavingOrDeleting} variant="outline" className="p-3 absolute top-2 right-2" onClick={isSaved ? (event) => handleDeleteProperty(event, property) : (event) => handleSaveProperty(event, property)}>
-                                <Heart className={`w-6 h-6 ${isSaved ? "fill-red-500 text-red-500" : ""}`} />
-                                <span className="sr-only">Add to Favorites</span>
-                            </Button>
-                        </div>
-                    ))}
-                </Slider>
-                :
+            {property.carouselPhotos && property.carouselPhotos.length > 1 ? (
+                <CustomSlider images={property.carouselPhotos} handleSaveProperty={handleSaveProperty} handleDeleteProperty={handleDeleteProperty} isSavingOrDeleting={isSavingOrDeleting} isSaved={isSaved} property={property}/>
+            ) : (
                 <div>
                     <Image
                         src={property?.imgSrc || "https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"}
@@ -79,11 +88,17 @@ const PropertyCardHeader = ({ property,
                         height={200}
                         className="w-full h-48 object-cover rounded-t-lg"
                     />
-                    <Button disabled={isSavingOrDeleting} variant="outline" className="p-3" onClick={isSaved ? (event) => handleDeleteProperty(event, property) : (event) => handleSaveProperty(event, property)}>
+                    <Button 
+                        disabled={isSavingOrDeleting} 
+                        variant="outline" 
+                        className="p-3 absolute top-2 right-2 bg-white/80 hover:bg-white" 
+                        onClick={isSaved ? (event) => handleDeleteProperty(event, property) : (event) => handleSaveProperty(event, property)}
+                    >
                         <Heart className={`w-6 h-6 ${isSaved ? "fill-red-500 text-red-500" : ""}`} />
                         <span className="sr-only">Add to Favorites</span>
                     </Button>
-                </div>}
+                </div>
+            )}
             {property.specialOffer && (
                 <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
                     Special Offer
@@ -100,28 +115,6 @@ const PropertyCardHeader = ({ property,
                 </span>
             )}
         </div>
-    );
-};
-
-const SampleNextArrow = (props: any) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", background: "transparent", right: "10px", zIndex: 1 }}
-            onClick={onClick}
-        />
-    );
-};
-
-const SamplePrevArrow = (props: any) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", background: "transparent", left: "10px", zIndex: 1 }}
-            onClick={onClick}
-        />
     );
 };
 

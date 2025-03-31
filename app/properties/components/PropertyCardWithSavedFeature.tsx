@@ -1,4 +1,4 @@
-// "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
+// Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000
 
 import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +14,10 @@ import { FilterComponent } from "@/components/FilterComponent";
 import DialogHeaderCard from "@/app/properties/components/property-card-components/DialogHeaderCard";
 import DialogContentCard from "@/app/properties/components/property-card-components/DialogContentCard";
 import { createClient } from "@/app/utils/supabase/client"
-const RentalListings = ({ properties, reloadMethod  }: { properties: any[], reloadMethod?: any }) => {
+import SinglePropertyCard from "@/app/properties/components/property-card-components/SinglePropertyCard";
+
+const RentalListings = React.memo(({ properties, reloadMethod  }: { properties: any[], reloadMethod?: any }) => {
+    console.log("property card log 1")
     const [showAllPhotos, setShowAllPhotos] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
     const [savedProperties, setSavedProperties] = useState<{ property_id: string }[]>([]);
@@ -144,42 +147,26 @@ const RentalListings = ({ properties, reloadMethod  }: { properties: any[], relo
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
-                {filteredProperties.map((property, index) => {
+                {filteredProperties.map((property) => {
                     const propertyId = `${property.latitude}${property.longitude}`;
                     const isSaved = savedProperties.some(saved => saved.property_id === propertyId);
                     return (
-                        <Dialog key={index}>
-                            <DialogTrigger asChild>
-                                <div>
-                                    <DialogHeaderCard
-                                        property={property}
-                                        isSaved={isSaved}
-                                        handleSaveProperty={handleSaveProperty}
-                                        handleDeleteProperty={handleDeleteProperty}
-                                        isSavingOrDeleting={isSavingOrDeleting}
-                                    />
-                                </div>
-                            </DialogTrigger>
-                            <DialogContent className="w-[90%] h-[90%] max-w-none max-h-none p-4">
-                                <DialogHeader>
-                                    <DialogTitle> {property?.buildingName || property.address}</DialogTitle>
-                                </DialogHeader>
-                                <DialogContentCard
-                                    property={property}
-                                    showAllPhotos={showAllPhotos}
-                                    setShowAllPhotos={setShowAllPhotos}
-                                    handleSaveProperty={handleSaveProperty}
-                                    handleDeleteProperty={handleDeleteProperty}
-                                    isSavingOrDeleting={isSavingOrDeleting}
-                                />
-                            </DialogContent>
-                        </Dialog>
+                        <SinglePropertyCard
+                            key={propertyId}
+                            property={property}
+                            isSaved={isSaved}
+                            handleSaveProperty={handleSaveProperty}
+                            handleDeleteProperty={handleDeleteProperty}
+                            isSavingOrDeleting={isSavingOrDeleting}
+                            showAllPhotos={showAllPhotos}
+                            setShowAllPhotos={setShowAllPhotos}
+                        />
                     );
                 })}
             </div>
         </div>
     );
-};
+});
 
 export default RentalListings;
 

@@ -24,12 +24,13 @@ type assessmentType = {
     content: string;
 }
 import { createClient } from "@/app/utils/supabase/client"
+// import { ChatForm } from "./Chat-Form"
 export default function Page() {
     // const [properties, setProperties] = useState(testProperties);
     const [loadingPage, setLoadingPage] = useState<boolean>(true);
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [messages, setMessages] = useState<assessmentType[]>([]);
-    const [input, setInput] = useState<string>("");
+    // const [input, setInput] = useState<string>("");
     const scrollRef = useRef<HTMLDivElement>(null);
     const [properties, setProperties] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -38,6 +39,8 @@ export default function Page() {
     const [savedChatId, setSavedChatId] = useState<string>("");
     const supabase = createClient();
     const [user, setUser] = useState<any>(null);
+    // const [isProperties, setIsProperties] = useState<boolean>(false);
+    console.log("page log 1")
     useEffect(() => {
         const checkUser = async () => {
             const { data: { user } } = await supabase.auth.getUser()
@@ -45,19 +48,56 @@ export default function Page() {
         }
         checkUser();
     }, [supabase]);
-    const handleNext = async (filteredQuery?: string) => {
-        // console.log("Input:", input);
-        if (input.trim() === "" && !filteredQuery) {
+
+    console.log("page log 2")
+
+    // Ensure all hooks are called unconditionally
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        }
+    }, [messages]);
+
+    console.log("page log 3")
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isSmall = window.innerWidth < 768;
+            setIsMobile(isSmall);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Call it initially to set the correct state
+        setLoadingPage(false);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+    useEffect(() => {
+        if (!user) {
             return;
         }
-        const query = filteredQuery || input;
+        if (savedChatId) {
+            handleSaveIntoExistingChat(savedChatId, messages, properties, apiCalParameters);
+        } else {
+            handleSaveChat(messages, setSavedChatId);
+        }
+    }, [messages, properties, user]);
+
+
+    const handleNext = async (input: string) => {
+        // console.log("Input:", input);
+        if (input.trim() === "") {
+            return;
+        }
+        
         setIsLoading(true);
         try {
             setMessages((prevMessages) => [
                 ...prevMessages,
                 {
                     role: 'user',
-                    content: query
+                    content: input
                 }
             ]);
             // console.log("messages", messages);
@@ -66,11 +106,11 @@ export default function Page() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ input: query, messages }),
+                body: JSON.stringify({ input: input, messages }),
             });
             // console.log("response", response);
             const responseData = await response.json();
-            console.log("Response:", responseData);
+            // console.log("Response:", responseData);
             if (responseData.apiResponse.properties) {
                 // console.log("responseData.apiResponse.properties and length", responseData.apiResponse.properties.length, responseData.apiResponse.properties[0]);
                 setProperties(responseData.apiResponse.properties);
@@ -85,7 +125,7 @@ export default function Page() {
                 if (responseData.apiResponse.api_call_parameters && responseData.apiResponse.api_call_parameters.length > 0) {
                     setApiCalParameters(responseData.apiResponse.api_call_parameters);
                 }
-                setInput("");
+                // setInput("");
                 return;
             }
             if (responseData.apiResponse.messages && responseData.apiResponse.messages.length > 0) {
@@ -100,7 +140,7 @@ export default function Page() {
                     ]);
                 }
             }
-            setInput("");
+            // setInput("");
         } catch (error) {
             console.error("Error:", error);
         } finally {
@@ -108,26 +148,8 @@ export default function Page() {
         }
     }
 
-    useEffect(() => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-        }
-    }, [messages]);
-
-    useEffect(() => {
-        const handleResize = () => {
-            const isSmall = window.innerWidth < 768;
-            setIsMobile(isSmall);
-        };
-
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Call it initially to set the correct state
-        setLoadingPage(false);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     const handleBuyOrRent = async (type: string) => {
-        console.log("type", type);
+        // console.log("type", type);
         setIsLoading(true);
         try {
             setMessages((prevMessages) => [
@@ -165,24 +187,13 @@ export default function Page() {
                     ]);
                 }
             }
-            setInput("");
+            // setInput("");
         } catch (error) {
             console.error("Error:", error);
         } finally {
             setIsLoading(false);
         }
     }
-
-    useEffect(() => {
-        if (!user) {
-            return;
-        }
-        if (savedChatId) {
-            handleSaveIntoExistingChat(savedChatId, messages, properties, apiCalParameters);
-        } else {
-            handleSaveChat(messages, setSavedChatId);
-        }
-    }, [messages, properties, user]);
 
     if (loadingPage) {
         return <div className="flex justify-center items-center h-screen"><Loader2 className="w-10 h-10 animate-spin" /></div>;
@@ -194,7 +205,7 @@ export default function Page() {
         }
         setLoadingPage(true);
         setSavedChatId(id);
-        console.log("savedChatId", savedChatId);
+        // console.log("savedChatId", savedChatId);
         await handleLoadSavedChat(id, setMessages, setProperties, setApiCalParameters);
         setLoadingPage(false);
     }
@@ -204,6 +215,7 @@ export default function Page() {
         setProperties([]);
         setApiCalParameters([]);
     }
+
     return (
         <SidebarProvider defaultOpen={false} className="h-screen w-full">
             <AppSidebar handleSavedChatClick={handleSavedChatClick} handleNewChatClick={handleNewChatClick} />
@@ -231,11 +243,21 @@ export default function Page() {
                                             messages={messages}
                                             handleBuyOrRent={handleBuyOrRent}
                                             handleNext={handleNext}
-                                            properties={properties}
+                                            isProperties={hasProperties}
                                             apiCalParameters={apiCalParameters}
-                                            input={input} isLoading={isLoading}
-                                            setInput={setInput}
+                                            isLoading={isLoading}
                                         />
+                                        {/* <ChatForm
+                                            className="h-full"
+                                            messages={messages}
+                                            handleNext={handleNext}
+                                            isProperties={isProperties}
+                                            apiCalParameters={apiCalParameters}
+                                            input={input}
+                                            isLoading={isLoading}
+                                            setInput={setInput}
+
+                                        /> */}
                                     </ResizablePanel>
                                 </>
                             )}
@@ -252,21 +274,21 @@ export default function Page() {
                         </>
                     )}
                 </ResizablePanelGroup>
-                {isMobile && <FloatingChatBar
+                {/* {isMobile && <FloatingChatBar
                     messages={messages}
                     handleBuyOrRent={handleBuyOrRent}
                     handleNext={handleNext}
                     properties={properties}
                     apiCalParameters={apiCalParameters}
 
-                />}
+                />} */}
             </SidebarInset>
         </SidebarProvider>
     )
 }
 
 const handleSaveChat = async (messages: assessmentType[], setSavedChatId: (id: string) => void) => {
-    console.log("messages", messages);
+    // console.log("messages", messages);
     if (messages.length === 0) {
         console.log("No messages provided");
         return;
@@ -295,7 +317,7 @@ const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmen
         }
         const response = await fetch(`/api/get_saved_chat_by_id?id=${id}`);
         const responseData = await response.json();
-        console.log("responseData", responseData);
+        // console.log("responseData", responseData);
         if (responseData.length > 0) {
             const historyMessages = responseData[0].messages || [];
             const historyProperties = responseData[0].properties || [];
@@ -311,8 +333,8 @@ const handleLoadSavedChat = async (id: string, setMessages: (messages: assessmen
 }
 
 const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[], properties: any[], apiCalParameters: any[]) => {
-    console.log("messages", messages);
-    console.log("properties", properties);
+    // console.log("messages", messages);
+    // console.log("properties", properties);
     if (messages.length === 0 && properties.length === 0) {
         console.log("No messages or properties provided");
         return;
@@ -326,7 +348,7 @@ const handleSaveIntoExistingChat = async (id: string, messages: assessmentType[]
             body: JSON.stringify({ messages, properties, apiCalParameters }),
         });
         const responseData = await response.json();
-        console.log("responseData", responseData);
+        // console.log("responseData", responseData);
     } catch (error) {
         console.error("Error saving into existing chat:", error);
     }

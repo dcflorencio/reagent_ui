@@ -1,6 +1,6 @@
 // Import necessary modules
 import { createClient } from '@supabase/supabase-js';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getUser } from '@/hooks/getUser';
 
 const supabase = createClient(
@@ -9,7 +9,7 @@ const supabase = createClient(
 );
 
 // Named export for the GET method
-export const GET = async (req: NextRequest) => {
+export const GET = async () => {
     try {
         const userData = await getUser();
         console.log("userData", userData);
