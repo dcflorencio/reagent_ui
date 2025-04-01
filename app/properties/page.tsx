@@ -274,14 +274,14 @@ export default function Page() {
                         </>
                     )}
                 </ResizablePanelGroup>
-                {/* {isMobile && <FloatingChatBar
+                {isMobile && <FloatingChatBar
                     messages={messages}
                     handleBuyOrRent={handleBuyOrRent}
                     handleNext={handleNext}
                     properties={properties}
                     apiCalParameters={apiCalParameters}
 
-                />} */}
+                />}
             </SidebarInset>
         </SidebarProvider>
     )
