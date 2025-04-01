@@ -147,12 +147,12 @@ const RentalListings = React.memo(({ properties, reloadMethod  }: { properties: 
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
-                {filteredProperties.map((property) => {
+                {filteredProperties.map((property, index) => {
                     const propertyId = `${property.latitude}${property.longitude}`;
                     const isSaved = savedProperties.some(saved => saved.property_id === propertyId);
                     return (
                         <SinglePropertyCard
-                            key={propertyId}
+                            key={index}
                             property={property}
                             isSaved={isSaved}
                             handleSaveProperty={handleSaveProperty}
