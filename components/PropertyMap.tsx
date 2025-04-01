@@ -11,6 +11,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
     // const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
     const mapRef = useRef<HTMLDivElement>(null);
     const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
+    const isFirstRender = useRef(true);
 
     // Function to format the price
     const formatPrice = (price: number) => {
@@ -156,10 +157,19 @@ function PropertyMap({ properties }: { properties: any[] }) {
         }
     };
 
-    // New useEffect to handle properties update
     useEffect(() => {
         if (map) {
-            updateMapWithProperties();
+            if (isFirstRender.current && properties.length > 0) {
+                console.log("First render detected, setting timeout");
+                isFirstRender.current = false;
+                const timeoutId = setTimeout(() => {
+                    console.log("Timeout triggered, updating map with properties");
+                    updateMapWithProperties();
+                }, 2000); // Adjusted to 2 seconds for testing
+                return () => clearTimeout(timeoutId);
+            } else {
+                updateMapWithProperties();
+            }
         }
     }, [map, properties]);
 
