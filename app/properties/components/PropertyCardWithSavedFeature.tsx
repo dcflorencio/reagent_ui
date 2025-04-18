@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
+// import {
+//     Dialog,
+//     DialogContent,
+//     DialogHeader,
+//     DialogTitle,
+//     DialogTrigger,
+// } from "@/components/ui/dialog";
 import { FilterComponent } from "@/components/FilterComponent";
-import DialogHeaderCard from "@/app/properties/components/property-card-components/DialogHeaderCard";
-import DialogContentCard from "@/app/properties/components/property-card-components/DialogContentCard";
+// import DialogHeaderCard from "@/app/properties/components/property-card-components/DialogHeaderCard";
+// import DialogContentCard from "@/app/properties/components/property-card-components/DialogContentCard";
 import { createClient } from "@/app/utils/supabase/client"
 import SinglePropertyCard from "@/app/properties/components/property-card-components/SinglePropertyCard";
 

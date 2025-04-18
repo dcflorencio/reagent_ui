@@ -3,6 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 function PropertyMap({ properties }: { properties: any[] }) {
     const [map, setMap] = useState<google.maps.Map | null>(null);
+    const [mapProperties, setMapProperties] = useState<any[]>([]);
+    useEffect(() => {
+        if (properties.length === 0) return;
+        if (JSON.stringify(properties) !== JSON.stringify(mapProperties)) {
+            setMapProperties(properties);
+        }
+    }, [properties]);
     // const [placesService, setPlacesService] = useState<google.maps.places.PlacesService | null>(null);
     // const [currentBounds, setCurrentBounds] = useState<google.maps.LatLngBounds | null>(null);
     // const [marker, setMarker] = useState<google.maps.Marker | null>(null);
@@ -11,7 +18,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
     // const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null);
     const mapRef = useRef<HTMLDivElement>(null);
     const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
-    const isFirstRender = useRef(true);
+    // const isFirstRender = useRef(true);
 
     // Function to format the price
     const formatPrice = (price: number) => {
@@ -59,7 +66,7 @@ function PropertyMap({ properties }: { properties: any[] }) {
                 console.log('Places service initialized');
 
                 // Call updateMapWithProperties after map is initialized
-                if (properties.length > 0) {
+                if (mapProperties.length > 0) {
                     updateMapWithProperties();
                 }
 
@@ -73,13 +80,13 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
     // Updated method to add markers, adjust bounds, and add event listeners
     const updateMapWithProperties = () => {
-        if (map && properties.length > 0) {
+        if (map && mapProperties.length > 0) {
             clearMap();
             const bounds = new google.maps.LatLngBounds();
             const infoWindow = new google.maps.InfoWindow();
             const newMarkers: google.maps.Marker[] = [];
 
-            properties.forEach(property => {
+            mapProperties.forEach(property => {
                 const position = new google.maps.LatLng(property.latitude, property.longitude);
                 const price = formatPrice(property?.units && property?.units.length > 0
                     ? property?.units[0]?.price
@@ -159,19 +166,20 @@ function PropertyMap({ properties }: { properties: any[] }) {
 
     useEffect(() => {
         if (map) {
-            if (isFirstRender.current && properties.length > 0) {
-                console.log("First render detected, setting timeout");
-                isFirstRender.current = false;
-                const timeoutId = setTimeout(() => {
-                    console.log("Timeout triggered, updating map with properties");
-                    updateMapWithProperties();
-                }, 2000); // Adjusted to 2 seconds for testing
-                return () => clearTimeout(timeoutId);
-            } else {
-                updateMapWithProperties();
-            }
+            // if (isFirstRender.current && properties.length > 0) {
+            //     console.log("First render detected, setting timeout");
+            //     isFirstRender.current = false;
+            //     const timeoutId = setTimeout(() => {
+            //         console.log("Timeout triggered, updating map with properties");
+            //         updateMapWithProperties();
+            //     }, 2000); // Adjusted to 2 seconds for testing
+            //     return () => clearTimeout(timeoutId);
+            // } else {
+            //     updateMapWithProperties();
+            // }
+            updateMapWithProperties();
         }
-    }, [map, properties]);
+    }, [map, mapProperties]);
 
     return (
         <div className="min-h-[200px] w-full h-full relative">
