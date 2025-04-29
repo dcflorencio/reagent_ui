@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/collapsible"
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -80,7 +79,7 @@ export function NavChatHistory({
                     </SidebarMenuSubItem>
                   ))} */}
                   {savedChats.map((chat, index) => (
-                    <SidebarMenuSubItem key={chat.created_at}>
+                    <SidebarMenuSubItem key={`${chat.created_at}-${index}`}>
                       <SidebarMenuSubButton asChild>
                         <a href={`/properties/chat/${chat.id}`}>
                           <div className="flex flex-col">

@@ -1,6 +1,6 @@
 // "Property Type: House, Bedrooms: 3+, Bathrooms: 0+, Location: Chicago, Illinois, USA, Square Footage: 400 to 1000 sqft, Budget: $100,000 to $500,000"
 
-import React, { lazy, Suspense, useState, useEffect, useRef } from "react";
+import React, { lazy, useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Slider from "react-slick";

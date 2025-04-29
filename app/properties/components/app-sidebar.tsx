@@ -3,8 +3,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Bookmark, GalleryVerticalEnd, Search } from "lucide-react"
 import { createClient } from "@/app/utils/supabase/client"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
     Sidebar,
     SidebarContent,

@@ -1,24 +1,16 @@
-import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuPortal,
     DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { AvatarFallback, Avatar, AvatarImage } from "./ui/avatar"
 import { User } from "@supabase/supabase-js"
 import { Bell } from "lucide-react";
 import { Sparkles } from "lucide-react";
-import { BadgeCheck } from "lucide-react";
-import { CreditCard } from "lucide-react";
 import { LogOut } from "lucide-react";
 
 export function ProfileDropdown({ handleLogout, user }: { handleLogout: () => void, user: User }) {

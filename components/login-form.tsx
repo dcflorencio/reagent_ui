@@ -71,7 +71,6 @@
 //   )
 // }
 
-
 "use client"
 
 import type React from "react"
@@ -93,6 +92,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
       // Handle successful sign-in, e.g., redirect or update UI
     } catch (error) {
       // Handle error, e.g., show error message
+      console.log(error)
     } finally {
       setIsLoading(false)
     }

@@ -1,9 +1,7 @@
 "use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Heart, BookmarkIcon } from "lucide-react";
+import { BookmarkIcon } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import GoogleMap from "@/app/properties/components/property-card-components/GoogleMap";
 import RequestATour from "@/components/RequestATour";
