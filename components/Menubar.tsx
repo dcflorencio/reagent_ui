@@ -1,3 +1,5 @@
+'use client'
+
 import {
     Menubar
 } from "@/components/ui/menubar"
@@ -17,10 +19,25 @@ const MenubarDemo = () => {
         router.push('/login')
     };
     useEffect(() => {
+        console.log('[Menubar] MenubarDemo mounted');
+        console.log('[Menubar] Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
+        console.log('[Menubar] Supabase ANON KEY:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'Present' : 'Missing');
+        console.log('[Menubar] NODE_ENV:', process.env.NODE_ENV);
+        console.log('[Menubar] document.cookie:', typeof document !== 'undefined' ? document.cookie : 'Not in browser');
+
         const checkUser = async () => {
-            const { data: { user } } = await supabase.auth.getUser()
+            console.log('[Menubar] checkUser called');
+            const session = await supabase.auth.getSession();
+            console.log('[Menubar] getSession:', session);
+
+            const response = await supabase.auth.getUser();
+            console.log('[Menubar] getUser full response:', response);
+            const { data: { user }, error } = response;
+            console.log('[Menubar] getUser result:', { user, error });
             setIsLoggedIn(!!user);
             setUser(user);
+            console.log('[Menubar] setIsLoggedIn:', !!user);
+            console.log('[Menubar] setUser:', user);
         };
         checkUser();
     }, [supabase]);
