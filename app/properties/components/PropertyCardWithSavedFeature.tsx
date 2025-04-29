@@ -168,6 +168,9 @@ const RentalListings = React.memo(({ properties, reloadMethod  }: { properties: 
     );
 });
 
+// Add display name to fix the ESLint error
+RentalListings.displayName = 'RentalListings';
+
 export default RentalListings;
 
 const fetchSavedProperties = async (setIsSavingOrDeleting: (isSavingOrDeleting: boolean) => void) => {

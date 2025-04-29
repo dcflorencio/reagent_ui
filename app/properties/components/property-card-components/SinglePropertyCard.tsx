@@ -52,4 +52,6 @@ const SinglePropertyCard: React.FC<SinglePropertyCardProps> = React.memo(({
     );
 });
 
+SinglePropertyCard.displayName = 'SinglePropertyCard';
+
 export default SinglePropertyCard; 

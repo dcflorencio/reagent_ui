@@ -43,7 +43,7 @@ export function AppSidebar({ handleSavedChatClick, handleNewChatClick }: { handl
             }
         };
         fetchSavedChats();
-    }, []);
+    }, [supabase.auth]);
     return (
         <Sidebar>
             <SidebarHeader>

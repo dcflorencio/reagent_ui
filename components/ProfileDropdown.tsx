@@ -17,7 +17,6 @@ export function ProfileDropdown({ handleLogout, user }: { handleLogout: () => vo
     const avatarUrl = user?.user_metadata.avatar_url;
     const name = user?.user_metadata.name;
     const email = user?.email;
-    console.log
 
     return (
         <DropdownMenu>

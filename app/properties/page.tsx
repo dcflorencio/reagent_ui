@@ -82,6 +82,7 @@ export default function Page() {
         } else {
             handleSaveChat(messages, setSavedChatId);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [messages, properties, user]);
 
 
