@@ -43,7 +43,9 @@ export async function POST(req: NextRequest): Promise<NextResponse<{ apiResponse
 async function makeAPICall(messages: { role: string; content: string }[]) {
     // const config = { "configurable": { "thread_id": "1", "user_id": user_id } }
     const apiResponse = await fetch(
-        "https://reagent-ui-3d6ba29f3428595b8a7ab36565570117.us.langgraph.app/runs/wait",
+        "https://aigenthome-prod-0c76a5f8e54f5c19b10fe56b657fc60b.us.langgraph.app/runs/wait",
+        
+        
         {
             method: "POST",
             headers: {
