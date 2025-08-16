@@ -1,6 +1,8 @@
 from langgraph_engineer.model import _get_model
 from langgraph_engineer.state import AgentState
-from typing import TypedDict
+# from typing import TypedDict
+from typing_extensions import TypedDict
+
 from langchain_core.messages import RemoveMessage
 import os
 
