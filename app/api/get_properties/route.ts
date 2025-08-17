@@ -2,7 +2,6 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-// Ensure Node runtime so we can read streamed bodies
 export const runtime = "nodejs";
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
@@ -23,7 +22,7 @@ export async function POST(
     const key = process.env.LANGGRAPH_API_KEY;
     const assistant =
       process.env.LANGGRAPH_ASSISTANT_ID ??
-      "6feb6d4c-f3c3-594b-b829-c6a377b4bbb4"; // Graph "Real Estate"
+      "6feb6d4c-f3c3-594b-b829-c6a377b4bbb4";
 
     if (!key) throw new Error("LANGGRAPH_API_KEY is not defined");
 
@@ -41,7 +40,6 @@ export async function POST(
         assistant_id: assistant,
         input: { messages: msgs },
         ...(thread_id ? { config: { thread_id } } : {}),
-        // 👇 CRITICAL: include values
         stream_mode: ["messages", "updates", "values"],
       }),
     });
@@ -60,45 +58,35 @@ export async function POST(
     const updates: Record<string, unknown> = {};
     let finalValues: any = undefined;
 
-    // Optional: capture debug lines to return to client if needed
+    // collect debug frames if toggled on
     const debugFrames: Array<{ event?: string; sample?: any }> = [];
 
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
       buffer += decoder.decode(value, { stream: true });
-
       buffer = buffer.replace(/\r\n/g, "\n");
       const frames = buffer.split("\n\n");
       buffer = frames.pop() ?? "";
 
       for (const frame of frames) {
         if (!frame.trim()) continue;
-
         const lines = frame.split("\n");
         let eventName: string | undefined;
         const dataChunks: string[] = [];
 
         for (const line of lines) {
-          if (line.startsWith("event:")) {
-            eventName = line.slice(6).trim();
-          } else if (line.startsWith("data:")) {
-            dataChunks.push(line.slice(5).trim());
-          }
+          if (line.startsWith("event:")) eventName = line.slice(6).trim();
+          else if (line.startsWith("data:")) dataChunks.push(line.slice(5).trim());
         }
-
         if (!dataChunks.length) continue;
+
         const raw = dataChunks.join("\n");
         if (!raw || raw === "[DONE]") continue;
 
         let payload: any;
-        try {
-          payload = JSON.parse(raw);
-        } catch {
-          continue;
-        }
+        try { payload = JSON.parse(raw); } catch { continue; }
 
-        // for debug
         if (process.env.DEBUG_SSE === "1") {
           debugFrames.push({
             event: eventName,
@@ -106,7 +94,6 @@ export async function POST(
           });
         }
 
-        // 1) Prefer messages/* events for assistant text
         if (eventName?.startsWith("messages/")) {
           const arr = Array.isArray(payload) ? payload : [];
           const ai = arr.find((m: any) => m?.type === "ai");
@@ -118,21 +105,17 @@ export async function POST(
           continue;
         }
 
-        // 2) updates: merge last seen values (can be null during transitions)
         if (eventName === "updates" && payload && typeof payload === "object") {
-          for (const [k, v] of Object.entries(payload)) {
-            (updates as any)[k] = v;
-          }
+          for (const [k, v] of Object.entries(payload)) (updates as any)[k] = v;
           continue;
         }
 
-        // 3) values: final state (this is where your listings should appear)
         if (eventName === "values") {
           finalValues = payload;
           continue;
         }
 
-        // 4) token streams fallback (if messages/* weren’t used)
+        // token fallback if messages/* were not used
         const token =
           payload?.data?.chunk?.content ??
           payload?.data?.chunk?.text ??
@@ -145,16 +128,16 @@ export async function POST(
       }
     }
 
-    // Try to lift properties and call params from either final values or updates
-    const lifted = liftFromValuesOrUpdates(finalValues, updates);
+    // ---------- lift properties robustly ----------
+    const lifted = liftEverywhere(finalValues, updates, debugFrames);
 
     return NextResponse.json({
       apiResponse: {
         assistant: assistantText || "",
         updates,
-        values: finalValues, // 👈 expose final values for the page’s fallback
-        properties: lifted.properties, // convenience for any legacy UI
-        api_call_parameters: lifted.apiCallParams,
+        values: finalValues,
+        properties: lifted.properties,
+        api_call_parameters: lifted.apiCallParams ?? null,
         thread_id: thread_id ?? null,
         ...(process.env.DEBUG_SSE === "1" ? { _sse_debug: debugFrames } : {}),
       },
@@ -167,15 +150,18 @@ export async function POST(
 
 /* ---------------- helpers ---------------- */
 
+function tryParseJSON<T = any>(v: any): T | null {
+  if (v == null) return null;
+  if (typeof v !== "string") return v as T;
+  try { return JSON.parse(v) as T; } catch { return null; }
+}
+
 function tryParseArray(v: any): any[] | null {
   if (Array.isArray(v)) return v;
   if (typeof v === "string") {
     const s = v.trim();
     if (s.startsWith("[") && s.endsWith("]")) {
-      try {
-        const parsed = JSON.parse(s);
-        return Array.isArray(parsed) ? parsed : null;
-      } catch {}
+      try { const parsed = JSON.parse(s); return Array.isArray(parsed) ? parsed : null; } catch {}
     }
   }
   return null;
@@ -185,70 +171,123 @@ function looksLikePropertyArray(arr: any[]): boolean {
   if (!arr.length || typeof arr[0] !== "object") return false;
   const it = arr[0] as any;
   return (
-    "price" in it ||
-    "address" in it ||
-    "latitude" in it ||
-    "lat" in it ||
-    "longitude" in it ||
-    "lng" in it
+    "price" in it || "address" in it ||
+    "latitude" in it || "lat" in it ||
+    "longitude" in it || "lng" in it ||
+    "zpid" in it
   );
 }
 
-function pickPropertiesFromObject(obj: any): any[] | undefined {
+// pick an array from common fields (including nested { data: ... } with JSON)
+function pickArrayFromAny(obj: any): any[] | undefined {
   if (!obj || typeof obj !== "object") return undefined;
 
+  // If this is a wrapper like { data: "{\"props\":[...]}" } unwrap it
+  const maybeData = (obj as any).data;
+  if (typeof maybeData === "string") {
+    const parsed = tryParseJSON<any>(maybeData);
+    const arr = pickArrayFromAny(parsed);
+    if (arr && arr.length) return arr;
+  } else if (maybeData && typeof maybeData === "object") {
+    const arr = pickArrayFromAny(maybeData);
+    if (arr && arr.length) return arr;
+  }
+
   const keys = [
-    "json_to_properties",  // your node name from the trace
-    "properties",
-    "properties_found",
-    "listings",
-    "results",
-    "search_results",
-    "matched_properties",
+    "json_to_properties", "properties", "properties_found",
+    "listings", "results", "search_results", "matched_properties",
+    "props" // <-- important for the server case you saw
   ];
 
   for (const k of keys) {
     const raw = (obj as any)[k];
     if (raw == null) continue;
 
-    // Sometimes nodes return { properties: [...] }
+    // Node returns { properties: [...] } or { props: [...] }
     if (raw && typeof raw === "object" && !Array.isArray(raw)) {
       const inner =
         (raw as any).properties ??
         (raw as any).listings ??
         (raw as any).results ??
+        (raw as any).props ??
         (raw as any).data;
+
+      // inner could itself be a stringified object/array
+      const innerParsedObj = tryParseJSON<any>(inner);
+      if (innerParsedObj && typeof innerParsedObj === "object") {
+        const arrFromInner = pickArrayFromAny(innerParsedObj);
+        if (arrFromInner && arrFromInner.length) return arrFromInner;
+      }
+
       const arrInner = tryParseArray(inner);
       if (arrInner && looksLikePropertyArray(arrInner)) return arrInner;
     }
 
+    // direct array or stringified array
     const arr = tryParseArray(raw);
     if (arr && looksLikePropertyArray(arr)) return arr;
+
+    // stringified object like "{\"props\":[...]}"
+    const asObj = tryParseJSON<any>(raw);
+    if (asObj && typeof asObj === "object") {
+      const arrFromObj = pickArrayFromAny(asObj);
+      if (arrFromObj && arrFromObj.length) return arrFromObj;
+    }
   }
 
-  // Fallback: first array-of-objects that "looks like" listings
+  // Last resort: first array-of-objects that "looks like" listings
   for (const [, v] of Object.entries(obj)) {
+    // unwrap nested data quickly
+    if (v && typeof v === "object") {
+      const arrNested = pickArrayFromAny(v);
+      if (arrNested && arrNested.length) return arrNested;
+    }
     const arr = tryParseArray(v);
     if (arr && looksLikePropertyArray(arr)) return arr;
+    const asObj = tryParseJSON<any>(v);
+    if (asObj && typeof asObj === "object") {
+      const arrFromObj = pickArrayFromAny(asObj);
+      if (arrFromObj && arrFromObj.length) return arrFromObj;
+    }
   }
+
   return undefined;
 }
 
-function liftFromValuesOrUpdates(values: any, updates: any): {
-  properties?: any[];
-  apiCallParams?: any;
-} {
-  const fromValues = pickPropertiesFromObject(values);
-  if (fromValues) {
-    const params = values?.api_call_parameters ?? values?.api_cal_parameters;
-    return { properties: fromValues, apiCallParams: params };
+function liftEverywhere(values: any, updates: any, debugFrames: Array<{event?: string; sample?: any}>) {
+  // 1) values event
+  const fromValues = pickArrayFromAny(values);
+  if (fromValues?.length) {
+    return {
+      properties: fromValues,
+      apiCallParams: values?.api_call_parameters ?? values?.api_cal_parameters ?? null,
+    };
   }
 
-  const fromUpdates = pickPropertiesFromObject(updates);
-  if (fromUpdates) {
-    const params = updates?.api_call_parameters ?? updates?.api_cal_parameters;
-    return { properties: fromUpdates, apiCallParams: params };
+  // 2) updates stream
+  const fromUpdates = pickArrayFromAny(updates);
+  if (fromUpdates?.length) {
+    return {
+      properties: fromUpdates,
+      apiCallParams: updates?.api_call_parameters ?? updates?.api_cal_parameters ?? null,
+    };
   }
 
-  return {};
+  // 3) scan _sse_debug -> messages/complete content -> { status, data: "{\"props\": [...] }"}
+  if (Array.isArray(debugFrames)) {
+    for (let i = debugFrames.length - 1; i >= 0; i--) {
+      const f = debugFrames[i];
+      if (f?.event !== "messages/complete") continue;
+      const content = f.sample?.content;
+      const parsedComplete = tryParseJSON<any>(content);
+      if (!parsedComplete) continue;
+
+      // unwrap .data which might be a stringified object that holds props
+      const inner = tryParseJSON<any>(parsedComplete.data) ?? parsedComplete.data;
+      const arr = pickArrayFromAny(inner);
+      if (arr?.length) return { properties: arr, apiCallParams: inner?.api_call_parameters ?? null };
+    }
+  }
+
+  return { properties: [] as any[], apiCallParams: null };
 }
