@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "github:googlemaps/google-maps-services-js",
-    "@googlemaps/js-api-loader": "github:googlemaps/js-api-loader",
+    "@googlemaps/js-api-loader": "1.16.10",
     "@radix-ui/react-avatar": "^1.1.3",
     "@radix-ui/react-collapsible": "^1.1.3",
     "@radix-ui/react-dialog": "^1.1.6",
